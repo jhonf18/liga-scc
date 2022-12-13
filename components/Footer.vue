@@ -28,6 +28,11 @@
         <h4 class="font-semibold">Conoce la liga</h4>
         <ul>
           <li>
+            <a href="https://licancerbucaramanga.org/servicios/" target="_blank">
+              Nuestros servicios
+            </a>
+          </li>
+          <li>
             <a href="https://licancerbucaramanga.org/historia/" target="_blank">
               Nuestra Historia
             </a>

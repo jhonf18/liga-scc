@@ -3,9 +3,9 @@
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 340 340" style="enable-background:new 0 0 340 340;" xml:space="preserve">
 <g id="XMLID_31_">
-	<path id="XMLID_786_" d="M305,0H35C21.193,0,10,11.193,10,25v290c0,13.807,11.193,25,25,25h270c13.807,0,25-11.193,25-25V25
+	<path fill="#ddd" id="XMLID_786_" d="M305,0H35C21.193,0,10,11.193,10,25v290c0,13.807,11.193,25,25,25h270c13.807,0,25-11.193,25-25V25
 		C330,11.193,318.807,0,305,0z M300,30v200h-31.459L195,82.918l-50,100l-25-50L71.459,230H40V30H300z M105,230l15-30l15,30H105z
 		 M155,230l40-80l40,80H155z M300,310H40v-50h260V310z"/>
-	<circle id="XMLID_792_" cx="85" cy="75" r="15"/>
+	<circle fill="#ddd" id="XMLID_792_" cx="85" cy="75" r="15"/>
 </g>
 </svg>

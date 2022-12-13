@@ -22,7 +22,13 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    './static/css/main.css'
   ],
+
+  loading: {
+    color: '#2AB4FC',
+    height: '2px',
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -49,9 +55,32 @@ export default {
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    icon: {
+      source: './static/icon-mesa.png'
+    },
+    meta: {
+      name: 'Liga Santandereana Contra e Cáncer',
+      theme_color: '#282b53',
+      lang: 'es',
+    },
     manifest: {
-      lang: 'en'
-    }
+      lang: 'es',
+      name: 'Liga Santandereana Contra el Cáncer',
+      description: 'Herramientas interactivas',
+      short_name: 'LSCC',
+      display: 'standalone',
+      start_url: '/'
+    },
+    workbox: {
+      runtimeCaching: [
+        {
+          urlPattern: 'https://fonts.googleapis.com/.*',
+          handler: 'cacheFirst',
+          method: 'GET',
+          strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+        }
+      ]
+    },
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content

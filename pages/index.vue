@@ -1,7 +1,8 @@
 <template>
   <div>
     <main class="banner">
-      <h1 class="banner-title">
+      <h1
+        class="mx-auto text-2xl sm:text-5xl text-center max-w-2xl font-medium leading-normal mt-12 mb-12">
         Juega y aprende con la Liga Santandereana Contra el Cáncer
       </h1>
     </main>
@@ -32,8 +33,8 @@
           <div>
             <span>Aprende sobre el cáncer con</span>
             <div class="grid grid-cols-2 gap-6 mt-2">
-              <button class="button">Infografías</button>
-              <button class="button">Juegos</button>
+              <Button variant="primary">Infografías</Button>
+              <Button variant="primary">Juegos</Button>
             </div>
           </div>
         </div>
@@ -52,22 +53,22 @@
       </p>
       <div class="flex justify-center mt-8">
         <div class="mr-4">
-            <button class="button" style="background-color: #282b53">
+          <Button size="lg" variant="primary">
             <PlayGamesIcon style="width: 25px" class="mr-2" />
             Juegos
-          </button>
+          </Button>
         </div>
         <div class="mr-4">
-          <button class="button" style="background-color: #dd3333">
+          <Button size="lg" variant="secondary">
             <VideoIcon style="width: 25px" class="mr-2" />
             Videos
-          </button>
+          </Button>
         </div>
         <div>
-          <button class="button" style="background-color: #294481">
+          <Button size="lg" variant="tertiary">
             <PictureIcon style="width: 18px" class="mr-2" />
             Infografías
-          </button>
+          </Button>
         </div>
       </div>
     </section>
@@ -90,8 +91,6 @@ export default {
   background: rgb(46,52,138);
   background: radial-gradient(circle, rgba(46,52,138,0.9990371148459384) 10%, rgba(40,43,83,1) 98%);
   color: #fff;
-  font-size: 3em;
-  font-weight: 500;
   padding: 1.5em 0;
 }
 
@@ -115,16 +114,6 @@ export default {
   background-color: #282b5360;
 }
 
-.button {
-  background-color: #282b53;
-  color: #fff;
-  padding: .5em 1em;
-  border-radius: .5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .wrapper {
   position: relative;
   width: 150px;
@@ -140,7 +129,7 @@ export default {
   right: 0;
   bottom: 0;
   border-radius: 50%;
-  background-color: #282b53;
+  background-color: #171a3b;
   margin: auto;
   transform: scale(1, 1);
 }
