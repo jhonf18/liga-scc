@@ -2,15 +2,17 @@
   <div>
     <main class="banner">
       <h1
-        class="mx-auto text-2xl sm:text-5xl text-center max-w-2xl font-medium leading-normal mt-12 mb-12">
+        class="mx-auto text-3xl sm:text-5xl text-center max-w-2xl font-medium leading-normal mt-12 mb-12">
         Juega y aprende con la Liga Santandereana Contra el Cáncer
       </h1>
     </main>
 
-    <section class="container mx-auto mt-16 mb-16 ">
-      <h2 class="text-center text-3xl mb-8 font-semibold">Conoce sobre el cáncer</h2>
-      <div class="grid grid-cols-5 gap-4">
-        <div class=" p-4 col-span-3">
+    <section class="p-6 sm:container sm:p-0 mx-auto mt-16 mb-16 ">
+      <h2 class="text-center text-2xl sm:text-3xl mb-8 font-semibold">
+        Conoce sobre el cáncer
+      </h2>
+      <div class="md:grid md:grid-cols-5 md:gap-4">
+        <div class="container-video col-span-3">
           <div class="container-video h-full flex justify-center items-center">
             <div class="filter-container"></div>
             <div class="wrapper">
@@ -23,9 +25,11 @@
             </div>
           </div>
         </div>
-        <div class="container-info col-span-2 p-4">
+        <div class="container-info mt-6 md:mt-0 col-span-2 md:p-4">
           <div>
-            <h3 class="text-2xl font-medium">¿Qué es el cáncer?</h3>
+            <h3 class="text-xl sm:text-2xl font-medium">
+              ¿Qué es el cáncer?
+            </h3>
             <p class="mt-4 mb-8">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolore molestias natus nulla possimus, perferendis magni numquam. Aut repudiandae, eligendi quo, at eveniet consequatur deleniti perspiciatis, rerum voluptates quae ex.
             </p>
@@ -47,25 +51,25 @@
       <div class="border-t border-gray-400 w-1/5 h-1 mx-auto mt-4"></div>
     </div>
 
-    <section class="container mx-auto mt-16">
-      <p class="text-xl text-center">
+    <section class="p-6 sm:container sm:p-0 mx-auto mt-8 sm:mt-16">
+      <p class="text-lg sm:text-xl text-center">
         Visita nuestras herramientas interactivas y educate para prevenir y detectar de forma temprana el cáncer.
       </p>
-      <div class="flex justify-center mt-8">
-        <div class="mr-4">
+      <div class="flex flex-col sm:flex-row sm:justify-center mt-8">
+        <div class="mr-4 mt-4 sm:mt-0 w-full sm:w-auto">
           <Button size="lg" variant="primary">
             <PlayGamesIcon style="width: 25px" class="mr-2" />
             Juegos
           </Button>
         </div>
-        <div class="mr-4">
-          <Button size="lg" variant="secondary">
+        <div class="mr-4 mt-4 sm:mt-0 w-full sm:w-auto">
+          <Button size="lg" variant="secondary"  >
             <VideoIcon style="width: 25px" class="mr-2" />
             Videos
           </Button>
         </div>
-        <div>
-          <Button size="lg" variant="tertiary">
+        <div class="mt-4 sm:mt-0 w-full sm:w-auto">
+          <Button size="lg" variant="tertiary" >
             <PictureIcon style="width: 18px" class="mr-2" />
             Infografías
           </Button>
@@ -184,6 +188,10 @@ export default {
 
 .section-tools-icons {
   width: 20px;
+}
+
+.container-video {
+  min-height: 14rem;
 }
 
 

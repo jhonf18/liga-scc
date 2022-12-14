@@ -1,6 +1,6 @@
 <template>
   <footer class="footer text-white">
-    <div class="container mx-auto mt-16 grid grid-cols-6 gap-4 p-4 py-8 mb-2">
+    <div class="sm:container mx-auto mt-16 sm:grid sm:grid-cols-6 sm:gap-4 p-4 py-8 mb-2">
       <div class="col-span-2">
         <div class="container-img">
           <a href="https://licancerbucaramanga.org/" target="_blank">
@@ -10,9 +10,9 @@
           </a>
         </div>
       </div>
-      <div class="col-start-4 col-span-2">
+      <div class="mt-5 lg:col-start-4 col-span-2">
         <h4 class="font-semibold">Conoce nuestras herramientas</h4>
-        <ul>
+        <ul class="pl-1">
           <li>
             <nuxt-link to="/juegos">Juegos</nuxt-link>
           </li>
@@ -24,9 +24,9 @@
           </li>
         </ul>
       </div>
-      <div class="col-start-6 col-span-1">
+      <div class="mt-5 col-span-2 lg:col-start-6 lg:col-span-1">
         <h4 class="font-semibold">Conoce la liga</h4>
-        <ul>
+        <ul class="pl-1">
           <li>
             <a href="https://licancerbucaramanga.org/servicios/" target="_blank">
               Nuestros servicios
