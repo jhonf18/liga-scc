@@ -6,7 +6,7 @@
           <a href="https://licancerbucaramanga.org/" target="_blank">
             <img
           src="https://licancerbucaramanga.org/wp-content/uploads/2021/02/Logo-Blanco.png"
-          alt="Logotipo Liga Santandereana Contra el Cáncer">
+          alt="Logotipo en blanco de la Liga Santandereana Contra el Cáncer">
           </a>
         </div>
       </div>

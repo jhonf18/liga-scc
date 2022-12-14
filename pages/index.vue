@@ -9,7 +9,7 @@
 
     <section class="container mx-auto mt-16 mb-16 ">
       <h2 class="text-center text-3xl mb-8 font-semibold">Conoce sobre el cáncer</h2>
-      <div class="h-96 grid grid-cols-5 gap-4">
+      <div class="grid grid-cols-5 gap-4">
         <div class=" p-4 col-span-3">
           <div class="container-video h-full flex justify-center items-center">
             <div class="filter-container"></div>

@@ -10,6 +10,9 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
+      screens: {
+        xs: '380px'
+      },
       colors: {
         purple: {
           400: '#53547a',
