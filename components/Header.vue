@@ -38,7 +38,9 @@
               <li class="py-2">
                 <div class="flex items-center">
                   <RightIcon class="icon-right" />
-                  ETAPAS DE VIDA
+                  <span>
+                    ETAPAS DE VIDA
+                  </span>
                 </div>
                 <ul class="block pl-8">
                   <li @click="isShowMenu = false" class="py-2">
@@ -85,25 +87,41 @@
             </nuxt-link>
             </li>
           <li class="item-ciclo-vida menu-item">
-            ETAPAS DE VIDA
+            <span>
+              ETAPAS DE VIDA
+            </span>
             <ul class="dropdown-ciclo-vida">
               <li>
-                <nuxt-link class="li-link" to="/ninos">
+                <nuxt-link class="li-link" exact to="etapas/ninos">
                   <RightIcon class="icon-right" />
                   <span>NIÑO Y NIÑA</span>
                 </nuxt-link>
                 </li>
               <li>
-                <nuxt-link class="li-link" to="/adolescente">
+                <nuxt-link class="li-link" exact to="etapas/adolescente">
                   <RightIcon class="icon-right" />
                   <span>ADOLESCENTE</span>
                 </nuxt-link>
               </li>
               <li>
-                <nuxt-link class="li-link" to="/adulto">
+                <span class="li-link">
                   <RightIcon class="icon-right" />
                   <span> ADULTO </span>
-                </nuxt-link>
+                </span>
+                <ul class="bg-white flex flex-col w-48">
+                  <li>
+                    <nuxt-link class="li-link" to="etapas/adulto/mujer">
+                      <RightIcon class="icon-right" />
+                      MUJER
+                    </nuxt-link>
+                  </li>
+                  <li>
+                    <nuxt-link class="li-link" to="etapas/adulto/hombre">
+                      <RightIcon class="icon-right" />
+                      HOMBRE
+                    </nuxt-link>
+                  </li>
+                </ul>
               </li>
             </ul>
           </li>
@@ -185,6 +203,11 @@ a.nuxt-link-active {
   font-weight: bold;
 }
 
+li:has(> a.nuxt-link-active) {
+  color: #282b53;
+  font-weight: bold;
+}
+
 nav ul ul{
   position: absolute;
   max-width: 300px;
@@ -240,5 +263,12 @@ nav > ul > li > ul {
   width: 200px;
 }
 
+
+nav ul ul ul {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  display: flex;
+}
 
 </style>
