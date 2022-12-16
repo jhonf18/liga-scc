@@ -22,7 +22,6 @@
       <div class="relative w-100 mr-auto xs:w-10/12 md:w-2/5 bg-white h-screen py-3">
         <!-- Header lateral menu -->
         <div class="flex items-center px-2">
-          <FourPIcon width="32" class="sm:hidden" />
           <span class="font-bold ml-1 text-sm sm:text-base">MENÚ</span>
           <div class="ml-auto" @click="isShowMenu = false">
             <XIcon />

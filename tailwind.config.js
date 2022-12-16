@@ -14,6 +14,11 @@ module.exports = {
         xs: '380px'
       },
       colors: {
+        light: {
+          font: '#495057',
+          'font-title': '#424445',
+          background: '#fafbff'
+        },
         purple: {
           400: '#53547a',
           500: '#46475f',
@@ -69,11 +74,11 @@ module.exports = {
       '2xl': '1536px',
     }
   },
-  //variants: {
-    //extend: {},
-    //scrollbar: ['rounded', 'dark']
-  //},
-  //plugins: [
-    //require('tailwind-scrollbar')
-  //],
+  variants: {
+    extend: {},
+    scrollbar: ['rounded', 'dark']
+  },
+  plugins: [
+    require('tailwind-scrollbar')
+  ],
 }

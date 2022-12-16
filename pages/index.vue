@@ -7,13 +7,15 @@
       </h1>
     </main>
 
-    <section class="p-6 sm:container sm:p-0 mx-auto mt-16 mb-16 ">
+    <section class="p-6 sm:container sm:p-0 mx-auto mt-16 mb-16 lg:p-4">
       <h2 class="text-center text-2xl sm:text-3xl mb-8 font-semibold">
         Conoce sobre el cáncer
       </h2>
       <div class="md:grid md:grid-cols-5 md:gap-4">
         <div class="container-video col-span-3">
-          <div class="container-video h-full flex justify-center items-center">
+          <div
+            @click="openVideo"
+            class="container-video cursor-pointer h-full flex justify-center items-center">
             <div class="filter-container"></div>
             <div class="wrapper">
               <div class="circle pulse"></div>
@@ -37,12 +39,11 @@
           <div>
             <span>Aprende sobre el cáncer con</span>
             <div class="grid grid-cols-2 gap-6 mt-2">
-              <Button variant="primary">Infografías</Button>
+              <Button variant="primary" @click="openInfographic">Infografías</Button>
               <Button variant="primary">Juegos</Button>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -76,6 +77,24 @@
         </div>
       </div>
     </section>
+
+    <Modal
+      id="modal-video"
+      ref="modal-video"
+      target="modal-video"
+      type="iframe"
+      link-multimedia="//www.youtube.com/embed/n3rL-OeHeoE?autoplay=1"
+      >
+    </Modal>
+
+    <Modal
+      id="modal-infographic"
+      ref="modal-infographic"
+      target="modal-infographic"
+      type="image"
+      link-multimedia="https://medicinaysaludpublica.blob.core.windows.net.optimalcdn.com/images/2022/03/27/c%C3%A1ncermesa-de-trabajo-1-9f09e072.png"
+      >
+    </Modal>
   </div>
 </template>
 
@@ -86,6 +105,14 @@ export default {
     PlayGamesIcon: () => import('@/static/icons/play-games.svg?inline'),
     VideoIcon: () => import('@/static/icons/video.svg?inline'),
     PictureIcon: () => import('@/static/icons/picture.svg?inline')
+  },
+  methods: {
+    openVideo() {
+      this.$refs['modal-video'].open()
+    },
+    openInfographic() {
+      this.$refs['modal-infographic'].open()
+    }
   }
 }
 </script>
