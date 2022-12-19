@@ -134,6 +134,7 @@ export default {
 .container-video {
   background: url('https://licancerbucaramanga.org/wp-content/uploads/2021/06/Fachada-1.jpg?id=13704');
   position: relative;
+  min-height: 14rem;
 }
 
 .filter-container {
@@ -217,9 +218,6 @@ export default {
   width: 20px;
 }
 
-.container-video {
-  min-height: 14rem;
-}
 
 
 </style>
