@@ -5,11 +5,11 @@
       <div class="ml-2" @click="isShowMenu = true">
         <MenuIcon style="color: #fff" />
       </div>
-      <img
-        class="mx-auto"
-        width="90px"
-        src="https://licancerbucaramanga.org/wp-content/uploads/2021/02/Logo-Blanco.png"
-        alt="Logotipo en blanco de la Liga Santandereana Contra el Cáncer">
+        <img
+          class="mx-auto"
+          width="90px"
+          src="https://licancerbucaramanga.org/wp-content/uploads/2021/02/Logo-Blanco.png"
+          alt="Logotipo en blanco de la Liga Santandereana Contra el Cáncer">
     </div>
 
     <!-- Lateral menu -->
@@ -44,13 +44,13 @@
                 </div>
                 <ul class="block pl-8">
                   <li @click="isShowMenu = false" class="py-2">
-                    <nuxt-link to="/ninos">NIÑO Y NIÑA</nuxt-link>
+                    <nuxt-link to="/etapas/ninos">NIÑO Y NIÑA</nuxt-link>
                   </li>
                   <li @click="isShowMenu = false" class="py-2">
-                    <nuxt-link to="/adolescente">ADOLESCENTE</nuxt-link>
+                    <nuxt-link to="/etapas/adolescente">ADOLESCENTE</nuxt-link>
                   </li>
                   <li @click="isShowMenu = false" class="py-2">
-                    <nuxt-link to="/adulto">ADULTO</nuxt-link>
+                    <nuxt-link to="/etapas/adulto">ADULTO</nuxt-link>
                   </li>
                 </ul>
               </li>
@@ -75,9 +75,11 @@
     <!-- header desktop -->
     <div class="hidden sm:block">
       <div class="container-img">
-        <img
-          src="https://licancerbucaramanga.org/wp-content/uploads/2021/02/cropped-Logo_LSCC-Normal.png"
-          alt="Logotipo Liga Santandereana Contra el Cáncer">
+        <nuxt-link to="/">
+          <img
+            src="https://licancerbucaramanga.org/wp-content/uploads/2021/02/cropped-Logo_LSCC-Normal.png"
+            alt="Logotipo Liga Santandereana Contra el Cáncer">
+        </nuxt-link>
       </div>
       <nav class="menu">
         <ul class="menu-ul">
@@ -92,13 +94,13 @@
             </span>
             <ul class="dropdown-ciclo-vida">
               <li>
-                <nuxt-link class="li-link" exact to="etapas/ninos">
+                <nuxt-link class="li-link" to="/etapas/ninos">
                   <RightIcon class="icon-right" />
                   <span>NIÑO Y NIÑA</span>
                 </nuxt-link>
                 </li>
               <li>
-                <nuxt-link class="li-link" exact to="etapas/adolescente">
+                <nuxt-link class="li-link" exact to="/etapas/adolescente">
                   <RightIcon class="icon-right" />
                   <span>ADOLESCENTE</span>
                 </nuxt-link>
@@ -110,13 +112,13 @@
                 </span>
                 <ul class="bg-white flex flex-col w-48">
                   <li>
-                    <nuxt-link class="li-link" to="etapas/adulto/mujer">
+                    <nuxt-link class="li-link" to="/etapas/adulto/mujer">
                       <RightIcon class="icon-right" />
                       MUJER
                     </nuxt-link>
                   </li>
                   <li>
-                    <nuxt-link class="li-link" to="etapas/adulto/hombre">
+                    <nuxt-link class="li-link" to="/etapas/adulto/hombre">
                       <RightIcon class="icon-right" />
                       HOMBRE
                     </nuxt-link>
@@ -203,7 +205,7 @@ a.nuxt-link-active {
   font-weight: bold;
 }
 
-li:has(> a.nuxt-link-active) {
+li:has( a.nuxt-link-active) > span {
   color: #282b53;
   font-weight: bold;
 }
@@ -269,6 +271,7 @@ nav ul ul ul {
   top: 0;
   left: 100%;
   display: flex;
+  z-index: 1000;
 }
 
 </style>

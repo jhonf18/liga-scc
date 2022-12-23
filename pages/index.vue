@@ -58,19 +58,19 @@
       </p>
       <div class="flex flex-col sm:flex-row sm:justify-center mt-8">
         <div class="mr-4 mt-4 sm:mt-0 w-full sm:w-auto">
-          <Button size="lg" variant="primary">
+          <Button size="lg" variant="primary" to="/juegos">
             <PlayGamesIcon style="width: 25px" class="mr-2" />
             Juegos
           </Button>
         </div>
         <div class="mr-4 mt-4 sm:mt-0 w-full sm:w-auto">
-          <Button size="lg" variant="secondary"  >
+          <Button size="lg" variant="secondary" to="/videos" >
             <VideoIcon style="width: 25px" class="mr-2" />
             Videos
           </Button>
         </div>
         <div class="mt-4 sm:mt-0 w-full sm:w-auto">
-          <Button size="lg" variant="tertiary" >
+          <Button size="lg" variant="tertiary" to="/infografias" >
             <PictureIcon style="width: 18px" class="mr-2" />
             Infografías
           </Button>

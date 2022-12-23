@@ -1,37 +1,38 @@
 <template>
   <div class="flex flex-wrap">
     <div class="w-full">
-      <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
-        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-          <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer"
+      <ul class="flex mb-0 list-none flex-wrap pt-3 flex-row">
+        <li class="-mb-px last:mr-0 flex-auto text-center">
+          <a class="text-xs font-bold uppercase px-5 py-3 rounded border-l border-t block leading-normal cursor-pointer"
             v-on:click="toggleTabs(1)"
             v-bind:class="{'text-tertiary bg-white': openTab !== 1, 'text-white bg-tertiary': openTab === 1}">
             Videos
           </a>
         </li>
-        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center cursor-pointer">
-          <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal"
+        <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
+          <a class="text-xs font-bold uppercase px-5 py-3 rounded border-l border-r border-t block leading-normal"
             v-on:click="toggleTabs(2)"
             v-bind:class="{'text-tertiary bg-white': openTab !== 2, 'text-white bg-tertiary': openTab === 2}">
             Juegos
           </a>
         </li>
-        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center cursor-pointer">
-          <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal"
+        <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
+          <a class="text-xs font-bold uppercase px-5 py-3 rounded border-r border-t block leading-normal"
             v-on:click="toggleTabs(3)"
             v-bind:class="{'text-tertiary bg-white': openTab !== 3, 'text-white bg-tertiary': openTab === 3}">
             Infografías
           </a>
         </li>
       </ul>
-      <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
-        <div class="px-4 py-5 flex-auto">
+      <div class="relative flex flex-col min-w-0 pt-4 border-t break-words bg-white w-full mb-6 shadow-lg">
+        <div class="flex-auto">
           <div class="tab-content tab-space">
             <div v-bind:class="{'hidden': openTab !== 1, 'block': openTab === 1}">
             <div class="container-video">
               <div
-
-                class="container-video cursor-pointer h-full flex justify-center items-center">
+                @click="openVideo"
+                class="container-video cursor-pointer h-full flex justify-center items-center"
+                :style="{ 'background': `url(${data.url_preview_video})` }">
                 <div class="filter-container"></div>
                 <div class="wrapper">
                   <div class="circle pulse"></div>
@@ -45,22 +46,63 @@
             </div>
             </div>
             <div v-bind:class="{'hidden': openTab !== 2, 'block': openTab === 2}">
-
+              <div class="md:grid md:grid-cols-2 md:gap-2 lg:gap-4 p-4">
+                <Card v-for="(playGame, i) in data.play_games"
+                  :key="i"
+                  :data="playGame">
+                </Card>
+              </div>
             </div>
             <div v-bind:class="{'hidden': openTab !== 3, 'block': openTab === 3}">
-              <p>
-
-              </p>
+              <div class="container-video">
+              <div
+                @click="openInfographic"
+                class="container-infographic cursor-pointer h-full flex justify-center items-center"
+                :style="{
+                  'background': `url(${data.url_infographic})`,
+                  'background-position': 'top center',
+                  'background-repeat': 'no-repeat',
+                  'background-size': 'cover'
+                }">
+                <div class="filter-container">
+                  <div class="filter-content flex justify-center items-center w-full h-full">
+                    <span class="m-auto text-gray-300 text-2xl font-medium">ABRIR</span>
+                  </div>
+                </div>
+              </div>
+            </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <Modal
+      id="modal-content-video"
+      ref="modal-content-video"
+      target="modal-content-video"
+      type="iframe"
+      :link-multimedia="data.url_video"
+      />
+
+      <Modal
+      id="content-infographic"
+      ref="content-infographic"
+      target="content-infographic"
+      type="image"
+      :link-multimedia="data.url_infographic"
+      />
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    data: {
+      type: Object,
+      required: true
+    }
+  },
   data() {
     return {
       openTab: 1
@@ -69,6 +111,12 @@ export default {
   methods: {
     toggleTabs: function(tabNumber){
       this.openTab = tabNumber
+    },
+    openVideo() {
+      this.$refs['modal-content-video'].open()
+    },
+    openInfographic() {
+      this.$refs['content-infographic'].open()
     }
   }
 }
@@ -77,9 +125,14 @@ export default {
 
 <style lang="postcss" scoped>
 .container-video {
-  background: url('https://licancerbucaramanga.org/wp-content/uploads/2021/06/Fachada-1.jpg?id=13704');
   position: relative;
-  min-height: 16rem;
+  min-height: 20rem;
+}
+
+.container-infographic {
+  position: relative;
+  transition: all .4s;
+  min-height: 20rem;
 }
 
 .filter-container {
@@ -157,5 +210,26 @@ export default {
   100% {
     transform: scale(1, 1);
   }
+}
+
+.container-video:hover .filter-container {
+  background-color: #282b53ad;
+}
+
+.container-video:hover .filter-content {
+  display: flex;
+}
+
+.filter-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #282b5360;
+}
+
+.filter-content {
+  display: none;
 }
 </style>
