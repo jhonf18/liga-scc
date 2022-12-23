@@ -1,12 +1,12 @@
 <template>
   <main>
     <h1
-      class="text-2xl md:text-4xl lg:text-5xl font-bold text-primary text-center my-12">
+      class="text-2xl md:text-4xl lg:text-5xl font-bold text-primary text-center pt-7 mb-9">
       Infografías sobre el cáncer
     </h1>
     <section
-    class="px-4 sm:px-0 sm:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-4 sm:container mx-auto">
-      <div v-for="(infographic, i) in infographics" :key="i">
+    class="px-4 sm:px-0 sm:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-6 sm:container mx-auto">
+      <div v-for="(infographic, i) in infographics" :key="i" class="mb-6 sm:mb-0">
         <div class="container-video">
           <div
             @click="openInfographic(infographic)"
