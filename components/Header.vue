@@ -175,6 +175,10 @@ header {
   justify-content: space-between;
   align-items: center;
   font-size: 1rem;
+  position: fixed;
+  top: 0;
+  z-index: 100000;
+  background: #fff;
 }
 
 .menu {

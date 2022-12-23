@@ -5,7 +5,7 @@
       Infografías sobre el cáncer
     </h1>
     <section
-    class="sm:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-4 sm:container mx-auto">
+    class="px-4 sm:px-0 sm:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-4 sm:container mx-auto">
       <div v-for="(infographic, i) in infographics" :key="i">
         <div class="container-video">
           <div
