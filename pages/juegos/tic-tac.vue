@@ -1,28 +1,15 @@
 <template>
-  <div>
-    <h1 class="text-4xl font-bold text-primary text-center">Tres en raya</h1>
-    <div
-      id="cabecera"
-      class="container flex items-center justify-center mt-1"
-    >
-      <div id="opcion2" class="flex row mt-5" hidden="true" v-show="false">
-        <button type="button" @click="playing(1)" class="btn btn-warning m-2">
-          Quiero X (empiezo yo)
-        </button>
-        <button type="button" @click="playing(2)" class="btn btn-warning m-2">
-          Quiero O (empieza el ordenador)
-        </button>
-      </div>
-    </div>
+  <div class="py-6 sm:py-4">
+    <h1 class="text-2xl sm:text-4xl font-bold text-primary text-center">Tres en raya</h1>
 
     <div class="mt-8 container mx-auto max-w-4xl border rounded px-4 py-5 shadow-lg w-full-1rem"
       :class="{ 'bg-primary': step === 3 }" >
       <transition name="slide" mode="out-in" >
         <div v-if="step === 1" key="step1">
-          <h3 class="text-center text-2xl font-semibold mb-8">
+          <h3 class="text-center text-xl sm:text-2xl font-semibold mb-8">
             Instrucciones de juego
           </h3>
-          <p class="mt-4">
+          <p class="mt-4 text-sm sm:text-md">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil quaerat iste fugiat quidem, nesciunt quasi quia harum tempore illum doloribus impedit assumenda eaque, quibusdam sunt natus deleniti, praesentium optio?
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aliquam, cupiditate, delectus magnam ut doloremque odit adipisci nihil blanditiis suscipit deleniti quasi ad porro reprehenderit explicabo quod vitae eveniet quidem.
           </p>
@@ -31,12 +18,17 @@
           </div>
         </div>
         <div v-if="step === 2" key="step2">
+
+          <h3 class="text-center font-semibold text-lg sm:text-xl mb-6 text-tertiary">
+            Responde esta pregunta para definir el saque inicial
+          </h3>
+
           <h4 class="font-semibold">
             {{ questions[0].question }}
           </h4>
           <ul class="mt-6">
             <li
-              @click="e => selectResponse(response.correct, e)"
+              @click="e => selectResponse(response.correct, e, i)"
               class="border rounded p-2 mb-3 cursor-pointer hover:bg-gray-200 hover:border-gray-300 transition"
               v-for="(response, i) in questions[0].responses" :key="i">
               <span class="font-bold text-primary mr-1" v-if="i === 0">A.</span>
@@ -106,9 +98,49 @@
       </div>
     </div>
 
-    <Toast ref="toast-tic-tac" :type="toast.type" :visibleTime="5">
+    <Toast ref="toast-tic-tac" :type="toast.type" :visibleTime="toast.visibleTime">
       <p>{{ toast.message }}</p>
     </Toast>
+
+    <Modal
+      id="modal-questions"
+      ref="modal-questions"
+      target="modal-questions"
+      title="Responde para avanzar"
+      :footer="false">
+      <h4 class="font-semibold">
+        {{ modal.question }}
+      </h4>
+      <ul class="mt-6">
+        <li
+          @click="e => selectResponse(response.correct, e, i, true)"
+          class="border rounded p-2 mb-3 cursor-pointer hover:bg-gray-200 hover:border-gray-300 transition"
+          v-for="(response, i) in modal.responses" :key="i">
+          <span class="font-bold text-primary mr-1" v-if="i === 0">A.</span>
+          <span class="font-bold text-primary mr-1" v-else-if="i == 1">B.</span>
+          <span class="font-bold text-primary mr-1" v-else>C.</span>
+          {{ response.text }}
+        </li>
+      </ul>
+    </Modal>
+
+    <Modal
+      id="modal-result"
+      ref="modal-result"
+      target="modal-result"
+      :title="modalResult.title"
+      :footer="false">
+      <p class="text-center fonf-semibold text-xl">
+        {{ modalResult.content }}
+      </p>
+      <div class="flex justify-center items-center mt-8">
+        <Button @click="repeatGame" size="md" variant="outline-primary">
+          Repetir juego
+        </Button>
+      </div>
+    </Modal>
+
+
   </div>
 </template>
 
@@ -133,6 +165,7 @@ export default {
       map: [0,0,0,0,0,0,0,0,0],
       cells: ['', '', '', '', '', '', '', '', ''],
       cellsStyles: [{}, {}, {}, {}, {}, {}, {}, {}, {}],
+      cell: -1,
       player: 1,
       NumberOfPlayers: 1,
       choice: 0,
@@ -143,9 +176,20 @@ export default {
       questionsDisplayed: [],
       turn: 0,
       resultResponse: false,
+      userResponseQuestion: false,
       toast: {
         type: 'error',
-        message: 'La respuesta ha sido incorrecta'
+        message: 'La respuesta ha sido incorrecta',
+        visibleTime: 5
+      },
+      modal: {
+        question : '',
+        responses: []
+      },
+      modalResult: {
+        title: '',
+        content: '',
+        textFooter: 'Repetir'
       }
     }
   },
@@ -154,8 +198,14 @@ export default {
       this.player = 1;
       this.NumberOfPlayers = 0;
       this.choice = 0;
+      this.step = 2;
+      this.cell = -1;
       this.map = [0,0,0,0,0,0,0,0,0];
+      this.cells = ['', '', '', '', '', '', '', '', ''],
+      this.cellsStyles = [{}, {}, {}, {}, {}, {}, {}, {}, {}]
       this.message = 'Haz tu primer movimiento';
+      this.turn = 0;
+      this.resultResponse = false;
       this.draw();
     },
     draw(){
@@ -190,18 +240,19 @@ export default {
     final() {
       let espacios = 0;
       for(let i = 0; i < this.map.length; i++) {
-        if(this.map[i]==0) espacios++;
+        if(this.map[i] == 0) espacios++;
       }
+
       for(let a = 0; a < 8; a+=3) {
         if(this.map[a] == this.map[a+1] &&
           this.map[a+1] == this.map[a+2] &&
-          this.map[a]>0) return this.map[a];
+          this.map[a] > 0) return this.map[a];
       }
 
       for(let b = 0; b < 3; b++) {
         if(this.map[b] == this.map[b+3] &&
-          this.map[b+3]== this.map[b+6] &&
-          this.map[b]>0) return this.map[b];
+          this.map[b+3] == this.map[b+6] &&
+          this.map[b] > 0) return this.map[b];
       }
 
       if(this.map[0] == this.map[4] &&
@@ -210,10 +261,10 @@ export default {
 
       if(this.map[2] == this.map[4] &&
         this.map[4] == this.map[6] &&
-        this.map[2]>0) return this.map[2];
+        this.map[2] > 0) return this.map[2];
 
-      if(espacios==9) return 9;
-      if(espacios==0) return 0;
+      if(espacios == 9) return 9;
+      if(espacios == 0) return 0;
     },
     isEqual(a1, a2){
       let equal = true;
@@ -224,10 +275,41 @@ export default {
     },
     fcell(cell){
 
-      if (this.NumberOfPlayers==1){
-        if (this.choice == this.player ) this.message = "Juego yo";
-        else this.message = "Juegas tú";
+      console.log(this.map);
+
+      this.cell = cell;
+
+      const lengthQuestions = this.questions.length;
+
+      if (lengthQuestions !== 0) {
+
+        if (this.turn !== 0 && this.choice === this.player) {
+
+          const index = Math.floor( Math.random() * lengthQuestions); //Random index
+          const question = this.questions[index];
+          this.modal = {
+            question: question.question,
+            responses: question.responses
+          }
+
+          this.$refs['modal-questions'].open();
+
+          this.turn++;
+
+        } else {
+          this.turn++;
+          this.continousFcell(cell);
+        }
+
+      } else {
+        this.questions = this.shuffleQuestions();
+        this.fcell(cell);
       }
+    },
+    continousFcell(cell) {
+
+      if (this.choice == this.player ) this.message = "Juego yo";
+      else this.message = "Juegas tú";
 
       if (this.map[cell] != 0) {
         this.message ="Esa celda ya está ocupada";
@@ -243,22 +325,21 @@ export default {
 
       this.draw();
 
-      switch (this.final()){
+      switch ( this.final() ){
         case 0:
-          this.message ="Empate, no hay movimientos";
-        //pregunta();
+          this.showFinalModal('TIE');
         break;
         case 1:
-          if (this.NumberOfPlayers == 1){
-            if (this.choice == 1) this.message ="Has ganado!!!";
-            else this.message ="Ordenador gana";
+          if (this.choice == 1) {
+            this.showFinalModal('WINNER');
+          }
+          else {
+            this.showFinalModal('LOSE');
           }
         break;
         case 2:
-          if (this.NumberOfPlayers == 1){
-            if (this.choice == 2) this.message="Has ganado!!!";
-            else this.message="Ordenador gana";;
-          }
+          if (this.choice == 2) this.showFinalModal('WINNER');
+          else this.showFinalModal('LOSE');
         break;
         default:
           if ( this.player != this.choice){ this.play() }
@@ -372,37 +453,87 @@ export default {
         }
       }
     },
-    selectResponse(response, event) {
+    selectResponse(response, event, index, playing) {
+
+      if (!playing) {
+        if (!response) {
+          this.toast.type = 'error';
+          this.toast.message = 'La respuesta ha sido incorrecta, comenzará el cáncer jugando.'
+        } else {
+          this.toast.type = 'success';
+          this.toast.message = 'La respuesta ha sido correcta, comenzarás jugando.'
+        }
+      } else {
+        this.toast.visibleTime = 3;
+        if (!response) {
+          this.toast.type = 'error';
+          this.toast.message = 'Has respondido incorrectamente, vuelve a intentarlo para que sigas luchando contra el cáncer.'
+        } else {
+          this.toast.type = 'success';
+          this.toast.message = 'Perfecto, has respondido correctamente.'
+        }
+      }
+
+
+      this.$refs['modal-questions'].closeByButton();
+
       event.currentTarget.classList.remove('hover:bg-gray-200', 'hover:border-gray-300')
+
       if (!response) {
         event.currentTarget.classList.add('border-red-700', 'bg-red-400', 'hover:bg-red-500', 'hover:border-red-800')
-        this.toast.type = 'error';
-        this.toast.message = 'La respuesta ha sido incorrecta, comenzará el cáncer jugando.'
-
+        this.userResponseQuestion = false;
       } else {
         event.currentTarget.classList.add('border-green-700', 'bg-green-400', 'hover:bg-green-500', 'hover:border-green-800')
-        this.toast.type = 'success';
-        this.toast.message = 'La respuesta ha sido correcta, comenzarás jugando.'
+        this.userResponseQuestion = true;
+        this.continousFcell(this.cell)
       }
 
       if (this.turn === 0 && response) {
         this.resultResponse = true
       }
 
-
       this.$refs['toast-tic-tac'].show();
-      // await setTimeout(() => {
-      //   this.step = 3;
-      // }, 1000)
-      this.step = 3;
-      if (this.turn === 0 && response ) {
-        this.playing(1)
-      } else {
-        this.playing(2)
+
+      if (!playing) {
+        this.step = 3;
+        if (this.turn === 0 && response ) {
+          this.playing(1)
+        } else {
+          this.playing(2)
+        }
       }
 
-      console.log(this.cells, this.cellsStyles)
+      this.questions.splice(index, 1);
 
+    },
+    shuffleQuestions(){
+      let questions = [];
+      for (let i = 0; i < Questions.length; i++) {
+        questions[i] = Questions[i];
+        questions[i].responses = suffleArray(questions[i].responses);
+        questions[i].id = i;
+      }
+      questions = suffleArray(questions);
+      return questions;
+    },
+    showFinalModal(result) {
+      this.modalResult.result = result;
+
+      if (result === 'TIE') {
+        this.modalResult.title = 'Empate';
+        this.modalResult.content ="Vuelve a competir contra el cáncer para que lo puedas vencer.";
+      } else if (result === 'WINNER') {
+        this.modalResult.title = '¡Ganaste!';
+        this.modalResult.content ="¡Felicitaciones! Haz vencido al cáncer, puedes intentarlo nuevamente si prefieres.";
+      } else {
+        this.modalResult.title = 'Perdiste';
+        this.modalResult.content ="El cáncer te ha vencido, pero no te preocupes, intenta ganarle al cáncer nuevamente.";
+      }
+      this.$refs['modal-result'].open();
+    },
+    repeatGame() {
+      this.$refs['modal-result'].closeByButton();
+      this.reset();
     }
   }
 }

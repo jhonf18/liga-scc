@@ -65,7 +65,7 @@
               type="button"
               class="bg-red-700 px-4 py-1 ml-auto text-white rounded"
               @click="closeByButton">
-              Salir
+              {{ textFooter }}
             </button>
           </div>
         </div>
@@ -98,6 +98,11 @@ export default {
       type: Boolean,
       required: false,
       default: true
+    },
+    textFooter: {
+      type: String,
+      required: false,
+      default: 'Salir'
     },
     target: {
       type: String,
