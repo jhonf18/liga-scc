@@ -79,6 +79,7 @@ module.exports = {
     scrollbar: ['rounded', 'dark']
   },
   plugins: [
+    require('@tailwindcss/line-clamp'),
     require('tailwind-scrollbar')
   ],
 }

@@ -17,9 +17,9 @@ export default {
         url_infographic: 'https://ciencia.unam.mx/uploads/infografias/if_cancer_piel_26062018.jpg',
         play_games: [
           {
-            name: 'Juego cáncer de piel',
-            link: '/etapas/juegos/1',
-            url_image: 'https://media.cdnp.elobservador.com.uy/adjuntos/184/imagenes/013/019/0013019026.jpg?&cw=350',
+            name: 'Tres en raya',
+            link: '/juegos/tic-tac-toe-hombre',
+            url_image: require('~/static/images/tic-tac-hombre.png'),
             description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
           },
           {

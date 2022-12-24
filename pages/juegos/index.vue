@@ -17,15 +17,15 @@ export default {
     return {
       play_games: [
         {
-          name: 'Juego XXX',
-          link: '/etapas/juegos/1',
-          url_image: 'https://media.cdnp.elobservador.com.uy/adjuntos/184/imagenes/013/019/0013019026.jpg?&cw=350',
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
+          name: 'Tic Tac Hombre',
+          link: '/juegos/tic-tac-toe-hombre',
+          url_image: require('~/static/images/tic-tac-hombre.png'),
+          description: 'excepturi porro dolor voluptatibus iusto voluptas quis.'
         },
         {
-          name: 'Juego XXX',
-          link: '/etapas/juegos/2',
-          url_image: 'https://media.cdnp.elobservador.com.uy/adjuntos/184/imagenes/013/019/0013019030.jpg?&cw=350',
+          name: 'Tic Tac Mujer',
+          link: '/juegos/tic-tac-toe-mujer',
+          url_image: require('~/static/images/tic-tac-mujer.png'),
           description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
         },
         {

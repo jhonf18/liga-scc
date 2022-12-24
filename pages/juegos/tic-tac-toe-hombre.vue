@@ -9,7 +9,7 @@
           <h3 class="text-center text-xl sm:text-2xl font-semibold mb-8">
             Instrucciones de juego
           </h3>
-          <p class="mt-4 text-sm sm:text-md">
+          <p class="mt-4 text-sm sm:text-base">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil quaerat iste fugiat quidem, nesciunt quasi quia harum tempore illum doloribus impedit assumenda eaque, quibusdam sunt natus deleniti, praesentium optio?
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aliquam, cupiditate, delectus magnam ut doloremque odit adipisci nihil blanditiis suscipit deleniti quasi ad porro reprehenderit explicabo quod vitae eveniet quidem.
           </p>
@@ -39,7 +39,7 @@
           </ul>
         </div>
         <div v-if="step === 3" key="step3">
-          <h3 class="text-center text-2xl text-white font-semibold mb-8 mt-8">
+          <h3 class="text-center text-2xl sm:text-3xl text-white font-semibold mb-8 mt-8">
             Vence al cáncer de próstata
           </h3>
           <div
@@ -346,54 +346,68 @@ export default {
       }
     },
     winningMove(num) {
-      let trio=[0,0,0];
+      if (new Date().getTime() % 2 === 0) {
+        let trio=[0,0,0];
 
-      for (let a = 0; a < 8; a+=3) {
-        trio[0] = this.map[a];
-        trio[1] = this.map[a+1];
-        trio[2] = this.map[a+2];
+        for (let a = 0; a < 8; a+=3) {
+          trio[0] = this.map[a];
+          trio[1] = this.map[a+1];
+          trio[2] = this.map[a+2];
 
-        let first = trio.indexOf(num);
-        let last = trio.lastIndexOf(num);
-        var zero= trio.indexOf(0);
+          let first = trio.indexOf(num);
+          let last = trio.lastIndexOf(num);
+          var zero= trio.indexOf(0);
 
-        if (first != last && zero != -1){
-          this.fcell(a + zero);
+          if (first != last && zero != -1){
+            this.fcell(a + zero);
+            return true;
+          }
+        }
+        for (let b = 0; b < 3; b++) {
+          trio[0]= this.map[b];
+          trio[1]= this.map[b+3];
+          trio[2]= this.map[b+6];
+
+          let first = trio.indexOf(num);
+          let last = trio.lastIndexOf(num);
+          let zero =trio.indexOf(0);
+
+          if (first != last && zero != -1){
+            this.fcell(b + zero * 3);
+            return true;
+          }
+
+        }
+        trio[0] = this.map[0];
+        trio[1] = this.map[4];
+        trio[2] = this.map[8];
+        let zerof = trio.indexOf(0);
+
+        if ( trio.indexOf(num) != trio.lastIndexOf(num) && zerof !=-1){
+          this.fcell(zerof * 4);
           return true;
         }
-      }
-      for (let b = 0; b < 3; b++) {
-        trio[0]= this.map[b];
-        trio[1]= this.map[b+3];
-        trio[2]= this.map[b+6];
 
-        let first = trio.indexOf(num);
-        let last = trio.lastIndexOf(num);
-        let zero =trio.indexOf(0);
-
-        if (first != last && zero != -1){
-          this.fcell(b + zero * 3);
+        trio[0] = this.map[2];
+        trio[1] = this.map[4];
+        trio[2] = this.map[6];
+        zerof = trio.indexOf(0);
+        if (trio.indexOf(num) != trio.lastIndexOf(num) && zerof != -1){
+          this.fcell(2 * zerof +2);
           return true;
         }
-
-      }
-      trio[0] = this.map[0];
-      trio[1] = this.map[4];
-      trio[2] = this.map[8];
-      let zerof = trio.indexOf(0);
-
-      if ( trio.indexOf(num) != trio.lastIndexOf(num) && zerof !=-1){
-        this.fcell(zerof * 4);
-        return true;
-      }
-
-      trio[0] = this.map[2];
-      trio[1] = this.map[4];
-      trio[2] = this.map[6];
-      zerof = trio.indexOf(0);
-      if (trio.indexOf(num) != trio.lastIndexOf(num) && zerof != -1){
-        this.fcell(2 * zerof +2);
-        return true;
+      } else {
+        let index = -1;
+        for (let i = 0; i < 9; i++) {
+          if (this.map[i] === 0) {
+            index = i;
+            break;
+          }
+        }
+        if (index > -1 ) {
+          this.fcell(index);
+          return true;
+        }
       }
     },
     play() {
@@ -524,7 +538,7 @@ export default {
         this.modalResult.content ="Vuelve a competir contra el cáncer para que lo puedas vencer.";
       } else if (result === 'WINNER') {
         this.modalResult.title = '¡Ganaste!';
-        this.modalResult.content ="¡Felicitaciones! Haz vencido al cáncer, puedes intentarlo nuevamente si prefieres.";
+        this.modalResult.content ="¡Felicitaciones! Haz vencido al cáncer.";
       } else {
         this.modalResult.title = 'Perdiste';
         this.modalResult.content ="El cáncer te ha vencido, pero no te preocupes, intenta ganarle al cáncer nuevamente.";
@@ -550,7 +564,7 @@ td {
   font-size: 60px;
   color: #ff0000;
   color: #999c9e;
-  @apply hover:bg-gray-400 cursor-pointer text-center;
+  @apply hover:bg-gray-300 cursor-pointer text-center;
 }
 
 td svg {
