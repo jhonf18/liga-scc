@@ -346,7 +346,7 @@ export default {
       }
     },
     winningMove(num) {
-      if (new Date().getTime() % 2 === 0) {
+      if (new Date().getTime() % 4 !== 0) {
         let trio=[0,0,0];
 
         for (let a = 0; a < 8; a+=3) {
