@@ -143,6 +143,7 @@
             </nuxt-link>
           </li>
         </ul>
+        <!-- TODO: agregar submenu de adulto en version movil -->
       </nav>
     </div>
   </header>
@@ -177,7 +178,7 @@ header {
   font-size: 1rem;
   position: fixed;
   top: 0;
-  z-index: 100000;
+  z-index: 29;
   background: #fff;
 }
 
