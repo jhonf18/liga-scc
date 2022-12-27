@@ -33,7 +33,7 @@
               <div class="back"></div>
               <div class="front flex justify-center items-center"
                 :style="{ backgroundImage: 'url(' + card.image + ')' }">
-                  <p class="hidden text-lg">{{ card.name }}</p>
+                  <p class="hidden sm:text-lg">{{ card.name }}</p>
                 </div>
             </div>
           </div>
