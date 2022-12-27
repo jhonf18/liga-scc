@@ -3,7 +3,7 @@
     <h1 class="text-2xl sm:text-4xl font-bold text-primary text-center">Tres en raya</h1>
 
     <div class="mt-8 container mx-auto max-w-4xl border rounded px-4 py-5 shadow-lg w-full-1rem transition duration-500"
-      :class="{ 'bg-pink-300': step === 3 }" >
+      :class="{ 'bg-purple-400': step === 3 }" >
       <transition name="slide" mode="out-in" >
         <div v-if="step === 1" key="step1">
           <h3 class="text-center text-xl sm:text-2xl font-semibold mb-8">
@@ -39,8 +39,8 @@
           </ul>
         </div>
         <div v-if="step === 3" key="step3">
-          <h3 class="text-center text-2xl sm:text-3xl text-white font-semibold mb-8 mt-8">
-            Vence al cáncer mama
+          <h3 class="text-center text-2xl sm:text-4xl text-white font-semibold mb-5 mt-8">
+            Combate al tabaquismo
           </h3>
           <div
             class="container flex items-center justify-center mt-5">
@@ -149,7 +149,7 @@
 import Questions from '@/helpers/questions/cancer_mama';
 import { suffleArray } from '@/helpers';
 import cancerIcon from '@/static/icons/cancer.svg.js';
-import germIcon from '@/static/icons/germ.svg.js';
+import noSmokingIcon from '@/static/icons/no-smoking.svg.js'
 
 let questions = [];
 for (let i = 0; i < Questions.length; i++) {
@@ -216,19 +216,19 @@ export default {
         } else if ( this.map[i] === 1 ) {
           if (this.resultResponse) {
             this.$set(this.cells, i, cancerIcon);
-            this.cellsStyles[i] = { fill: "#d8357a" };
+            this.cellsStyles[i] = { fill: "#282b53" };
           } else {
-            this.$set(this.cells, i, germIcon);
+            this.$set(this.cells, i, noSmokingIcon );
             this.cellsStyles[i] = { fill: "#999c9e" };
           }
 
         } else {
           if(this.resultResponse) {
-            this.$set(this.cells, i, germIcon);
+            this.$set(this.cells, i, noSmokingIcon );
             this.cellsStyles[i] = { fill: "#999c9e" };
           } else {
             this.$set(this.cells, i, cancerIcon);
-            this.cellsStyles[i] = { fill: "#d8357a" };
+            this.cellsStyles[i] = { fill: "#282b53" };
           }
         }
       }
@@ -346,7 +346,7 @@ export default {
       }
     },
     winningMove(num) {
-      if (new Date().getTime() % 4 !== 0) {
+      if (new Date().getTime() % 9 !== 0) {
         let trio=[0,0,0];
 
         for (let a = 0; a < 8; a+=3) {
@@ -561,12 +561,12 @@ td {
   width: 100px;
   height: 100px;
   font-size: 60px;
-  @apply hover:bg-gray-300 border-4 border-pink-400 cursor-pointer text-center;
+  @apply hover:bg-gray-300 border-4 border-purple-500 cursor-pointer text-center;
 }
 
 td svg {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
 }
 
 

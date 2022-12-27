@@ -39,7 +39,7 @@
           </ul>
         </div>
         <div v-if="step === 3" key="step3">
-          <h3 class="text-center text-2xl sm:text-3xl text-white font-semibold mb-8 mt-8">
+          <h3 class="text-center text-2xl sm:text-4xl text-white font-semibold mb-5 mt-8">
             Vence al cáncer de próstata
           </h3>
           <div
@@ -346,7 +346,7 @@ export default {
       }
     },
     winningMove(num) {
-      if (new Date().getTime() % 4 !== 0) {
+      if (new Date().getTime() % 9 !== 0) {
         let trio=[0,0,0];
 
         for (let a = 0; a < 8; a+=3) {

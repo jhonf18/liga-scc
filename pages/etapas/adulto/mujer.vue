@@ -19,13 +19,13 @@ export default {
           {
             name: 'Tic Tac Mujer',
             link: '/juegos/tic-tac-toe-mujer',
-            url_image: require('~/static/images/tic-tac-mujer.png'),
+            url_image: 'https://licancerbucaramanga.org/wp-content/uploads/2021/06/Fachada-1.jpg?id=13704',
             description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
           },
           {
-            name: 'Juego cáncer de piel 2',
-            link: '/etapas/juegos/2',
-            url_image: 'https://media.cdnp.elobservador.com.uy/adjuntos/184/imagenes/013/019/0013019030.jpg?&cw=350',
+            name: 'Recordar',
+            link: '/juegos/recordar',
+            url_image: require('~/static/images/recordar.png'),
             description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
           }
         ]

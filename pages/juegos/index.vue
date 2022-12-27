@@ -23,15 +23,15 @@ export default {
           description: 'excepturi porro dolor voluptatibus iusto voluptas quis.'
         },
         {
-          name: 'Tic Tac Mujer',
-          link: '/juegos/tic-tac-toe-mujer',
-          url_image: require('~/static/images/tic-tac-mujer.png'),
+          name: 'Tic Tac Adolescente',
+          link: '/juegos/tic-tac-toe-adolescente',
+          url_image: require('~/static/images/tic-tac-adolescente.png'),
           description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
         },
         {
-          name: 'Juego XXX',
-          link: '/etapas/juegos/1',
-          url_image: 'https://media.cdnp.elobservador.com.uy/adjuntos/184/imagenes/013/019/0013019026.jpg?&cw=350',
+          name: 'Recordar',
+          link: '/juegos/recordar',
+          url_image: require('~/static/images/recordar.png'),
           description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
         },
         {
