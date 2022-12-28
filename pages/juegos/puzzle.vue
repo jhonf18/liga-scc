@@ -557,7 +557,7 @@ export default {
   --loaderColor: #655191;
   --transition: transform .15s;
   --ratio: 4;
-  --maxBoardWidth: calc(100vh - 4rem);
+  --maxBoardWidth: calc(100vw - 8rem);
   --smallColumn: calc(240px + 2em);
   --backgroundImage: "";
   --radius: 8px;
