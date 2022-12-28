@@ -221,7 +221,7 @@ const categories = [
 export default {
   data() {
     return {
-      ratio: 4, //👈 A little buggy at some sizes; works best at 4, but ¯\_(ツ)_/¯
+      ratio: 3, //👈 A little buggy at some sizes; works best at 4, but ¯\_(ツ)_/¯
 			tiles: [],
 			solution: [],
 			illegalMoves: [],
@@ -556,7 +556,7 @@ export default {
   --background: #b7aeca;
   --loaderColor: #655191;
   --transition: transform .15s;
-  --ratio: 4;
+  --ratio: 3;
   --maxBoardWidth: calc(100vw - 8rem);
   --smallColumn: calc(240px + 2em);
   --backgroundImage: "";
