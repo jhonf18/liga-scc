@@ -42,11 +42,15 @@
       </div>
       <div v-if="step === 3" key="step-3">
         <h3 class="text-center text-2xl sm:text-4xl text-white font-semibold mb-4 mt-4">
-          .....
+          Rompele la cabeza al tabaquismo
         </h3>
-        <div id="board" class="grid grid-cols-6">
+        <div id="board" class="md:grid md:grid-cols-6">
           <div id="game-group" class="col-span-4">
-            <form @click="handleClick" :aria-label="`${howManyCorrect} of ${ratioSquared} tiles correctly placed.`" :class="{dim: dimTiles, invertNumbers: invertNumbers, showNumbers: showNumbers}">
+            <form
+              @click="handleClick"
+              :aria-label="`${howManyCorrect} of ${ratioSquared} tiles correctly placed.`"
+              :class="{dim: dimTiles, invertNumbers: invertNumbers, showNumbers: showNumbers}"
+              class="mx-auto">
               <transition-group
                 name="slide"
                 id="innerBoard"
@@ -76,20 +80,30 @@
                     <span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
                   </p>
                 </div>
+                <div v-if="winGame && gameStarted"
+                  class="absolute top-0 left-0 w-full h-full bg-gray-300/[0.6] flex justify-center items-center z-10">
+                  <p class="font-semibold text-center text-2xl text-black">
+                    {{ nameImageSelected }}
+                  </p>
+                </div>
               </transition>
             </form>
 
-            <p id="counter" class="text-center text-gray-300">
+            <p id="counter" class="text-center text-gray-300 mx-auto my-4 md:mt-4 block">
               <span id="progress-bar" :style="{width: howManyCorrect / ratioSquared * 100 + '%'}"></span>
               <strong>{{howManyCorrect}} / {{ratioSquared}}</strong>
             </p>
 
-            <p aria-hidden="true" class="text-white">Juega con 🖱️, 👆, o ⌨️ ⬆️ ➡️ ⬇️ ⬅️</p>
-            <p class="sr text-white">Juega con el mouse, pantalla, o teclado.</p>
+            <p aria-hidden="true" class="text-white mx-auto mb-4 text-center md:text-left">
+              Juega con 🖱️, 👆, o ⌨️ ⬆️ ➡️ ⬇️ ⬅️
+            </p>
+            <p class="sr text-white mx-auto mb-4">
+              Juega con el mouse, pantalla, o teclado.
+            </p>
           </div>
 
 
-          <div id="options" class="col-span-2">
+          <div id="options" class="col-span-2 text-sm p-4 max-w-xl mx-auto">
             <!-- <div id="custom-image">
               <label for="custom-image-input">Custom Image:</label>
               <select v-model="imageSelect" name="imageSelect" id="imageSelect">
@@ -106,7 +120,7 @@
               id="solution"
               :style="{backgroundImage: imageSelect == 'custom' ? `url(${customImage})` : `url(${imageSelect})`}"
               class="mb-8">
-              <span>[Solución]</span>
+              <span class="text-3xl">[Solución]</span>
             </div>
 
             <div class="options-group mb-4">
@@ -133,20 +147,76 @@
               </transition>
             </div>
 
-            <Button variant="outline-primary" @click="randomizeBoard" class="mt-8">
-              Revolver fichas
+            <Button
+              variant="outline-primary"
+              @click="nextImage" class="mt-8">
+              Siguiente Imagen
+            </Button>
+            <Button
+              variant="outline-primary"
+              @click="resetGame" class="mt-4">
+              Volver a jugar
             </Button>
           </div>
         </div>
       </div>
     </transition>
-
   </div>
+
+  <Toast ref="toast-puzzle" type="success" :visible-time="4">
+      <p>Ya haz completado todas las imágenes de esta categoría. Dale volver a jugar y selecciona otra categoría.</p>
+    </Toast>
 </main>
 </template>
 
 
 <script>
+
+const categories = [
+  {
+    name: 'Categoría 1',
+    images: [
+      {
+        name: 'Imagen 1.1',
+        url: 'https://ih0.redbubble.net/image.369334182.5732/flat,1000x1000,075,f.u2.jpg'
+      },
+      {
+        name: 'Imagen 1.2',
+        url: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/240751/sanfran.jpg'
+      },
+      {
+        name: 'Imagen 1.3',
+        url: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/240751/chicago.jpg'
+      },
+    ]
+  },
+  {
+    name: 'Categoría 2',
+    images: [
+      {
+        name: 'Imagen 2.1',
+        url: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/240751/griff.jpg'
+      },
+      {
+        name: 'Imagen 2.2',
+        url: require('~/static/images/playgames/tabaquismo/imagen-1.jpg')
+      },
+      {
+        name: 'Imagen 2.3',
+        url: require('~/static/images/playgames/tabaquismo/imagen-2.jpg')
+      }
+    ]
+  },
+  {
+    name: 'Categoría 3',
+    images: [
+      {
+        name: 'Imagen 3.1',
+        url: require('~/static/images/playgames/tabaquismo/imagen-3.jpg')
+      }
+    ]
+  }
+]
 
 export default {
   data() {
@@ -163,53 +233,11 @@ export default {
 			customImage: 'https://ih0.redbubble.net/image.369334182.5732/flat,1000x1000,075,f.u2.jpg',
 			showSolution: true,
 			gameStarted: false,
-      categories: [
-        {
-          name: 'Categoría 1',
-          images: [
-            {
-              name: 'Imagen 1.1',
-              url: 'https://ih0.redbubble.net/image.369334182.5732/flat,1000x1000,075,f.u2.jpg'
-            },
-            {
-              name: 'Imagen 1.2',
-              url: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/240751/sanfran.jpg'
-            },
-            {
-              name: 'Imagen 1.3',
-              url: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/240751/chicago.jpg'
-            },
-          ]
-        },
-        {
-          name: 'Categoría 2',
-          images: [
-            {
-              name: 'Imagen 2.1',
-              url: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/240751/griff.jpg'
-            },
-            {
-              name: 'Imagen 2.2',
-              url: require('~/static/images/playgames/tabaquismo/imagen-1.jpg')
-            },
-            {
-              name: 'Imagen 2.3',
-              url: require('~/static/images/playgames/tabaquismo/imagen-2.jpg')
-            }
-          ]
-        },
-        {
-          name: 'Categoría 3',
-          images: [
-            {
-              name: 'Imagen 3.1',
-              url: require('~/static/images/playgames/tabaquismo/imagen-3.jpg')
-            }
-          ]
-        }
-      ],
+      categories: JSON.parse(JSON.stringify(categories)),
       categorySelected: {},
       step: 1,
+      winGame: false,
+      nameImageSelected: ''
     }
   },
   watch: {
@@ -244,11 +272,6 @@ export default {
   },
   async mounted() {
 
-    if(process.client) {
-      await this.$nextTick();
-      //this.setLoaded()
-    }
-
 	},
   computed: {
     randomMoveQty() {
@@ -264,6 +287,7 @@ export default {
 					// win playgame
           // TODO: Mostrar modal que diga que ha ganado y el nombre de la imagen, con boton de repetir juego
           // TODO: arreglar pantalla en telefono
+          this.winGame = true;
         }, 200);
 			}
 
@@ -283,9 +307,32 @@ export default {
 
       await this.$nextTick();
       setTimeout(() => {
-        this.imageSelect = this.categorySelected.images[Math.floor(Math.random()* this.categorySelected.images.length)].url;
+        const indexRandom = Math.floor(Math.random()* this.categorySelected.images.length);
+        const imageSelected = this.categorySelected.images[indexRandom];
+        this.imageSelect = imageSelected.url;
+        this.nameImageSelected = imageSelected.name
+        this.categorySelected.images.splice(indexRandom, 1);
         this.setLoaded()
 			}, 1500);
+    },
+    nextImage () {
+      if (this.categorySelected.images.length === 0) {
+        //  Show toast
+        this.$refs['toast-puzzle'].show()
+      } else {
+        // Change image
+        this.winGame = false;
+        const indexRandom = Math.floor(Math.random()* this.categorySelected.images.length);
+        const imageSelected = this.categorySelected.images[indexRandom];
+        this.imageSelect = imageSelected.url;
+        this.nameImageSelected = imageSelected.name
+        this.categorySelected.images.splice(indexRandom, 1);
+        this.randomizeBoard()
+      }
+    },
+    resetGame() {
+      this.categories = JSON.parse(JSON.stringify(categories));
+      this.step = 2;
     },
     setLoaded() {
       //Set styles for any board size properly and randomize it to start
@@ -501,10 +548,7 @@ export default {
 }
 </script>
 
-
-
 <style lang="postcss">
-
 :root {
   --dark: #a7a8aa;
   --light: #a7a8aa;
@@ -513,17 +557,31 @@ export default {
   --loaderColor: #655191;
   --transition: transform .15s;
   --ratio: 4;
-  --maxBoardWidth: 70vmin;
+  --maxBoardWidth: calc(100vh - 4rem);
   --smallColumn: calc(240px + 2em);
   --backgroundImage: "";
   --radius: 8px;
 }
 
+
 @media (min-width: 480px) {
   :root {
-    --maxBoardWidth: 60vh;
+    --maxBoardWidth: calc(100vw - 8rem);
   }
 }
+
+@media (min-width: 576px) {
+  :root {
+    --maxBoardWidth: calc(100vh - 8rem);
+  }
+}
+
+@media (min-width: 767px) {
+  :root {
+    --maxBoardWidth: 70vh;
+  }
+}
+
 @media (min-width: 1020px) {
   :root {
     --maxBoardWidth: 70vh;
@@ -600,9 +658,6 @@ form, button, input {
   position: relative;
   overflow: hidden;
 }
-#board form + p {
-  margin: 1em 0;
-}
 #board form.dim .tile span:before {
   content: "";
   width: 100%;
@@ -633,7 +688,6 @@ form, button, input {
   text-align: left;
   position: relative;
   background: var(--background);
-  padding: 1.5em 2em;
   border-radius: var(--radius);
 }
 @media (min-width: 769px) {
@@ -663,7 +717,7 @@ form, button, input {
   line-height: 0;
   place-items: center;
   text-align: center;
-  font-size: 2em;
+
   color: rgba(255, 255, 255, 0.5);
   text-shadow: 0px 0px 0.5em rgba(0, 0, 0, 0.5);
   border: 1px solid #000;
