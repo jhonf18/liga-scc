@@ -50,7 +50,23 @@
                     <nuxt-link to="/etapas/adolescente">ADOLESCENTE</nuxt-link>
                   </li>
                   <li @click="isShowMenu = false" class="py-2">
-                    <nuxt-link to="/etapas/adulto">ADULTO</nuxt-link>
+                    <span class="li-link">
+                      <span> ADULTO </span>
+                      <ul class="ml-4">
+                        <li>
+                          <nuxt-link class="li-link flex " to="/etapas/adulto/mujer">
+                            <RightIcon class="icon-right" />
+                            MUJER
+                          </nuxt-link>
+                        </li>
+                        <li>
+                          <nuxt-link class="li-link flex" to="/etapas/adulto/hombre">
+                            <RightIcon class="icon-right" />
+                            HOMBRE
+                          </nuxt-link>
+                        </li>
+                      </ul>
+                    </span>
                   </li>
                 </ul>
               </li>
@@ -75,7 +91,7 @@
     <!-- header desktop -->
     <div class="hidden sm:block">
       <div class="container-img">
-        <nuxt-link to="/">
+        <nuxt-link to="/" class="inline-block">
           <img
             src="https://licancerbucaramanga.org/wp-content/uploads/2021/02/cropped-Logo_LSCC-Normal.png"
             alt="Logotipo Liga Santandereana Contra el Cáncer">

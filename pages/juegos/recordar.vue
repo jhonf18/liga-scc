@@ -373,59 +373,6 @@ export default {
   text-align: center;
 }
 
-.splash {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
-.splash .overlay {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.719);
-}
-.splash .content {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 400px;
-  height: 200px;
-  margin: auto;
-  text-align: center;
-  background-color: rgba(51, 51, 51, 0.9);
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  -moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
-  -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
-  padding: 1em;
-}
-.splash .content .title {
-  font-size: 1.8em;
-  padding: 0.5em;
-}
-.splash .content .score {
-  padding: 0.5em;
-}
-.splash .content button {
-  margin-top: 1.0em;
-  background-color: #444;
-  padding: 5px 20px;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  border: 1px solid #555;
-  color: White;
-  font-size: 1.4em;
-}
-
 .slide-enter {
   transform: translateX(100%);
   opacity: 0;

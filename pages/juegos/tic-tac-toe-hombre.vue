@@ -18,7 +18,6 @@
           </div>
         </div>
         <div v-if="step === 2" key="step2">
-
           <h3 class="text-center font-semibold text-lg sm:text-xl mb-6 text-tertiary">
             Responde esta pregunta para definir el saque inicial
           </h3>

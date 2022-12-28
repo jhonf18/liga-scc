@@ -13,6 +13,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/svg": "^0.4.0",
     "core-js": "^3.19.3",
+    "hammerjs": "^2.0.8",
     "nuxt": "^2.15.8",
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
