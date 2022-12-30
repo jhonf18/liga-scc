@@ -41,9 +41,10 @@
           <h3 class="text-center text-2xl sm:text-4xl text-white font-semibold mb-5 mt-8">
             Vence al cáncer de próstata
           </h3>
-          <div
-            class="container flex items-center justify-center mt-5">
-            <div class="bg-white rounded">
+          <div class="container flex items-center justify-center mt-5">
+            <div class="bg-white rounded relative">
+              <div class="absolute w-full h-full top-0 left-0 bg-gray-400/[0.6]" v-if="disabledGame">
+              </div>
               <table class="rounded">
                 <tr>
                   <td v-for="(num, i) in 3"
@@ -73,6 +74,14 @@
                 </tr>
               </table>
             </div>
+          </div>
+          <div class="mt-8 max-w-xl mx-auto">
+            <Button
+              v-if="disabledGame"
+              @click="reset"
+              variant="tertiary" size="block">
+              Volver a jugar
+            </Button>
           </div>
         </div>
       </transition>
@@ -189,11 +198,13 @@ export default {
         title: '',
         content: '',
         textFooter: 'Repetir'
-      }
+      },
+      disabledGame: false
     }
   },
   methods: {
     reset() {
+      this.disabledGame = false;
       this.player = 1;
       this.NumberOfPlayers = 0;
       this.choice = 0;
@@ -542,6 +553,7 @@ export default {
         this.modalResult.title = 'Perdiste';
         this.modalResult.content ="El cáncer te ha vencido, pero no te preocupes, intenta ganarle al cáncer nuevamente.";
       }
+      this.disabledGame = true;
       this.$refs['modal-result'].open();
     },
     repeatGame() {

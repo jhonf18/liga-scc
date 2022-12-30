@@ -1,5 +1,4 @@
 <template>
-  <!-- TODO: deshabilitar boton de comenzar, mostrar mensaje al finalizar ya sea ganado o perdido -->
   <!-- TODO: poner boton al terminar el tricky de volver a jugar y deshabilitar el juego -->
   <main class="py-6 sm:py-4">
     <h1 class="text-2xl sm:text-4xl font-bold text-primary text-center">
@@ -33,14 +32,14 @@
           <h3 class="text-center text-2xl sm:text-4xl text-white font-semibold mb-4 mt-4">
             Aprende hacerte el autoexamen
           </h3>
-          <div class="cards grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
-            <div
+          <div
+            class="cards grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
+              <div
               class="card mx-auto cursor-pointer h-28 w-28 sm:h-44 sm:w-44"
               v-for="(card, index) in cards"
               :key="`${card.name}-${index}`"
               @click="clickCard(card.button, index)"
               :id="card.button">
-              <div class="back"></div>
               <div class="front flex justify-center items-center"
                 :class="card.class"
                 :style="{
@@ -50,16 +49,44 @@
                 </div>
             </div>
           </div>
-          <div class="mt-8 max-w-xl mx-auto">
-            <Button
-              @click="startGame"
-              variant="primary" class="!bg-pink-500" size="block">
-              Comenzar
-            </Button>
-          </div>
+            <div class="mt-8 max-w-xl mx-auto">
+              <transition mode="out-in">
+                <Button
+                  v-if="!gameStarted"
+                  @click="startGame"
+                  key="button-1"
+                  variant="primary" class="!bg-pink-500 !hover:bg-pink-600" size="block">
+                  Comenzar
+                </Button>
+                <Button
+                  v-else
+                  variant="primary"
+                  key="button-2"
+                  class="!bg-pink-500 !hover:bg-pink-600" size="block">
+                  Jugando ...
+                </Button>
+              </transition>
+            </div>
+          <!-- <div class="cards grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6"> -->
         </div>
       </transition>
     </div>
+    <Modal
+      id="modal-finished-playgame"
+      target="modal-finished-playgame"
+      ref="modal-finished-playgame"
+      :title="modal.title"
+      @close="resetGame"
+      :footer="false">
+        <p class="text-center fonf-semibold text-xl">
+          {{ modal.text }}
+        </p>
+      <div class="flex justify-center items-center mt-8">
+        <Button @click="clickToResetGame" size="md" variant="outline-primary">
+          Volver a jugar
+        </Button>
+      </div>
+    </Modal>
   </main>
 </template>
 
@@ -118,12 +145,20 @@ export default {
   data() {
     return {
       step: 1,
-      cards: cards,
+      cards: [],
       canPlay: false,
       counter: 0,
       score: 0,
-      sequence: []
+      sequence: [],
+      modal: {
+        title: '',
+        text: ''
+      },
+      gameStarted: false
     }
+  },
+  created() {
+    this.cards = suffleArray(cards);
   },
   methods: {
     async clickCard(button, index) {
@@ -132,8 +167,6 @@ export default {
         return;
       } else {
         this.canPlay = false;
-        console.log(button)
-        console.log(this.sequence, this.counter)
         const ok = this.compareSequenceOfUserwithOriginal(button);
         if (ok) {
           await this.onAndOfButton(index, 100);
@@ -146,17 +179,46 @@ export default {
           }
           this.canPlay = true;
         } else {
-          alert('Haz perdido');
+          this.modal = {
+            title: 'Haz perdido',
+            text: 'Aún te faltan pasos del autoexamen por aprender, pero no te preocupes puedes volver a intentarlo cuando quieras'
+          }
+          this.gameStarted = false;
+          this.$refs['modal-finished-playgame'].open()
+          //alert('Haz perdido');
         }
       }
     },
     compareSequenceOfUserwithOriginal(button){
       return this.cards[this.sequence[this.counter]].button == button;
     },
-    async cpuTurn() {
+    clickToResetGame() {
+      this.$refs['modal-finished-playgame'].closeByButton();
+    },
+    resetGame() {
+      this.cards =[];
+      const newCards = suffleArray(cards);
+      for (let i = 0; i < 6; i++) {
+        this.cards.push(newCards[i]);
+      }
+
+      this.sequence = [];
       this.canPlay = false;
-      this.addButtonToSequence()
-      await this.playSequence()
+      this.counter = 0;
+    },
+    async cpuTurn() {
+      if (this.sequence.length === 6) {
+        this.modal = {
+          title: '¡Felicitaciones!',
+          text: 'Te haz aprendido los pasos correctamente. Puedes volver a repasarlos si prefieres'
+        }
+        this.gameStarted = false;
+        this.$refs['modal-finished-playgame'].open();
+      } else {
+        this.canPlay = false;
+        this.addButtonToSequence()
+        await this.playSequence()
+      }
     },
     addButtonToSequence() {
       const length = this.sequence.length;
@@ -168,6 +230,7 @@ export default {
     startGame() {
       const index = getIndexOfElementInArray(this.cards, 'object', 'button', 1);
       this.sequence.push(index);
+      this.gameStarted = true;
       this.playSequence()
     },
     async playSequence(){
@@ -250,4 +313,24 @@ export default {
 
 .slide-enter-active,
 .slide-leave-active { transition: all .35s linear }
+
+
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 </style>
