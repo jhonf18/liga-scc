@@ -3,9 +3,6 @@
   <h1 class="text-2xl sm:text-4xl font-bold text-primary text-center">
     Rompecabezas deslizante
   </h1>
-  <div>
-
-  </div>
   <div
     class="container mx-auto max-w-4xl p-4 mt-8 border rounded px-4 py-5 shadow-lg w-full-1rem transition duration-500"
     :class="{ 'bg-purple-700': step === 3,
@@ -46,11 +43,15 @@
         </h3>
         <div id="board" class="md:grid md:grid-cols-6">
           <div id="game-group" class="col-span-4">
+            <div
+              class="title-category text-center font-bold text-xl text-primary mx-auto py-3 rounded-tl rounded-tr border-gray-600 border-b">
+              {{ categorySelected.name }}
+            </div>
             <form
               @click="handleClick"
               :aria-label="`${howManyCorrect} of ${ratioSquared} tiles correctly placed.`"
               :class="{dim: dimTiles, invertNumbers: invertNumbers, showNumbers: showNumbers}"
-              class="mx-auto">
+              class="mx-auto rounded-t-none rounded-b">
               <transition-group
                 name="slide"
                 id="innerBoard"
@@ -234,8 +235,10 @@ export default {
 			showSolution: true,
 			gameStarted: false,
       categories: JSON.parse(JSON.stringify(categories)),
-      categorySelected: {},
-      step: 1,
+      categorySelected: {
+        name: 'Categoría 1'
+      },
+      step:1,
       winGame: false,
       nameImageSelected: ''
     }
@@ -332,6 +335,7 @@ export default {
     },
     resetGame() {
       this.categories = JSON.parse(JSON.stringify(categories));
+      this.winGame = false;
       this.step = 2;
     },
     setLoaded() {
@@ -588,6 +592,11 @@ export default {
   }
 }
 
+.title-category {
+  width: var(--maxBoardWidth);
+  background-color:  var(--dark);
+}
+
 
 form, button, input {
   font-family: Nunito, sans-serif;
@@ -648,7 +657,6 @@ form, button, input {
 #board form {
   width: var(--maxBoardWidth);
   height: var(--maxBoardWidth);
-  border-radius: var(--radius);
   border: 1.5vmin solid var(--dark);
   background: var(--dark);
   color: var(--dark);
