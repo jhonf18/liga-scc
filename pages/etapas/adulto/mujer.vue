@@ -17,9 +17,9 @@ export default {
         url_infographic: 'https://ciencia.unam.mx/uploads/infografias/if_cancer_piel_26062018.jpg',
         play_games: [
           {
-            name: 'Tic Tac Mujer',
-            link: '/juegos/tic-tac-toe-mujer',
-            url_image: 'https://licancerbucaramanga.org/wp-content/uploads/2021/06/Fachada-1.jpg?id=13704',
+            name: 'Simón dice',
+            link: '/juegos/simon-dice',
+            url_image: require('~/static/images/simon-dice.png'),
             description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
           },
           {
