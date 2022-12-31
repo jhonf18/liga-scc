@@ -49,10 +49,14 @@
           </div>
 
           <div class="text-center">
-            <h3 class="text-xl font-semibold">
+            <h3
+              class="text-xl font-semibold">
               Palabra: <br>
-              <span v-html="displayWord()">
-              </span>
+              <p
+                style="letter-spacing: 2px; text-align: justify; text-justify: inter-word; max-width: 17rem"
+                class="mx-auto text-2xl" >
+                {{ displayWord() }}
+              </p>
             </h3>
             <!-- <p class="text-xl text-red-500">
               Remaining attempts: {{remainingAttempts}}
@@ -67,13 +71,13 @@
           </div>
 
 
-          <div class="grid grid-cols-9 lg:grid-cols-12 gap-3 text-center mt-6">
+          <div class="grid grid-cols-6 sm:grid-cols-9 lg:grid-cols-12 gap-3 text-center mt-6">
             <button
               v-for="(letter, index) in letters"
               :key="index"
               :disabled="letter.disabled"
               @click="attemptWithLetter(letter.letter, index)"
-              class="button bg-blue-300 hover:bg-blue-400"
+              class="button bg-blue-300 hover:bg-blue-400 text-black"
               :class="{ 'bg-gray-400 hover:bg-gray-400 !cursor-none': letter.disabled }">
                 {{ letter.letter }}
               </button>
@@ -117,7 +121,6 @@
 </template>
 
 <script>
-import { getIndexOfElementInArray } from '~/helpers';
 
 const MAX_ATTEMPTS = 6;
 const MASK_CHAR = '_';
@@ -222,7 +225,7 @@ export default {
       let displayedWord = "";
       for (const letter of this.hiddenWord) {
         if (letter.letter === ' ') {
-          displayedWord += '&nbsp;&nbsp;';
+          displayedWord += ' ';
         } else {
           if (letter.hidden) {
             displayedWord += MASK_CHAR;
@@ -230,7 +233,7 @@ export default {
             displayedWord += letter.letter;
           }
         }
-        displayedWord += " ";
+        displayedWord += "";
       }
       return displayedWord;
     },
@@ -248,7 +251,7 @@ export default {
       this.remainingAttempts = MAX_ATTEMPTS;
     },
     clickToResetGame(){
-
+      this.$refs['modal-finished-playgame'].closeByButton();
     },
     imagePath() {
       return require(`~/static/images/hangman/Ahorcado-${MAX_ATTEMPTS - this.remainingAttempts}.png`);
