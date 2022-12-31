@@ -126,7 +126,6 @@ const MAX_ATTEMPTS = 6;
 const MASK_CHAR = '_';
 const ALPHABET = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
 
-
 const categories = [
   {
     name: 'Síntomas',
