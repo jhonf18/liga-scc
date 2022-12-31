@@ -47,9 +47,9 @@ export default {
           description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
         },
         {
-          name: 'Juego XXX',
-          link: '/etapas/juegos/2',
-          url_image: 'https://media.cdnp.elobservador.com.uy/adjuntos/184/imagenes/013/019/0013019030.jpg?&cw=350',
+          name: 'Ahorcado',
+          link: '/juegos/ahorcado',
+          url_image: require('~/static/images/ahorcado.png'),
           description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
         },
         {

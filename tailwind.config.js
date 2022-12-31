@@ -57,6 +57,11 @@ module.exports = {
       maxHeight: {
         '1rem': 'calc(100vh - 1rem)'
       },
+      maxWidth: {
+        '6': '6rem',
+        '17': '17rem',
+        '14': '14rem'
+      },
       width: {
         'full-1rem': 'calc(100% - 1rem)'
       },
