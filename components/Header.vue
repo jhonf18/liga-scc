@@ -31,56 +31,59 @@
         <div class="pt-4 pl-4">
           <div>
             <ul>
-              <li @click="isShowMenu = false" class="flex items-center py-2">
-                <RightIcon class="icon-right" />
-                <nuxt-link to="/" exact>INICIO</nuxt-link>
+              <li @click="isShowMenu = false" class="flex items-center">
+                <nuxt-link to="/" exact class="py-2 w-full">INICIO</nuxt-link>
               </li>
-              <li class="py-2">
-                <div class="flex items-center">
-                  <RightIcon class="icon-right" />
-                  <span>
-                    ETAPAS DE VIDA
-                  </span>
-                </div>
-                <ul class="block pl-8">
-                  <li @click="isShowMenu = false" class="py-2">
-                    <nuxt-link to="/etapas/ninos">NIÑO Y NIÑA</nuxt-link>
-                  </li>
-                  <li @click="isShowMenu = false" class="py-2">
-                    <nuxt-link to="/etapas/adolescente">ADOLESCENTE</nuxt-link>
-                  </li>
-                  <li @click="isShowMenu = false" class="py-2">
-                    <span class="li-link">
-                      <span> ADULTO </span>
-                      <ul class="ml-4">
-                        <li>
-                          <nuxt-link class="li-link flex " to="/etapas/adulto/mujer">
-                            <RightIcon class="icon-right" />
-                            MUJER
-                          </nuxt-link>
-                        </li>
-                        <li>
-                          <nuxt-link class="li-link flex" to="/etapas/adulto/hombre">
-                            <RightIcon class="icon-right" />
-                            HOMBRE
-                          </nuxt-link>
-                        </li>
-                      </ul>
-                    </span>
-                  </li>
-                </ul>
+              <li class="pr-3">
+                <Accordion>
+                  <template v-slot:title>
+                    <div class="flex items-center">
+                      <span class="py-2">
+                        ETAPAS DE VIDA
+                      </span>
+                    </div>
+                  </template>
+                  <template v-slot:content>
+                    <ul class="block pl-3">
+                      <li @click="isShowMenu = false">
+                        <nuxt-link to="/etapas/ninos" class="py-2 w-full block">NIÑO Y NIÑA</nuxt-link>
+                      </li>
+                      <li @click="isShowMenu = false">
+                        <nuxt-link to="/etapas/adolescente" class="py-2 w-full block">ADOLESCENTE</nuxt-link>
+                      </li>
+                      <li class="">
+                        <Accordion>
+                          <template v-slot:title>
+                            <span class="py-2"> ADULTO </span>
+                          </template>
+                          <template v-slot:content>
+                            <ul class="ml-3">
+                              <li @click="isShowMenu = false" >
+                                <nuxt-link class="py-2 w-full block" to="/etapas/adulto/mujer">
+                                  MUJER
+                                </nuxt-link>
+                              </li>
+                              <li @click="isShowMenu = false">
+                                <nuxt-link class="py-2 w-full block" to="/etapas/adulto/hombre">
+                                  HOMBRE
+                                </nuxt-link>
+                              </li>
+                            </ul>
+                          </template>
+                        </Accordion>
+                      </li>
+                    </ul>
+                  </template>
+                </Accordion>
               </li>
-              <li @click="isShowMenu = false" class="flex items-center py-2">
-                <RightIcon class="icon-right" />
-                <nuxt-link to="/juegos">JUEGOS</nuxt-link>
+              <li @click="isShowMenu = false" class="flex items-center">
+                <nuxt-link to="/juegos" class="py-2 w-full block">JUEGOS</nuxt-link>
               </li>
-              <li @click="isShowMenu = false" class="flex items-center py-2">
-                <RightIcon class="icon-right" />
-                <nuxt-link to="/videos">VIDEOS</nuxt-link>
+              <li @click="isShowMenu = false" class="flex items-center">
+                <nuxt-link to="/videos" class="py-2 w-full block">VIDEOS</nuxt-link>
               </li>
-              <li @click="isShowMenu = false" class="flex items-center py-2">
-                <RightIcon class="icon-right" />
-                <nuxt-link to="/infografias">INFOGRAFÍA</nuxt-link>
+              <li @click="isShowMenu = false" class="flex items-center">
+                <nuxt-link to="/infografias" class="py-2 w-full block">INFOGRAFÍA</nuxt-link>
               </li>
             </ul>
           </div>
@@ -226,7 +229,9 @@ a.nuxt-link-active {
   font-weight: bold;
 }
 
-li:has( a.nuxt-link-active) > span {
+li:has( a.nuxt-link-active) > span,
+li:has( a.nuxt-link-active) > div > button > span,
+li:has( a.nuxt-link-active) > div > button > div > span {
   color: #282b53;
   font-weight: bold;
 }
