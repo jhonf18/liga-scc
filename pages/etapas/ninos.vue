@@ -28,7 +28,8 @@ export default {
             url_image: 'https://media.cdnp.elobservador.com.uy/adjuntos/184/imagenes/013/019/0013019030.jpg?&cw=350',
             description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
           }
-        ]
+        ],
+        infographics: []
       }
     }
   }

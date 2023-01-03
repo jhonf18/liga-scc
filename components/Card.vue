@@ -1,7 +1,16 @@
 <template>
-  <article class="card max-w-sm border rounded mx-auto mb-4">
+  <article class="card max-w-sm border rounded mx-auto mb-4 w-full">
     <div class="container-img s-ratio-16-9 relative rounded-tl rounded-tr">
-      <nuxt-link :to="data.link">
+      <span v-if="content === 'infographic'" @click="clickCard" class="cursor-pointer">
+        <div
+          class="block overflow-hidden absolute inset-0 box-border m-0">
+          <img
+            :src="data.url_image"
+            alt="Juego sobre el cáncer de piel"
+            class="absolute top-0 left-0 w-full transition-all">
+        </div>
+      </span>
+      <nuxt-link v-if="content !== 'infographic'" :to="data.link">
         <div
           class="block overflow-hidden absolute inset-0 box-border m-0">
           <img
@@ -12,8 +21,12 @@
       </nuxt-link>
     </div>
     <div class="card-content p-4">
-      <nuxt-link :to="data.link"
-        class="text-xl text-primary font-semibold hover:underline transition-all">
+      <span v-if="!data.link" @click="clickCard"
+        class="text-xl text-primary font-semibold hover:underline transition-all cursor-pointer">
+        {{ data.name }}
+      </span>
+      <nuxt-link v-if="data.link" :to="data.link"
+        class="text-xl text-primary font-semibold hover:underline transition-all cursor-pointer">
         {{ data.name }}
       </nuxt-link>
       <p class="line-clamp-4 text-gray-800" :title="data.description">
@@ -29,6 +42,15 @@ export default {
     data: {
       type: Object,
       required: true
+    },
+    content: {
+      type: String,
+      required: false
+    }
+  },
+  methods: {
+    clickCard(card) {
+      this.$emit('clickCard');
     }
   }
 }

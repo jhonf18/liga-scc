@@ -6,30 +6,12 @@
     </h1>
     <section
     class="px-4 sm:px-0 sm:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-6 sm:container mx-auto">
-      <div v-for="(infographic, i) in infographics" :key="i" class="mb-6 sm:mb-0">
-        <div class="container-video">
-          <div
-            @click="openInfographic(infographic)"
-            class="container-video cursor-pointer h-full flex justify-center items-center"
-            :style="{
-              'background': `url(${infographic.url_image})`,
-              'background-position': 'top center',
-              'background-repeat': 'no-repeat',
-              'background-size': 'cover' }">
-            <div class="filter-container">
-              <div class="filter-content flex justify-center items-center w-full h-full">
-                <span class="m-auto text-gray-300 text-2xl font-medium">ABRIR</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mt-2 pl-2">
-          <nuxt-link :to="infographic.link"
-            class="text-lg text-primary font-semibold hover:underline transition-all">
-            {{ infographic.title }}
-          </nuxt-link>
-        </div>
-      </div>
+        <Card v-for="(infographic, i) in infographics"
+          :key="'infographic-' + i"
+          content="infographic"
+          :data="infographic"
+          @clickCard="openInfographic(infographic)">
+        </Card>
     </section>
     <Modal
       id="modal-content"
@@ -48,27 +30,27 @@ export default {
     return {
       infographics: [
         {
-          title: 'Cáncer de mama',
+          name: 'Cáncer de mama',
           url_image: 'https://licancerbucaramanga.org/wp-content/uploads/2021/06/Fachada-1.jpg?id=13704',
           link: '/etapas/adulto/mujer'
         },
         {
-          title: 'Cáncer de piel',
+          name: 'Cáncer de piel',
           url_image: 'https://licancerbucaramanga.org/wp-content/uploads/2021/10/Piezas-Octubre.png',
           link: '/etapas/ninos'
         },
         {
-          title: 'Tabaquismo',
+          name: 'Tabaquismo',
           url_image: 'https://licancerbucaramanga.org/wp-content/uploads/2021/05/Slider-icontec1.png',
           link: '/etapas/adolescente'
         },
         {
-          title: 'Cáncer de próstata',
+          name: 'Cáncer de próstata',
           url_image: 'https://licancerbucaramanga.org/wp-content/uploads/2022/12/BANNER-PAGINA-WEB-de-2022.png',
           link: '/etapas/adulto/hombre'
         },
         {
-          title: 'Cáncer en general',
+          name: 'Cáncer en general',
           url_image: 'https://licancerbucaramanga.org/wp-content/uploads/2022/09/DSC5075-440x260.jpg.webp',
           link: '/'
         }

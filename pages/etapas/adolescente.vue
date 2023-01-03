@@ -28,6 +28,16 @@ export default {
             url_image: require('~/static/images/puzzle.png'),
             description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
           }
+        ],
+        infographics: [
+          {
+            name: 'Cáncer de pulmón',
+            url_image: 'https://ciencia.unam.mx/uploads/infografias/if_cancer_piel_26062018.jpg',
+          },
+          {
+            name: 'Tabaquismo',
+            url_image: 'https://ciencia.unam.mx/uploads/infografias/if_cancer_piel_26062018.jpg',
+          }
         ]
       }
     }

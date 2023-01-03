@@ -54,23 +54,14 @@
               </div>
             </div>
             <div v-bind:class="{'hidden': openTab !== 3, 'block': openTab === 3}">
-              <div class="container-video">
-              <div
-                @click="openInfographic"
-                class="container-infographic cursor-pointer h-full flex justify-center items-center"
-                :style="{
-                  'background': `url(${data.url_infographic})`,
-                  'background-position': 'top center',
-                  'background-repeat': 'no-repeat',
-                  'background-size': 'cover'
-                }">
-                <div class="filter-container">
-                  <div class="filter-content flex justify-center items-center w-full h-full">
-                    <span class="m-auto text-gray-300 text-2xl font-medium">ABRIR</span>
-                  </div>
-                </div>
+              <div class="md:grid md:grid-cols-2 md:gap-2 lg:gap-4 p-4">
+                <Card v-for="(infographic, i) in data.infographics"
+                  :key="'infographic-' + i"
+                  content="infographic"
+                  :data="infographic"
+                  @clickCard="openInfographic(infographic)">
+                </Card>
               </div>
-            </div>
             </div>
           </div>
         </div>
@@ -115,7 +106,8 @@ export default {
     openVideo() {
       this.$refs['modal-content-video'].open()
     },
-    openInfographic() {
+    openInfographic(infographic) {
+      this.data.url_infographic = infographic.url_image;
       this.$refs['content-infographic'].open()
     }
   }
