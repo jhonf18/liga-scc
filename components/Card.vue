@@ -7,6 +7,7 @@
           <img
             :src="data.url_image"
             alt="Juego sobre el cáncer de piel"
+            :class="{ 'h-0 max-h-full' : content !== 'infographic' }"
             class="absolute top-0 left-0 w-full transition-all">
         </div>
       </span>
@@ -77,11 +78,9 @@ export default {
     margin: auto;
     display: block;
     width: 0px;
-    height: 0px;
     min-width: 100%;
     max-width: 100%;
     min-height: 100%;
-    max-height: 100%;
     filter: none;
     background-size: cover;
     background-image: none;

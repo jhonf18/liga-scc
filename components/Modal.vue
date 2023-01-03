@@ -59,7 +59,7 @@
               allowfullscreen frameborder="0"></iframe>
           </div>
           <div v-if="type === 'image'" >
-            <img :src="linkMultimedia" alt="Infografía sobre el cáncer">
+            <img :src="linkMultimedia" alt="Infografía sobre el cáncer" class="w-full">
           </div>
           <div  v-if="footer && type === 'text'" class="modal-footer">
             <button
