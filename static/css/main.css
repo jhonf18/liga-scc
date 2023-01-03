@@ -132,3 +132,40 @@ body::-webkit-scrollbar-track {
   @apply border border-yellow-500 hover:bg-yellow-600 hover:bg-yellow-600 text-yellow-500;
 }
 
+
+.bg-red-wheel {
+  background-color: #f42532;
+}
+.border-red-wheel {
+  border-color: #d50b18;
+}
+
+.bg-red-wheel:hover {
+  background-color: #d50b18;
+}
+
+.bg-orange-wheel {
+  background-color: #fb9504;
+  border-color: #bf7000;
+}
+
+.bg-orange-wheel:hover {
+  background-color: #bf7000;
+}
+
+.bg-blue-wheel {
+  background-color: #1675ce;
+  border-color: #115a9f;
+}
+.bg-blue-wheel:hover {
+  background-color: #115a9f;
+}
+
+.bg-green-wheel {
+  background-color: #35c967;
+  border-color: #00a237;
+}
+
+.bg-green-wheel:hover {
+  background-color: #00a237;
+}

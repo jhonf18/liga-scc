@@ -13,7 +13,7 @@ export const getIndexOfElementInArray = (arr, type, key, element) => {
 
   for (let i = 0; i < arr.length; i++) {
     if ( type === 'object' ) {
-      if ( arr[i][key] === element) {
+      if ( arr[i][key] == element) {
         o = i;
         break;
       }

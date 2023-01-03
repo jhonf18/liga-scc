@@ -26,6 +26,7 @@
             'max-w-md': size === 'sm' && type === 'text',
             'max-w-lg': size === 'md' && type === 'text',
             'max-w-3xl': size === 'lg' && type === 'text',
+            'max-w-4xl': size === 'xl' && type === 'text',
             'max-w-5xl': type !== 'text',
             'scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-400 scrollbar-track-gray-200': type === 'image'
           }">

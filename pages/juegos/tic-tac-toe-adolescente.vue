@@ -155,7 +155,7 @@
 
 <script>
 
-import Questions from '@/helpers/questions/cancer_mama';
+import Questions from '@/helpers/questions/tabaquismo';
 import { suffleArray } from '@/helpers';
 import cancerIcon from '@/static/icons/cancer.svg.js';
 import noSmokingIcon from '@/static/icons/no-smoking.svg.js'

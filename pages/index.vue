@@ -40,7 +40,7 @@
             <span>Aprende sobre el cáncer con</span>
             <div class="grid grid-cols-2 gap-6 mt-2">
               <Button variant="primary" @click="openInfographic">Infografías</Button>
-              <Button variant="primary">Juegos</Button>
+              <Button variant="primary" to="/juegos/trivia">Juegos</Button>
             </div>
           </div>
         </div>
