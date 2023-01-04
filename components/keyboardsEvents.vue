@@ -8,13 +8,18 @@
       handler(e) {
         this.$emit('keydown', e);
       },
+      handlerKeyUp(e) {
+        this.$emit('keyup', e);
+      },
       destroyEvents() {
         window.removeEventListener('keydown', this.handler);
+        window.removeEventListener('keyup', this.handlerKeyUp);
       }
     },
     mounted() {
       if (process.client) {
         window.addEventListener('keydown', this.handler);
+        window.addEventListener('keyup', this.handlerKeyUp);
       }
     },
     beforeDestroy() {

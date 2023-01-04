@@ -1,8 +1,5 @@
 <template>
   <main>
-    <div id="help">
-      <p>Controls: Right, Left, Up & Down arrow keys.</p>
-    </div>
     <div id="score_div">
       Score: <span id="score">0</span> High Score:
       <span id="high_score">0</span>
@@ -58,7 +55,7 @@
         </button>
       </div>
     </div>
-    <keyboards-events @keydown="onKeyDown"></keyboards-events>
+    <keyboards-events @keydown="onKeyDown" @keyup="onKeyUp"></keyboards-events>
   </main>
 </template>
 
@@ -86,6 +83,24 @@ export default {
     }
   },
   methods: {
+    onKeyUp(e) {
+      if (this.game_over === false) {
+        var key = e.keyCode;
+        if (key === 37) {
+            cancelAnimationFrame(this.move_left);
+            this.move_left = false;
+        } else if (key === 39) {
+            cancelAnimationFrame(this.move_right);
+            this.move_right = false;
+        } else if (key === 38) {
+            cancelAnimationFrame(this.move_up);
+            this.move_up = false;
+        } else if (key === 40) {
+            cancelAnimationFrame(this.move_down);
+            this.move_down = false;
+        }
+    }
+    },
     onKeyDown(e) {
       if (!this.game_over) {
         let key = e.keyCode;
@@ -235,7 +250,7 @@ body {
 
 #container {
   position: relative;
-  height: 30vh;
+  height: 90vh;
   width: 25%;
   left: 35%;
   margin-top: 20px;
