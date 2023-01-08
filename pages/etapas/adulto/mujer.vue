@@ -14,7 +14,6 @@ export default {
         second_title: 'Instruyete sobre el cáncer de pulmón',
         url_preview_video: 'https://licancerbucaramanga.org/wp-content/uploads/2021/06/Fachada-1.jpg?id=13704',
         url_video: 'https://www.youtube.com/embed/zqYc5c4bOZ8?feature=oembed',
-        url_infographic: 'https://ciencia.unam.mx/uploads/infografias/if_cancer_piel_26062018.jpg',
         play_games: [
           {
             name: 'Simón dice',
@@ -31,8 +30,12 @@ export default {
         ],
         infographics: [
           {
-            name: 'Autoexamen de mama',
-            url_image: require(`~/static/images/infografias/mama/infografia-1.png`),
+            name: 'Cáncer de mama',
+            url_image: require(`~/static/images/infografias/mama/cancer-de-mama.png`),
+          },
+          {
+            name: 'Autoexamen de mama y signos de alarma',
+            url_image: require(`~/static/images/infografias/mama/autoexamen.png`),
           },
         ]
       }

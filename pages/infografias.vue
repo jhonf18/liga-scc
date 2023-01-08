@@ -31,23 +31,28 @@ export default {
       infographics: [
         {
           name: 'Cáncer de mama',
-          url_image: 'https://licancerbucaramanga.org/wp-content/uploads/2021/06/Fachada-1.jpg?id=13704',
+          url_image: require(`~/static/images/infografias/mama/cancer-de-mama.png`),
           link: '/etapas/adulto/mujer'
         },
         {
-          name: 'Cáncer de piel',
-          url_image: 'https://licancerbucaramanga.org/wp-content/uploads/2021/10/Piezas-Octubre.png',
-          link: '/etapas/ninos'
+          name: 'Autoexamen de mama y signos de alarma',
+          url_image: require(`~/static/images/infografias/mama/autoexamen.png`),
+          link: '/etapas/adulto/mujer'
         },
         {
-          name: 'Tabaquismo',
-          url_image: 'https://licancerbucaramanga.org/wp-content/uploads/2021/05/Slider-icontec1.png',
-          link: '/etapas/adolescente'
-        },
-        {
-          name: 'Cáncer de próstata',
-          url_image: 'https://licancerbucaramanga.org/wp-content/uploads/2022/12/BANNER-PAGINA-WEB-de-2022.png',
+          name: 'Síntomas de cáncer de próstata ',
+          url_image: require(`~/static/images/infografias/prostata/sintomas.png`),
           link: '/etapas/adulto/hombre'
+        },
+        {
+          name: 'Cáncer de próstata ',
+          url_image: require(`~/static/images/infografias/prostata/cancer-de-prostata.png`),
+          link: '/etapas/adulto/hombre'
+        },
+        {
+          name: 'Cuidemos nuestra piel para evitar el cáncer',
+          url_image: require(`~/static/images/infografias/piel/cancer-de-piel.png`),
+          link: '/etapas/adulto/nino'
         },
         {
           name: 'Cáncer en general',

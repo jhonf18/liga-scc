@@ -13,7 +13,7 @@ export default {
         paragraph_2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat vero eius officiis exercitationem, asperiores autem sint. Perspiciatis tenetur modi quo maiores. Facere nulla sint quisquam praesentium dolorem ad ipsam unde.',
         second_title: 'Instruyete sobre el cáncer de pulmón',
         url_preview_video: 'https://licancerbucaramanga.org/wp-content/uploads/2021/06/Fachada-1.jpg?id=13704',
-        url_video: 'https://www.youtube.com/embed/zqYc5c4bOZ8?feature=oembed',
+        url_video: 'https://www.youtube.com/embed/6jD9YuTt5Pg',
         url_infographic: 'https://ciencia.unam.mx/uploads/infografias/if_cancer_piel_26062018.jpg',
         play_games: [
           {
@@ -29,7 +29,16 @@ export default {
             description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
           },
         ],
-        infographics: []
+        infographics: [
+          {
+            name: 'Síntomas de cáncer de prostata ',
+            url_image: require(`~/static/images/infografias/prostata/sintomas.png`),
+          },
+          {
+            name: 'Cáncer de próstata ',
+            url_image: require(`~/static/images/infografias/prostata/cancer-de-prostata.png`),
+          }
+        ]
       }
     }
   }

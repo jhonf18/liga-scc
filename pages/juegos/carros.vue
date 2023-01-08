@@ -291,7 +291,6 @@ export default {
         return;
       }
 
-
       if (this.collision(car, sombrilla) && !this.collisionUmbrella) {
         console.log(this.speed)
         this.speed = this.speed - 1;

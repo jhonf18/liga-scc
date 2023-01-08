@@ -1,6 +1,6 @@
 <template>
   <article class="card max-w-sm border rounded mx-auto mb-4 w-full">
-    <div class="container-img s-ratio-16-9 relative rounded-tl rounded-tr">
+    <div class="relative container-img s-ratio-16-9 relative rounded-tl rounded-tr">
       <span v-if="content === 'infographic'" @click="clickCard" class="cursor-pointer">
         <div
           class="block overflow-hidden absolute inset-0 box-border m-0">
@@ -20,8 +20,15 @@
             class="absolute top-0 left-0 w-full transition-all">
         </div>
       </nuxt-link>
+      <div
+      v-if="content === 'infographic'"
+      @click="clickCard"
+      class="card-hover absolute cursor-pointer top-0 left-0 flex justify-center items-center text-semibold bg-gray-400/[0.6] text-white w-full h-full">
+        ABRIR
+      </div>
     </div>
-    <div class="card-content p-4">
+    <div class="card-content p-4"
+      :class="{'text-center': content === 'infographic'}">
       <span v-if="!data.link" @click="clickCard"
         class="text-xl text-primary font-semibold hover:underline transition-all cursor-pointer">
         {{ data.name }}
@@ -46,6 +53,7 @@ export default {
     },
     content: {
       type: String,
+      default: 'card',
       required: false
     }
   },
@@ -58,6 +66,15 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+
+.card-hover {
+  display: none;
+}
+
+.container-img:hover .card-hover {
+  display: flex;
+}
+
 .card-img:hover img {
   transform: scale(1.1);
 }
@@ -75,7 +92,7 @@ export default {
     box-sizing: border-box;
     padding: 0px;
     border: none;
-    margin: auto;
+    /* margin: auto; */
     display: block;
     width: 0px;
     min-width: 100%;

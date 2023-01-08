@@ -57,8 +57,6 @@
       :link-multimedia="data.url_principal_image"
       >
     </Modal>
-
-
   </div>
 </template>
 

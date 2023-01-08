@@ -81,7 +81,7 @@
       ref="content-infographic"
       target="content-infographic"
       type="image"
-      :link-multimedia="data.url_infographic"
+      :link-multimedia="url_infographic"
       />
   </div>
 </template>
@@ -96,7 +96,8 @@ export default {
   },
   data() {
     return {
-      openTab: 1
+      openTab: 1,
+      url_infographic: ''
     }
   },
   methods: {
@@ -107,7 +108,8 @@ export default {
       this.$refs['modal-content-video'].open()
     },
     openInfographic(infographic) {
-      this.data.url_infographic = infographic.url_image;
+      console.log(infographic)
+      this.url_infographic = infographic.url_image;
       this.$refs['content-infographic'].open()
     }
   }
