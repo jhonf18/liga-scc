@@ -52,12 +52,17 @@ export default {
         {
           name: 'Cuidemos nuestra piel para evitar el cáncer',
           url_image: require(`~/static/images/infografias/piel/cancer-de-piel.png`),
-          link: '/etapas/adulto/nino'
+          link: '/etapas/nino'
         },
         {
-          name: 'Cáncer en general',
-          url_image: 'https://licancerbucaramanga.org/wp-content/uploads/2022/09/DSC5075-440x260.jpg.webp',
-          link: '/'
+          name: 'Efectos del tabaquismo',
+          url_image: require(`~/static/images/infografias/tabaquismo/efectos-del-tabaquismo.png`),
+          link: '/etapas/adolescente'
+        },
+        {
+          name: 'Cáncer de pulmón',
+          url_image: require(`~/static/images/infografias/tabaquismo/cancer-de-pulmon.png`),
+          link: '/etapas/adolescente'
         }
       ],
       url: ''

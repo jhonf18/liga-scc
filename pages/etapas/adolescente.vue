@@ -31,12 +31,12 @@ export default {
         ],
         infographics: [
           {
-            name: 'Cáncer de pulmón',
-            url_image: 'https://ciencia.unam.mx/uploads/infografias/if_cancer_piel_26062018.jpg',
+            name: 'Efectos del tabaquismo',
+            url_image: require(`~/static/images/infografias/tabaquismo/efectos-del-tabaquismo.png`),
           },
           {
-            name: 'Tabaquismo',
-            url_image: 'https://ciencia.unam.mx/uploads/infografias/if_cancer_piel_26062018.jpg',
+            name: 'Cáncer de pulmón',
+            url_image: require(`~/static/images/infografias/tabaquismo/cancer-de-pulmon.png`),
           }
         ]
       }

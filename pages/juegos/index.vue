@@ -58,6 +58,12 @@ export default {
           url_image: require('~/static/images/trivia.png'),
           description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
         },
+        {
+          name: 'Carros: Falta',
+          link: '/juegos/carros',
+          url_image: require('~/static/images/puzzle.png'),
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
+        },
       ]
     }
   }

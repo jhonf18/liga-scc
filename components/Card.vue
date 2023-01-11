@@ -6,7 +6,8 @@
           class="block overflow-hidden absolute inset-0 box-border m-0">
           <img
             :src="data.url_image"
-            alt="Juego sobre el cáncer de piel"
+            :title="`Infografía ${data.name}`"
+            :alt="`Infografía sobre ${data.name}`"
             :class="{ 'h-0 max-h-full' : content !== 'infographic' }"
             class="absolute top-0 left-0 w-full transition-all">
         </div>
@@ -16,7 +17,8 @@
           class="block overflow-hidden absolute inset-0 box-border m-0">
           <img
             :src="data.url_image"
-            alt="Juego sobre el cáncer de piel"
+            :alt="`Juego sobre el ${data.name}`"
+            :title="`Juego ${data.name}`"
             class="absolute top-0 left-0 w-full transition-all">
         </div>
       </nuxt-link>
