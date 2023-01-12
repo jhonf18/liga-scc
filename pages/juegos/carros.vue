@@ -64,7 +64,7 @@
           <div class="b_tyre_l"></div>
           <div class="b_tyre_r"></div>
         </div>
-        <div class="sun" :id="'sun-' + i" v-for="i in 3" :key="'sun-' + i">
+        <div class="sun" :id="'sun-' + i" v-for="i in 4" :key="'sun-' + i">
           <div class="sun-face">
             <div class="sun-hlight"></div>
             <div class="sun-leye"></div>
@@ -185,9 +185,11 @@ export default {
       lastBlockerShowed: null,
       nextUmbrellaShowed: null,
       nextBlockerShowed: null,
-      showedUmbrella: true,
-      showedBlocker: false,
-      timeLastCollisionUmbrella: null
+      timeLastCollisionUmbrella: null,
+      lastTimeCollisionBlocker: null,
+      racingCarAudio: null,
+      failAudio: null,
+      winAudio: null
       //requestAnimationFrame
     };
   },
@@ -204,7 +206,17 @@ export default {
       this.nextUmbrellaShowed = this.$moment().add(5, 's');
       this.lastUmbrellaShowed = this.$moment().add(10, 's');
       this.nextBlockerShowed = this.$moment().add(20, 's');
+      this.lastBlockerShowed = this.$moment().add(25, 's');
       this.anim_id = requestAnimationFrame(this.repeat);
+      const racingCarAudioFile = require(`~/assets/sounds/racing-car.mp3`).default;
+      this.racingCarAudio = new Audio(racingCarAudioFile);
+      this.racingCarAudio.loop = true;
+      this.racingCarAudio.volume = 0.2;
+      this.racingCarAudio.play();
+      this.failAudio = new Audio(require(`~/assets/sounds/fail.mp3`).default)
+      this.winAudio = new Audio(require(`~/assets/sounds/correct.mp3`).default)
+      this.line_speed = 5;
+      this.speed = 5;
     },
     onKeyUp(e) {
       if (this.game_over === false) {
@@ -280,36 +292,46 @@ export default {
       }
     },
     repeat() {
-      var container = $("#container");
-      var car = $("#car");
-      var car_1 = $("#sun-1");
-      var car_2 = $("#sun-2");
-      var car_3 = $("#sun-3");
-      var sombrilla = $('#sombrilla');
-      var bloqueador = $('#bloqueador')
-      var line_1 = $("#line_1");
-      var line_2 = $("#line_2");
-      var line_3 = $("#line_3");
-      var score = $("#score");
+      let container = $("#container");
+      let car = $("#car");
+      let car_1 = $("#sun-1");
+      let car_2 = $("#sun-2");
+      let car_3 = $("#sun-3");
+      let car_4 = $("#sun-4");
+      let sombrilla = $('#sombrilla');
+      let bloqueador = $('#bloqueador')
+      let line_1 = $("#line_1");
+      let line_2 = $("#line_2");
+      let line_3 = $("#line_3");
+      let score = $("#score");
 
       if (
         this.collision(car, car_1) ||
         this.collision(car, car_2) ||
         this.collision(car, car_3)
       ) {
-        console.log("stop game");
+        this.racingCarAudio.pause()
+        this.failAudio.play()
         //stop_the_game();
         return;
       }
 
       if (this.collision(car, sombrilla) && !this.collisionUmbrella) {
-        this.timeLastCollisionUmbrella = this.$moment().add(10, 's');
-        this.speed = this.speed - 4;
+        this.winAudio.play()
+        this.timeLastCollisionUmbrella = this.$moment().add(12, 's');
+        this.speed = this.speed - 2;
+        this.line_speed = this.line_speed - 2;
         this.collisionUmbrella = true;
         sombrilla.hide();
       }
 
       if (this.collision(car, bloqueador) && !this.collisionBlocker) {
+        this.winAudio.play()
+        this.lastTimeCollisionBlocker = this.$moment().add(5, 's');
+        this.car_down(car_1, true, -100)
+        this.car_down(car_2, true, -200)
+        this.car_down(car_3, true, -350)
+        this.car_down(car_4, true, -500)
         car_1.hide()
         car_2.hide()
         car_3.hide()
@@ -323,33 +345,46 @@ export default {
       if (this.score_counter % 20 == 0) {
         score.text(parseInt(score.text()) + 1);
       }
-      if (this.score_counter % 500 == 0) {
+
+      if (this.score_counter % 300 == 0) {
         this.speed++;
         this.line_speed++;
       }
 
-      //const sun = $('#sun')
-
-      this.car_down(car_1);
-      this.car_down(car_2);
-      this.car_down(car_3);
-
-      // if (
-      //   this.$moment().isSameOrAfter(this.lastUmbrellaShowed.add(5, 's'))) {
-      //   this.nextUmbrellaShowed = this.$moment().add(10, 's');
-      // }
+      if (!this.collisionBlocker) {
+        this.car_down(car_1);
+        this.car_down(car_2);
+        this.car_down(car_3);
+        this.car_down(car_4);
+      }
 
       if (this.$moment().isSameOrAfter(this.nextUmbrellaShowed) &&
         this.$moment().isSameOrBefore(this.lastUmbrellaShowed) && !this.collisionUmbrella) {
         this.car_down(sombrilla);
-
-        sombrilla.show()
-        //this.nextUmbrellaShowed = this.$moment().add(10, 's');
+        sombrilla.show();
       } else if (this.$moment().isSameOrAfter(this.lastUmbrellaShowed) ) {
         this.nextUmbrellaShowed = this.$moment().add(10, 's');
         this.lastUmbrellaShowed = this.$moment().add(15, 's');
-        this.showedUmbrella = true;
         sombrilla.hide();
+      }
+
+      if (this.$moment().isSameOrAfter(this.nextBlockerShowed) &&
+        this.$moment().isSameOrBefore(this.lastBlockerShowed) && !this.collisionBlocker) {
+        this.car_down(bloqueador)
+        bloqueador.show();
+      } else if (this.$moment().isSameOrAfter(this.lastBlockerShowed) ) {
+        this.nextBlockerShowed = this.$moment().add(20, 's');
+        this.lastBlockerShowed = this.$moment().add(25, 's');
+        car_1.show();
+        car_2.show();
+        car_3.show();
+        bloqueador.hide();
+      }
+
+      if (this.lastTimeCollisionBlocker &&
+        this.$moment().isSameOrAfter(this.lastTimeCollisionBlocker) &&
+        this.collisionBlocker) {
+        this.collisionBlocker = false;
       }
 
       if (this.timeLastCollisionUmbrella &&
@@ -358,40 +393,39 @@ export default {
         this.collisionUmbrella = false;
       }
 
-
-      if (this.$moment().isSameOrAfter(this.nextBlockerShowed) ) {
-        this.car_down(bloqueador);
-        this.nextBlockerShowed = this.$moment().add(20, 's');
-      }
-
-
-      //this.car_down(sun)
-
       this.line_down(line_1);
       this.line_down(line_2);
       this.line_down(line_3);
 
       this.anim_id = requestAnimationFrame(this.repeat);
     },
-    car_down(car) {
-      var container = $("#container");
-      var carD = $("#car");
-      var container_width = parseInt(container.width());
-      var container_height = parseInt(container.height());
-      var car_width = parseInt(carD.width());
+    car_down(car, newObject, numberCurrentTop) {
+      let container = $("#container");
+      let carD = $("#car");
+      let container_width = parseInt(container.width());
+      let container_height = parseInt(container.height());
+      let car_width = parseInt(carD.width());
 
-      var car_current_top = parseInt(car.css("top"));
-      if (car_current_top > container_height) {
-        car_current_top = -200;
-        var car_left = parseInt(Math.random() * (container_width - car_width));
+      let car_current_top;
+      if (newObject) {
+        car_current_top = numberCurrentTop;
+        let car_left = parseInt(Math.random() * (container_width - car_width));
         car.css("left", car_left);
+      } else {
+        car_current_top = parseInt(car.css("top"));
+        if (car_current_top > container_height) {
+          car_current_top = -200;
+          var car_left = parseInt(Math.random() * (container_width - car_width));
+          car.css("left", car_left);
+        }
       }
+
       car.css("top", car_current_top + this.speed);
     },
     line_down(line) {
-      var container = $("#container");
-      var container_height = parseInt(container.height());
-      var line_current_top = parseInt(line.css("top"));
+      let container = $("#container");
+      let container_height = parseInt(container.height());
+      let line_current_top = parseInt(line.css("top"));
       if (line_current_top > container_height) {
         line_current_top = -300;
       }
@@ -571,6 +605,11 @@ export default {
 #sun-3 {
   top: -350px;
   left: 50%;
+}
+
+#sun-4 {
+  top: -500px;
+  left: 30%;
 }
 
 #car_3 {

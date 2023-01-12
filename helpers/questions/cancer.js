@@ -1,6 +1,5 @@
 const questions = [
   {
-    type: 'ABC',
     question: 'Pregunta 1',
     responses: [
       { text: 'Respuesta 1.1', correct: true },
@@ -11,7 +10,6 @@ const questions = [
     nameFileIcon: 'button-wheel.png'
   },
   {
-    type: 'ABC',
     question: 'Pregunta 2',
     responses: [
       { text: 'Respuesta 2.1', correct: true },
@@ -22,7 +20,6 @@ const questions = [
     nameFileIcon: 'button-wheel.png'
   },
   {
-    type: 'ABC',
     question: 'Pregunta 3',
     responses: [
       { text: 'Respuesta 3.1', correct: true },
@@ -33,7 +30,6 @@ const questions = [
     nameFileIcon: 'button-wheel.png'
   },
   {
-    type: 'TRUE_OR_FALSE',
     question: 'Pregunta 4',
     responses: [
       { text: 'Falso', correct: true },
@@ -42,7 +38,6 @@ const questions = [
     nameFileIcon: 'button-wheel.png'
   },
   {
-    type: 'TRUE_OR_FALSE',
     question: 'Pregunta 5',
     responses: [
       { text: 'Falso', correct: true },
@@ -51,7 +46,6 @@ const questions = [
     nameFileIcon: 'button-wheel.png'
   },
   {
-    type: 'TRUE_OR_FALSE',
     question: 'Pregunta 6',
     responses: [
       { text: 'Falso', correct: true },
@@ -60,7 +54,6 @@ const questions = [
     nameFileIcon: 'button-wheel.png'
   },
   {
-    type: 'ABC',
     question: 'Pregunta 7',
     responses: [
       { text: 'Respuesta 7.1', correct: true },
@@ -71,7 +64,6 @@ const questions = [
     nameFileIcon: 'button-wheel.png'
   },
   {
-    type: 'ABC',
     question: 'Pregunta 8',
     responses: [
       { text: 'Respuesta 8.1', correct: true },
