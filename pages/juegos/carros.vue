@@ -154,11 +154,12 @@
           </button>
         </div>
       </div>
+      <div>
+        Score: <span id="score">0</span> High Score:
+        <span id="high_score">0</span>
+      </div>
     </Modal>
-    <div id="score_div" v-show="false">
-      Score: <span id="score">0</span> High Score:
-      <span id="high_score">0</span>
-    </div>
+
 
     <keyboards-events @keydown="onKeyDown" @keyup="onKeyUp"></keyboards-events>
   </main>
@@ -179,7 +180,14 @@ export default {
       move_down: false,
       anim_id: null,
       collisionUmbrella: false,
-      collisionBlocker: false
+      collisionBlocker: false,
+      lastUmbrellaShowed: null,
+      lastBlockerShowed: null,
+      nextUmbrellaShowed: null,
+      nextBlockerShowed: null,
+      showedUmbrella: true,
+      showedBlocker: false,
+      timeLastCollisionUmbrella: null
       //requestAnimationFrame
     };
   },
@@ -193,6 +201,9 @@ export default {
   methods: {
     clickPlayGame() {
       this.$refs["modal-content"].open();
+      this.nextUmbrellaShowed = this.$moment().add(5, 's');
+      this.lastUmbrellaShowed = this.$moment().add(10, 's');
+      this.nextBlockerShowed = this.$moment().add(20, 's');
       this.anim_id = requestAnimationFrame(this.repeat);
     },
     onKeyUp(e) {
@@ -292,8 +303,8 @@ export default {
       }
 
       if (this.collision(car, sombrilla) && !this.collisionUmbrella) {
-        console.log(this.speed)
-        this.speed = this.speed - 1;
+        this.timeLastCollisionUmbrella = this.$moment().add(10, 's');
+        this.speed = this.speed - 4;
         this.collisionUmbrella = true;
         sombrilla.hide();
       }
@@ -322,8 +333,38 @@ export default {
       this.car_down(car_1);
       this.car_down(car_2);
       this.car_down(car_3);
-      this.car_down(sombrilla)
-      this.car_down(bloqueador);
+
+      // if (
+      //   this.$moment().isSameOrAfter(this.lastUmbrellaShowed.add(5, 's'))) {
+      //   this.nextUmbrellaShowed = this.$moment().add(10, 's');
+      // }
+
+      if (this.$moment().isSameOrAfter(this.nextUmbrellaShowed) &&
+        this.$moment().isSameOrBefore(this.lastUmbrellaShowed) && !this.collisionUmbrella) {
+        this.car_down(sombrilla);
+
+        sombrilla.show()
+        //this.nextUmbrellaShowed = this.$moment().add(10, 's');
+      } else if (this.$moment().isSameOrAfter(this.lastUmbrellaShowed) ) {
+        this.nextUmbrellaShowed = this.$moment().add(10, 's');
+        this.lastUmbrellaShowed = this.$moment().add(15, 's');
+        this.showedUmbrella = true;
+        sombrilla.hide();
+      }
+
+      if (this.timeLastCollisionUmbrella &&
+        this.$moment().isSameOrAfter(this.timeLastCollisionUmbrella) &&
+        this.collisionUmbrella) {
+        this.collisionUmbrella = false;
+      }
+
+
+      if (this.$moment().isSameOrAfter(this.nextBlockerShowed) ) {
+        this.car_down(bloqueador);
+        this.nextBlockerShowed = this.$moment().add(20, 's');
+      }
+
+
       //this.car_down(sun)
 
       this.line_down(line_1);
@@ -386,7 +427,7 @@ export default {
 #container {
   position: relative;
   height: 70vh;
-  width: 40%;
+  width: 80%;
   margin: 0 auto;
   margin-top: 20px;
   background-color: #292929;
@@ -397,7 +438,7 @@ export default {
   height: 150px;
   width: 4%;
   margin-left: 48%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgb(255, 255, 255);
 }
 #line_1 {
   top: -150px;
@@ -410,15 +451,15 @@ export default {
 }
 .car {
   position: absolute;
-  height: 60px;
-  width: 40px;
+  height: 75px;
+  width: 50px;
   border-radius: 5px;
   box-shadow: 0px 1px 8px 0px black;
 }
 #car {
   bottom: 8%;
   left: 60%;
-  background-color: #ffdf5a;
+  background-color: #d32424;
 }
 .f_glass {
   position: absolute;
@@ -506,7 +547,7 @@ export default {
 
 #sombrilla {
   position: absolute;
-  top: 50px;
+  top: -50px;
   left: 80%;
 }
 

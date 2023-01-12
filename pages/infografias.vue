@@ -32,7 +32,8 @@ export default {
         {
           name: 'Cáncer de mama',
           url_image: require(`~/static/images/infografias/mama/cancer-de-mama.png`),
-          link: '/etapas/adulto/mujer'
+          link: '/etapas/adulto/mujer',
+          alt: ''
         },
         {
           name: 'Autoexamen de mama y signos de alarma',
@@ -63,6 +64,11 @@ export default {
           name: 'Cáncer de pulmón',
           url_image: require(`~/static/images/infografias/tabaquismo/cancer-de-pulmon.png`),
           link: '/etapas/adolescente'
+        },
+        {
+          name: 'Aprende sobre el cáncer',
+          url_image: require(`~/static/images/infografias/cancer/aprende-sobre-el-cancer.png`),
+          link: '/'
         }
       ],
       url: ''

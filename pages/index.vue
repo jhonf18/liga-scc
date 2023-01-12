@@ -92,7 +92,7 @@
       ref="modal-infographic"
       target="modal-infographic"
       type="image"
-      link-multimedia="https://medicinaysaludpublica.blob.core.windows.net.optimalcdn.com/images/2022/03/27/c%C3%A1ncermesa-de-trabajo-1-9f09e072.png"
+      :link-multimedia="require(`~/static/images/infografias/cancer/aprende-sobre-el-cancer.png`)"
       >
     </Modal>
   </div>
