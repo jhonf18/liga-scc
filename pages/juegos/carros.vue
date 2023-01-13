@@ -153,12 +153,6 @@
               src="~/static/images/playgames/carros/bloqueador.png"
               alt="Imagen de bloqueador">
           </div>
-          <div id="restart_div">
-            <button id="restart">
-              Restart<br />
-              <small class="small_text">(press Enter)</small>
-            </button>
-          </div>
           <div class="absolute top-0 left-0 h-full w-full z-20 bg-gray-500/[0.6] flex items-center justify-center"
             v-if="game_over">
             <div class="max-w-xl">
