@@ -50,18 +50,18 @@
       target="modal-content"
       size="2xl"
       type="playgame"
+      @close="closeModalPlaygame"
       :footer="false"
     >
       <div class="grid grid-cols-4 py-4">
         <div class="col-span-1 relative p-4" style="z-index: 3;">
-          <div class="mb-2 p-2">
-            <h6 class="text-center font-semibold">Tips</h6>
-            <ul class="list-disc text-sm">
+          <div class="mb-2 p-2 bg-blue-600 border text-white rounded border-gray-300 shadow-lg">
+            <h6 class="text-center font-semibold">Tip 1</h6>
+            <ul class="text-sm">
               <li>Recoje las sombrillas para que vayas más lento.</li>
-              <li>Recoje los protectores solares que esconderán los soles para que no puedan perjudicarte.</li>
             </ul>
           </div>
-          <p class="mt-4">
+          <p class="mt-4 text-center font-semibold">
             Puntuación: {{ score }} <br>
             Record: {{ high_score }}
           </p>
@@ -153,12 +153,33 @@
               src="~/static/images/playgames/carros/bloqueador.png"
               alt="Imagen de bloqueador">
           </div>
-          <div class="absolute top-0 left-0 h-full w-full z-20 bg-gray-500/[0.6] flex items-center justify-center"
+          <div class="absolute top-0 left-0 h-full w-full z-20 bg-gray-500/[0.7] flex items-center justify-center"
             v-if="game_over">
             <div class="max-w-xl">
-              Haz obtenido una puntiación de {{ score }} contra el cáncer
+              <span class="text-white font-semibold">
+                Haz obtenido una puntiación de {{ score }} contra el cáncer
+              </span>
               <Button size="block" class="mt-2" variant="secondary" @click="resetGame">Volver a jugar</Button>
             </div>
+          </div>
+          <div class="absolute top-0 left-0 h-full w-full z-20 bg-gray-500/[0.7] flex items-center justify-center"
+            v-if="firstGame">
+            <div class="max-w-xl">
+              <span class="text-white font-semibold">
+                Lee los tips e inicia la carrera contra el cáncer de piel
+              </span>
+              <Button size="block" class="mt-2" variant="secondary" @click="resetGame">
+                Iniciar carrera
+              </Button>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-1 relative p-4" style="z-index: 3;">
+          <div class="mb-2 p-2 bg-blue-600 border text-white rounded border-gray-300 shadow-lg">
+            <h6 class="text-center font-semibold">Tip 2</h6>
+            <ul class="text-sm">
+              <li>Recoje los protectores solares que esconderán los soles para que no puedan perjudicarte.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -204,7 +225,8 @@ export default {
       failAudio: null,
       winAudio: null,
       high_score: 0,
-      score: 0
+      score: 0,
+      firstGame: true
       //requestAnimationFrame
     };
   },
@@ -216,19 +238,20 @@ export default {
       this.lastUmbrellaShowed = this.$moment().add(10, 's');
       this.nextBlockerShowed = this.$moment().add(20, 's');
       this.lastBlockerShowed = this.$moment().add(25, 's');
-      const racingCarAudioFile = require(`~/assets/sounds/racing-car.mp3`).default;
-      this.racingCarAudio = new Audio(racingCarAudioFile);
       this.racingCarAudio.loop = true;
       this.racingCarAudio.volume = 0.2;
       this.racingCarAudio.play();
-      this.failAudio = new Audio(require(`~/assets/sounds/fail.mp3`).default)
-      this.winAudio = new Audio(require(`~/assets/sounds/correct.mp3`).default)
+
       this.line_speed = 5;
       this.speed = 5;
       this.score = 0;
-      this.high_score = localStorage.getItem('high_score') || 0;
       this.game_over = false;
       this.anim_id = requestAnimationFrame(this.repeat);
+
+      this.move_left = false;
+      this.move_right = false;
+      this.move_up =  false;
+      this.move_down = false;
 
       let car_1 = $("#sun-1");
       let car_2 = $("#sun-2");
@@ -244,9 +267,23 @@ export default {
       sombrilla.css('top', -90);
       bloqueador.css('top', -150)
     },
+    closeModalPlaygame() {
+      this.racingCarAudio.pause();
+      this.winAudio.pause();
+      this.failAudio.pause();
+      this.firstGame = true;
+      this.game_over = false;
+      this.score = 0;
+    },
     clickPlayGame() {
       this.$refs["modal-content"].open();
-      this.resetGame(true);
+      this.failAudio = new Audio(require(`~/assets/sounds/fail.mp3`).default)
+      this.winAudio = new Audio(require(`~/assets/sounds/correct.mp3`).default)
+      const racingCarAudioFile = require(`~/assets/sounds/racing-car.mp3`).default;
+      this.racingCarAudio = new Audio(racingCarAudioFile);
+      //this.resetGame();
+      this.firstGame = true;
+      this.high_score = localStorage.getItem('high_score') || 0;
     },
     onKeyUp(e) {
       if (this.game_over === false) {
@@ -322,6 +359,7 @@ export default {
       }
     },
     repeat() {
+      this.firstGame = false;
       let car = $("#car");
       let car_1 = $("#sun-1");
       let car_2 = $("#sun-2");
@@ -343,6 +381,7 @@ export default {
         this.failAudio.play()
         localStorage.setItem('high_score', this.high_score);
         this.game_over = true;
+        this.firstGame = false;
         return;
       }
 
