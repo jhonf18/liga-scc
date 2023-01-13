@@ -505,7 +505,6 @@ export default {
   align-items: center;
   justify-content: center;
   z-index: 1;
-  //padding:300px;
 }
 
 .cloud {
@@ -551,20 +550,20 @@ export default {
 
 @keyframes cloudAnimation {
   0%{
-    transform: translate(-100px,0);
+    transform: translate(-100px, 0);
   }
   100% {
-    transform: translate(600px,0);
+    transform: translate(600px, 0);
   }
 }
 
 .tree-big {
-  display:inline-box;
+  display:inline-block;
   width:10px;
   height:120px;
   background:#444;
   position:absolute;
-  bottom:0
+  bottom:0;
 }
 
 .tree-big:before {
@@ -588,21 +587,21 @@ export default {
 }
 
 .tree {
-  display:inline-box;
+  display:inline-block;
   width:10px;
   height:100px;
   background:#444;
   position:absolute;
-  bottom:0
+  bottom:0;
 }
 
 .tree:before {
   content:"";
-width: 0;
-height: 0;
-border-style: solid;
-border-width: 0 30px 100px 30px;
-border-color: transparent transparent #1bb845 transparent;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 30px 100px 30px;
+  border-color: transparent transparent #1bb845 transparent;
   position:absolute;
   bottom:30px;
   left:-25px;
@@ -737,21 +736,9 @@ border-color: transparent transparent #1bb845 transparent;
   left: 80%;
 }
 
-#car_1 {
-  top: -100px;
-  left: 60%;
-  background-color: #26c5ff;
-}
-
 #sun-2 {
   top: -200px;
   left: 40%;
-}
-
-#car_2 {
-  top: -200px;
-  left: 40%;
-  background-color: #26c5ff;
 }
 
 #sun-3 {
@@ -764,54 +751,7 @@ border-color: transparent transparent #1bb845 transparent;
   left: 30%;
 }
 
-#car_3 {
-  top: -350px;
-  left: 50%;
-  background-color: #26c5ff;
-}
-#restart_div {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: #292929;
-  color: white;
-  font-family: sans-serif;
-  font-size: 40px;
-  text-align: center;
-  display: none;
-}
 
-#restart {
-  border: none;
-  padding: 25px;
-  color: white;
-  background-color: #8a64ff;
-  font-size: 30px;
-  margin-top: 30%;
-}
-.small_text {
-  font-size: 15px;
-}
-#score_div {
-  position: absolute;
-  margin-top: 20%;
-  margin-left: 10%;
-  font-size: 35px;
-  background-color: white;
-  color: #454545;
-  padding: 10px;
-  box-shadow: 4px 4px 0px 1px #808080;
-}
-#help {
-  text-align: center;
-}
-#donate {
-  position: absolute;
-  right: 10px;
-  top: 25px;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 12px;
-}
 
 /* sun */
 @-webkit-keyframes sunrolling {
