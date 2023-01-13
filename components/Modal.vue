@@ -27,7 +27,8 @@
             'max-w-lg': size === 'md' && type === 'text',
             'max-w-3xl': size === 'lg' && type === 'text',
             'max-w-4xl': size === 'xl' && type === 'text',
-            'max-w-5xl': type !== 'text',
+            'max-w-5xl': type !== 'text' && type !== 'playgame',
+            'max-w-6xl': type === 'playgame',
             'scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-400 scrollbar-track-gray-200': type === 'image'
           }">
           <header v-if="type === 'text'" class="modal-header">
@@ -50,6 +51,9 @@
             :ref="`modal-body-${id}`"
             :style="stylesModalBody"
             class="modal-body scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-200 scrollbar-track-gray-100 dark:scrollbar-thumb-gray-500 dark:scrollbar-track-gray-400">
+            <slot></slot>
+          </div>
+          <div v-if="type === 'playgame'" class="relative">
             <slot></slot>
           </div>
           <div v-if="type === 'iframe'" class="container-iframe">

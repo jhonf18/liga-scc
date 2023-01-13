@@ -17,16 +17,16 @@ export default {
         url_infographic: 'https://ciencia.unam.mx/uploads/infografias/if_cancer_piel_26062018.jpg',
         play_games: [
           {
-            name: 'Tres en raya',
+            name: 'Hazle triqui al cáncer de próstata',
             link: '/juegos/tic-tac-toe-hombre',
             url_image: require('~/static/images/tic-tac-hombre.png'),
-            description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
+            description: 'Desafía con tu conocimiento al cáncer de próstata y márcale tres en raya para vencerlo.'
           },
           {
-            name: 'Ahorcado',
+            name: 'Sálvate de ir a la horca  por el cáncer de próstata',
             link: '/juegos/ahorcado',
             url_image: require('~/static/images/ahorcado.png'),
-            description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
+            description: 'Identifica la palabra oculta que te ayudará a salvarte y vencer el cáncer de próstata.'
           },
         ],
         infographics: [

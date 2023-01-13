@@ -16,17 +16,17 @@ export default {
         url_video: 'https://www.youtube.com/embed/zqYc5c4bOZ8?feature=oembed',
         play_games: [
           {
-            name: 'Simón dice',
-            link: '/juegos/simon-dice',
-            url_image: require('~/static/images/simon-dice.png'),
-            description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
-          },
-          {
-            name: 'Recordar',
+            name: 'Reconoce los signos y vence al cáncer de mama ',
             link: '/juegos/recordar',
             url_image: require('~/static/images/recordar.png'),
-            description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
-          }
+            description: 'Pon a prueba tu memoria para recordar y detectar a tiempo los signos de alarma y vencer al cáncer de mama.'
+          },
+          {
+            name: 'Ve al ritmo de la liga con el autoexamen de mama',
+            link: '/juegos/simon-dice',
+            url_image: require('~/static/images/simon-dice.png'),
+            description: 'Sigue el ritmo que te indica la liga y aprende a realizar el autoexamen de mama.'
+          },
         ],
         infographics: [
           {

@@ -17,17 +17,17 @@ export default {
         url_infographic: 'https://ciencia.unam.mx/uploads/infografias/if_cancer_piel_26062018.jpg',
         play_games: [
           {
-            name: 'Tic tac adolescente',
-            link: '/juegos/tic-tac-toe-adolescente',
-            url_image: require('~/static/images/tic-tac-adolescente.png'),
-            description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
-          },
-          {
-            name: 'Puzzle',
+            name: 'Organiza las fichas para luchar contra  el cáncer de pulmón',
             link: '/juegos/puzzle',
             url_image: require('~/static/images/puzzle.png'),
-            description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
-          }
+            description: 'Demuestra que tanto sabes sobre el cáncer de pulmón y ordena las fichas del conocimiento para vencerlo.'
+          },
+          {
+            name: 'Márcale triqui al Tabaquismo',
+            link: '/juegos/tic-tac-toe-adolescente',
+            url_image: require('~/static/images/tic-tac-adolescente.png'),
+            description: 'Enfréntate al principal factor de riesgo del cáncer de pulmón y vencelo con estrategia y conocimiento.'
+          },
         ],
         infographics: [
           {

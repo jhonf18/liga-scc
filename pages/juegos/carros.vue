@@ -1,5 +1,6 @@
 <template>
   <main>
+    <!-- TODO: Refactorizar codigo y realizar la versión movil del juego -->
     <h1 class="text-2xl sm:text-4xl font-bold text-primary text-center">
       Carros
     </h1>
@@ -47,116 +48,134 @@
       id="modal-content"
       ref="modal-content"
       target="modal-content"
-      size="xl"
+      size="2xl"
+      type="playgame"
       :footer="false"
     >
-      <div id="container">
-        <div id="line_1" class="line"></div>
-        <div id="line_2" class="line"></div>
-        <div id="line_3" class="line"></div>
-        <div id="car" class="car">
-          <div class="f_glass"></div>
-          <div class="b_glass"></div>
-          <div class="f_light_l"></div>
-          <div class="f_light_r"></div>
-          <div class="f_tyre_l"></div>
-          <div class="f_tyre_r"></div>
-          <div class="b_tyre_l"></div>
-          <div class="b_tyre_r"></div>
-        </div>
-        <div class="sun" :id="'sun-' + i" v-for="i in 4" :key="'sun-' + i">
-          <div class="sun-face">
-            <div class="sun-hlight"></div>
-            <div class="sun-leye"></div>
-            <div class="sun-reye"></div>
-            <div class="sun-lred"></div>
-            <div class="sun-rred"></div>
-            <div class="sun-nose"></div>
+      <div class="grid grid-cols-4 py-4">
+        <div class="col-span-1 relative p-4" style="z-index: 3;">
+          <div class="mb-2 p-2">
+            <h6 class="text-center font-semibold">Tips</h6>
+            <ul class="list-disc text-sm">
+              <li>Recoje las sombrillas para que vayas más lento.</li>
+              <li>Recoje los protectores solares que esconderán los soles para que no puedan perjudicarte.</li>
+            </ul>
           </div>
-          <div class="sun-anime">
-            <div class="sun-ball"></div>
-            <div class="sun-light">
-              <b></b>
-              <s></s>
+          <p class="mt-4">
+            Puntuación: {{ score }} <br>
+            Record: {{ high_score }}
+          </p>
+        </div>
+        <div id="container" style="z-index: 3;" class="col-span-2">
+          <div id="line_1" class="line"></div>
+          <div id="line_2" class="line"></div>
+          <div id="line_3" class="line"></div>
+          <div id="car" class="car">
+            <div class="f_glass"></div>
+            <div class="b_glass"></div>
+            <div class="f_light_l"></div>
+            <div class="f_light_r"></div>
+            <div class="f_tyre_l"></div>
+            <div class="f_tyre_r"></div>
+            <div class="b_tyre_l"></div>
+            <div class="b_tyre_r"></div>
+          </div>
+          <div class="sun" :id="'sun-' + i" v-for="i in 4" :key="'sun-' + i">
+            <div class="sun-face">
+              <div class="sun-hlight"></div>
+              <div class="sun-leye"></div>
+              <div class="sun-reye"></div>
+              <div class="sun-lred"></div>
+              <div class="sun-rred"></div>
+              <div class="sun-nose"></div>
             </div>
-            <div class="sun-light">
-              <b></b>
-              <s></s>
-            </div>
-            <div class="sun-light">
-              <b></b>
-              <s></s>
-            </div>
-            <div class="sun-light">
-              <b></b>
-              <s></s>
-            </div>
-            <div class="sun-light">
-              <b></b>
-              <s></s>
-            </div>
-            <div class="sun-light">
-              <b></b>
-              <s></s>
-            </div>
-            <div class="sun-light">
-              <b></b>
-              <s></s>
-            </div>
-            <div class="sun-light">
-              <b></b>
-              <s></s>
-            </div>
-            <div class="sun-light">
-              <b></b>
-              <s></s>
-            </div>
-            <div class="sun-light">
-              <b></b>
-              <s></s>
-            </div>
-            <div class="sun-light">
-              <b></b>
-              <s></s>
-            </div>
-            <div class="sun-light">
-              <b></b>
-              <s></s>
+            <div class="sun-anime">
+              <div class="sun-ball"></div>
+              <div class="sun-light">
+                <b></b>
+                <s></s>
+              </div>
+              <div class="sun-light">
+                <b></b>
+                <s></s>
+              </div>
+              <div class="sun-light">
+                <b></b>
+                <s></s>
+              </div>
+              <div class="sun-light">
+                <b></b>
+                <s></s>
+              </div>
+              <div class="sun-light">
+                <b></b>
+                <s></s>
+              </div>
+              <div class="sun-light">
+                <b></b>
+                <s></s>
+              </div>
+              <div class="sun-light">
+                <b></b>
+                <s></s>
+              </div>
+              <div class="sun-light">
+                <b></b>
+                <s></s>
+              </div>
+              <div class="sun-light">
+                <b></b>
+                <s></s>
+              </div>
+              <div class="sun-light">
+                <b></b>
+                <s></s>
+              </div>
+              <div class="sun-light">
+                <b></b>
+                <s></s>
+              </div>
+              <div class="sun-light">
+                <b></b>
+                <s></s>
+              </div>
             </div>
           </div>
-        </div>
-        <div id="sombrilla" style="width: 70px; height: 70px" class="absolute">
-          <img
-            class="w-full h-full"
-            src="~/static/images/playgames/carros/sombrilla.png"
-            alt="Imagen de sombrilla">
-        </div>
-        <div id="bloqueador" style="width: 70px; height: 70px" class="absolute">
-          <img
-            class="w-full h-full"
-            src="~/static/images/playgames/carros/bloqueador.png"
-            alt="Imagen de bloqueador">
-        </div>
-        <div id="car_3" v-if="false" class="car">
-          <div class="f_glass"></div>
-          <div class="b_glass"></div>
-          <div class="f_light_l"></div>
-          <div class="f_light_r"></div>
-          <div class="f_tyre_l"></div>
-          <div class="f_tyre_r"></div>
-          <div class="b_tyre_l"></div>
-          <div class="b_tyre_r"></div>
-        </div>
-        <div id="restart_div">
-          <button id="restart">
-            Restart<br />
-            <small class="small_text">(press Enter)</small>
-          </button>
+          <div id="sombrilla" style="width: 70px; height: 70px" class="absolute">
+            <img
+              class="w-full h-full"
+              src="~/static/images/playgames/carros/sombrilla.png"
+              alt="Imagen de sombrilla">
+          </div>
+          <div id="bloqueador" style="width: 70px; height: 70px" class="absolute">
+            <img
+              class="w-full h-full"
+              src="~/static/images/playgames/carros/bloqueador.png"
+              alt="Imagen de bloqueador">
+          </div>
+          <div id="restart_div">
+            <button id="restart">
+              Restart<br />
+              <small class="small_text">(press Enter)</small>
+            </button>
+          </div>
+          <div class="absolute top-0 left-0 h-full w-full z-20 bg-gray-500/[0.6] flex items-center justify-center"
+            v-if="game_over">
+            <div class="max-w-xl">
+              Haz obtenido una puntiación de {{ score }} contra el cáncer
+              <Button size="block" class="mt-2" variant="secondary" @click="resetGame">Volver a jugar</Button>
+            </div>
+          </div>
         </div>
       </div>
-      <div>
-        Score: <span id="score">0</span> High Score:
-        <span id="high_score">0</span>
+
+      <div class="content absolute h-full w-full top-0 left-0">
+        <div class="cloud"></div>
+        <div class="cloud x"></div>
+        <div class="tree" id="tree-1"></div>
+        <div class="tree-big" id="tree-b-1"></div>
+        <div class="tree" id="tree-2"></div>
+        <div class="tree-big" id="tree-b-2"></div>
       </div>
     </Modal>
 
@@ -189,25 +208,20 @@ export default {
       lastTimeCollisionBlocker: null,
       racingCarAudio: null,
       failAudio: null,
-      winAudio: null
+      winAudio: null,
+      high_score: 0,
+      score: 0
       //requestAnimationFrame
     };
   },
   mounted() {
-    if (process.client) {
-      /* Move the cars and lines */
-      //this.anim_id = requestAnimationFrame(this.repeat);
-      //this.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-    }
   },
   methods: {
-    clickPlayGame() {
-      this.$refs["modal-content"].open();
+    resetGame() {
       this.nextUmbrellaShowed = this.$moment().add(5, 's');
       this.lastUmbrellaShowed = this.$moment().add(10, 's');
       this.nextBlockerShowed = this.$moment().add(20, 's');
       this.lastBlockerShowed = this.$moment().add(25, 's');
-      this.anim_id = requestAnimationFrame(this.repeat);
       const racingCarAudioFile = require(`~/assets/sounds/racing-car.mp3`).default;
       this.racingCarAudio = new Audio(racingCarAudioFile);
       this.racingCarAudio.loop = true;
@@ -217,6 +231,28 @@ export default {
       this.winAudio = new Audio(require(`~/assets/sounds/correct.mp3`).default)
       this.line_speed = 5;
       this.speed = 5;
+      this.score = 0;
+      this.high_score = localStorage.getItem('high_score') || 0;
+      this.game_over = false;
+      this.anim_id = requestAnimationFrame(this.repeat);
+
+      let car_1 = $("#sun-1");
+      let car_2 = $("#sun-2");
+      let car_3 = $("#sun-3");
+      let car_4 = $("#sun-4");
+      let sombrilla = $('#sombrilla');
+      let bloqueador = $('#bloqueador');
+
+      car_1.css("top", -100);
+      car_2.css("top", -200);
+      car_3.css("top", -350);
+      car_4.css("top", -500);
+      sombrilla.css('top', -90);
+      bloqueador.css('top', -150)
+    },
+    clickPlayGame() {
+      this.$refs["modal-content"].open();
+      this.resetGame(true);
     },
     onKeyUp(e) {
       if (this.game_over === false) {
@@ -292,27 +328,27 @@ export default {
       }
     },
     repeat() {
-      let container = $("#container");
       let car = $("#car");
       let car_1 = $("#sun-1");
       let car_2 = $("#sun-2");
       let car_3 = $("#sun-3");
       let car_4 = $("#sun-4");
       let sombrilla = $('#sombrilla');
-      let bloqueador = $('#bloqueador')
+      let bloqueador = $('#bloqueador');
       let line_1 = $("#line_1");
       let line_2 = $("#line_2");
       let line_3 = $("#line_3");
-      let score = $("#score");
 
       if (
         this.collision(car, car_1) ||
         this.collision(car, car_2) ||
-        this.collision(car, car_3)
+        this.collision(car, car_3) ||
+        this.collision(car, car_4)
       ) {
         this.racingCarAudio.pause()
         this.failAudio.play()
-        //stop_the_game();
+        localStorage.setItem('high_score', this.high_score);
+        this.game_over = true;
         return;
       }
 
@@ -343,7 +379,11 @@ export default {
       this.score_counter++;
 
       if (this.score_counter % 20 == 0) {
-        score.text(parseInt(score.text()) + 1);
+        this.score++;
+        if (this.score >= this.high_score) {
+          this.high_score = this.score;
+        }
+        //score.text(parseInt(score.text()) + 1);
       }
 
       if (this.score_counter % 300 == 0) {
@@ -359,7 +399,7 @@ export default {
       }
 
       if (this.$moment().isSameOrAfter(this.nextUmbrellaShowed) &&
-        this.$moment().isSameOrBefore(this.lastUmbrellaShowed) && !this.collisionUmbrella) {
+        this.$moment().isSameOrBefore(this.lastUmbrellaShowed) && !this.collisionUmbrella && !this.collisionBlocker) {
         this.car_down(sombrilla);
         sombrilla.show();
       } else if (this.$moment().isSameOrAfter(this.lastUmbrellaShowed) ) {
@@ -458,20 +498,132 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+
+.content {
+  background:skyblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  //padding:300px;
+}
+
+.cloud {
+  display:inline-block;
+  background:white;
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  position:relative;
+  top:-30px;
+  -webkit-filter: blur(6px);
+  z-index:2;
+  left:-50px;
+  animation: 15000ms cloudAnimation linear infinite;
+  opacity:0.76;
+}
+.cloud:before {
+  content:"";
+  display:inline-block;
+  background:white;
+  width:100px;
+  height:100px;
+  -webkit-filter: blur(3px);
+  position:relative;
+  border-radius:50%;
+  top:-30px;
+  left:60px;
+}
+.cloud:after {
+  content:"";
+  display:inline-block;
+  background:white;
+  width:200px;
+  height:100px;
+  -webkit-filter: blur(3px);
+  position:relative;
+  border-radius:50%;
+  top:-80px;
+  left:70px;
+}
+
+.cloud:first-child {zoom:1.5;}
+
+@keyframes cloudAnimation {
+  0%{
+    transform: translate(-100px,0);
+  }
+  100% {
+    transform: translate(600px,0);
+  }
+}
+
+.tree-big {
+  display:inline-box;
+  width:10px;
+  height:120px;
+  background:#444;
+  position:absolute;
+  bottom:0
+}
+
+.tree-big:before {
+  content:"";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 40px 120px 40px;
+  border-color: transparent transparent #1bb845 transparent;
+  position:absolute;
+  bottom:60px;
+  left:-30px;
+}
+
+#tree-b-1 {
+  right: 5%;
+}
+
+#tree-b-2 {
+  right: 15%;
+}
+
+.tree {
+  display:inline-box;
+  width:10px;
+  height:100px;
+  background:#444;
+  position:absolute;
+  bottom:0
+}
+
+.tree:before {
+  content:"";
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 0 30px 100px 30px;
+border-color: transparent transparent #1bb845 transparent;
+  position:absolute;
+  bottom:30px;
+  left:-25px;
+}
+
+#tree-1 { left: 5%; }
+#tree-2 { right: 10%; }
+
 #container {
   position: relative;
   height: 70vh;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
-  margin-top: 20px;
-  background-color: #292929;
+  background-color: #707070;
   overflow: hidden;
 }
 .line {
   position: absolute;
   height: 150px;
-  width: 4%;
-  margin-left: 48%;
+  width: 2.5%;
+  margin-left: 48.75%;
   background-color: rgb(255, 255, 255);
 }
 #line_1 {
@@ -581,7 +733,7 @@ export default {
 
 #sombrilla {
   position: absolute;
-  top: -50px;
+  top: -90px;
   left: 80%;
 }
 
@@ -873,26 +1025,10 @@ export default {
 .sun-ball {
   width: 100%;
   height: 100%;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  -ie-border-radius: 100%;
-  -o-border-radius: 100%;
   border-radius: 100%;
   background: #ffcf11;
-  background-image: -webkit-radial-gradient(
-    circle,
-    #ffdf05,
-    #ffcf11
-  ); /* Chrome 10+, Saf5.1+ */
-  background-image: -moz-radial-gradient(circle, #ffdf05, #ffcf11);
-  background-image: -o-radial-gradient(circle, #ffdf05, #ffcf11);
-  background-image: -ie-radial-gradient(circle, #ffdf05, #ffcf11);
   background-image: radial-gradient(circle, #ffdf05, #ffdf05);
-  -webkit-box-shadow: 0 0 100px #ffdf05;
-  -moz-box-shadow: 0 0 100px #ffdf05;
-  -ie-box-shadow: 0 0 100px #ffdf05;
-  -o-box-shadow: 0 0 100px #ffdf05;
-  box-shadow: 0 0 100px #ffdf05;
+  box-shadow: 0 0 20px #ffdf05;
 }
 .sun-light {
   position: absolute;

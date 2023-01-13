@@ -17,52 +17,52 @@ export default {
     return {
       play_games: [
         {
-          name: 'Tic Tac Hombre',
+          name: 'Hazle triqui al cáncer de próstata',
           link: '/juegos/tic-tac-toe-hombre',
           url_image: require('~/static/images/tic-tac-hombre.png'),
-          description: 'excepturi porro dolor voluptatibus iusto voluptas quis.'
+          description: 'Desafía con tu conocimiento al cáncer de próstata y márcale tres en raya para vencerlo.'
         },
         {
-          name: 'Tic Tac Adolescente',
-          link: '/juegos/tic-tac-toe-adolescente',
-          url_image: require('~/static/images/tic-tac-adolescente.png'),
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
-        },
-        {
-          name: 'Recordar',
+          name: 'Reconoce los signos y vence al cáncer de mama ',
           link: '/juegos/recordar',
           url_image: require('~/static/images/recordar.png'),
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
+          description: 'Pon a prueba tu memoria para recordar y detectar a tiempo los signos de alarma y vencer al cáncer de mama.'
         },
         {
-          name: 'Puzzle',
+          name: 'Organiza las fichas para luchar contra  el cáncer de pulmón',
           link: '/juegos/puzzle',
           url_image: require('~/static/images/puzzle.png'),
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
+          description: 'Demuestra que tanto sabes sobre el cáncer de pulmón y ordena las fichas del conocimiento para vencerlo.'
         },
         {
-          name: 'Simón dice',
+          name: 'Ve al ritmo de la liga con el autoexamen de mama',
           link: '/juegos/simon-dice',
           url_image: require('~/static/images/simon-dice.png'),
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
+          description: 'Sigue el ritmo que te indica la liga y aprende a realizar el autoexamen de mama.'
         },
         {
-          name: 'Ahorcado',
-          link: '/juegos/ahorcado',
-          url_image: require('~/static/images/ahorcado.png'),
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
-        },
-        {
-          name: 'Trivia',
+          name: 'Trivia contra el cáncer',
           link: '/juegos/trivia',
           url_image: require('~/static/images/trivia.png'),
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
+          description: 'Vence la trivia del cáncer desde el conocimiento.'
         },
         {
-          name: 'Carros: Falta',
+          name: 'Sálvate de ir a la horca  por el cáncer de próstata',
+          link: '/juegos/ahorcado',
+          url_image: require('~/static/images/ahorcado.png'),
+          description: 'Identifica la palabra oculta que te ayudará a salvarte y vencer el cáncer de próstata.'
+        },
+        {
+          name: 'Márcale triqui al Tabaquismo',
+          link: '/juegos/tic-tac-toe-adolescente',
+          url_image: require('~/static/images/tic-tac-adolescente.png'),
+          description: 'Enfréntate al principal factor de riesgo del cáncer de pulmón y vencelo con estrategia y conocimiento.'
+        },
+        {
+          name: 'La carrera contra el  sol',
           link: '/juegos/carros',
-          url_image: require('~/static/images/puzzle.png'),
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi quaerat culpa minus dolorem, laudantium harum doloremque eos fugiat fugit itaque. Molestias eaque, numquam excepturi porro dolor voluptatibus iusto voluptas quis.'
+          url_image: require('~/static/images/carros.png'),
+          description: 'Compite esquivando los efectos del sol y usa tu destreza al volante para obtener elementos de protección contra el sol.'
         },
       ]
     }
