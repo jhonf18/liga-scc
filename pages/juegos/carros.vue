@@ -53,8 +53,8 @@
       @close="closeModalPlaygame"
       :footer="false"
     >
-      <div class="grid grid-cols-4 py-4">
-        <div class="col-span-1 relative p-4" style="z-index: 3;">
+      <div class="lg:grid grid-cols-4 py-4 px-2 lg:px-0">
+        <div class="col-span-1 relative p-4 hidden lg:block" style="z-index: 3;">
           <div class="mb-2 p-2 bg-blue-600 border text-white rounded border-gray-300 shadow-lg">
             <h6 class="text-center font-semibold">Tip 1</h6>
             <ul class="text-sm">
@@ -80,7 +80,7 @@
             <div class="b_tyre_l"></div>
             <div class="b_tyre_r"></div>
           </div>
-          <div class="sun" :id="'sun-' + i" v-for="i in 4" :key="'sun-' + i">
+          <div class="sun w-13 lg:w-15 h-13 lg:h-15" :id="'sun-' + i" v-for="i in 4" :key="'sun-' + i">
             <div class="sun-face">
               <div class="sun-hlight"></div>
               <div class="sun-leye"></div>
@@ -141,13 +141,13 @@
               </div>
             </div>
           </div>
-          <div id="sombrilla" style="width: 70px; height: 70px" class="absolute">
+          <div id="sombrilla" class="absolute w-15 lg:w-17">
             <img
               class="w-full h-full"
               src="~/static/images/playgames/carros/sombrilla.png"
               alt="Imagen de sombrilla">
           </div>
-          <div id="bloqueador" style="width: 70px; height: 70px" class="absolute">
+          <div id="bloqueador" class="absolute w-15 lg:w-17">
             <img
               class="w-full h-full"
               src="~/static/images/playgames/carros/bloqueador.png"
@@ -155,7 +155,7 @@
           </div>
           <div class="absolute top-0 left-0 h-full w-full z-20 bg-gray-500/[0.7] flex items-center justify-center"
             v-if="game_over">
-            <div class="max-w-xl">
+            <div class="max-w-xl px-2 text-center">
               <span class="text-white font-semibold">
                 Haz obtenido una puntiación de {{ score }} contra el cáncer
               </span>
@@ -164,7 +164,7 @@
           </div>
           <div class="absolute top-0 left-0 h-full w-full z-20 bg-gray-500/[0.7] flex items-center justify-center"
             v-if="firstGame">
-            <div class="max-w-xl">
+            <div class="max-w-xl px-2 text-center">
               <span class="text-white font-semibold">
                 Lee los tips e inicia la carrera contra el cáncer de piel
               </span>
@@ -178,7 +178,7 @@
             <div class="col-span-1" v-touch:touchhold="touchRight" v-touch:longtap="stopTouchRight"></div>
           </div>
         </div>
-        <div class="col-span-1 relative p-4" style="z-index: 3;">
+        <div class="col-span-1 relative p-4 hidden lg:block" style="z-index: 3;">
           <div class="mb-2 p-2 bg-blue-600 border text-white rounded border-gray-300 shadow-lg">
             <h6 class="text-center font-semibold">Tip 2</h6>
             <ul class="text-sm">
@@ -689,13 +689,23 @@ export default {
 #line_3 {
   top: 450px;
 }
+
 .car {
   position: absolute;
-  height: 75px;
-  width: 50px;
+  height: 60px;
+  width: 40px;
   border-radius: 5px;
   box-shadow: 0px 1px 8px 0px black;
 }
+
+@media (min-width: 1024px) {
+  .car {
+    height: 75px;
+    width: 50px;
+  }
+}
+
+
 #car {
   bottom: 8%;
   left: 60%;
@@ -877,10 +887,8 @@ export default {
 .sun {
   float: left;
   position: relative;
-  /* margin: 30px; */
-  width: 60px;
-  height: 60px;
 }
+
 .sun-face {
   position: absolute;
   z-index: 1;
@@ -897,17 +905,15 @@ export default {
 .sun-leye,
 .sun-reye {
   position: absolute;
-  top: 0.85em;
-  left: 0.75em;
-  width: 0.35em;
-  height: 0.6em;
+  top: 0.55em;
+  left: 0.65em;
+  width: 0.25em;
+  height: 0.4em;
   background: #565656;
-  -webkit-border-radius: 0.4em / 0.8em;
-  -moz-border-radius: 0.4em / 0.8em;
-  -o-border-radius: 0.4em / 0.8em;
-  -ms-border-radius: 0.4em / 0.8em;
   border-radius: 0.4em / 0.8em;
 }
+
+
 .sun-leye:after,
 .sun-reye:after {
   position: absolute;
@@ -927,10 +933,6 @@ export default {
   height: 0.2em;
   background: #ffdf05;
   content: "";
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 .sun-reye {
@@ -940,36 +942,30 @@ export default {
 .sun-lred,
 .sun-rred {
   position: absolute;
-  top: 1.3em;
+  top: .9em;
   left: -0.2em;
-  width: 0.7em;
+  width: 0.5em;
   height: 0.35em;
   opacity: 0.6;
   background: #ff5e00;
-  -webkit-border-radius: 0.7em / 0.35em;
-  -moz-border-radius: 0.7em / 0.35em;
-  -ms-border-radius: 0.7em / 0.35em;
-  -o-border-radius: 0.7em / 0.35em;
   border-radius: 0.7em / 0.35em;
 }
+
 .sun-rred {
   left: auto;
   right: -0.2em;
 }
 .sun-nose {
   position: absolute;
-  bottom: 0.8em;
+  bottom: 0.75em;
   left: 50%;
   margin-left: -0.2em;
   width: 0.3em;
   height: 0.1em;
   background: #565656;
-  -webkit-border-radius: 0.2em 0.2em 0 0 / 0.1em 0.1em 0 0;
-  -moz-border-radius: 0.2em 0.2em 0 0 / 0.1em 0.1em 0 0;
-  -ms-border-radius: 0.2em 0.2em 0 0 / 0.1em 0.1em 0 0;
-  -o-border-radius: 0.2em 0.2em 0 0 / 0.1em 0.1em 0 0;
   border-radius: 0.2em 0.2em 0 0 / 0.1em 0.1em 0 0;
 }
+
 .sun-nose:after {
   position: absolute;
   bottom: -0.2em;
@@ -977,13 +973,10 @@ export default {
   width: 0.3em;
   height: 0.2em;
   background: #565656;
-  -webkit-border-radius: 0 0 0.2em 0.2em;
-  -moz-border-radius: 0 0 0.2em 0.2em;
-  -ms-border-radius: 0 0 0.2em 0.2em;
-  -o-border-radius: 0 0 0.2em 0.2em;
   border-radius: 0 0 0.2em 0.2em;
   content: "";
 }
+
 .sun-nose:before {
   position: absolute;
   top: 0;
@@ -994,6 +987,7 @@ export default {
   background: #565656;
   content: "";
 }
+
 .sun-hlight {
   position: absolute;
   top: 0.6em;
@@ -1002,19 +996,11 @@ export default {
   height: 0.35em;
   opacity: 0.8;
   background: #fcf0a3;
-  -webkit-border-radius: 0.35em;
-  -moz-border-radius: 0.35em;
-  -ms-border-radius: 0.35em;
-  -o-border-radius: 0.35em;
   border-radius: 0.35em;
 }
 .sun-anime {
   width: 100%;
   height: 100%;
-  -webkit-animation: sunrolling 30s infinite;
-  -moz-animation: sunrolling 30s infinite;
-  -ie-animation: sunrolling 30s infinite;
-  -o-animation: sunrolling 30s infinite;
   animation: sunrolling 30s infinite;
 }
 .sun-ball {
@@ -1046,66 +1032,53 @@ export default {
   bottom: 0;
 }
 .sun-light:nth-child(10n + 2) {
-  -webkit-transform: rotate(18deg);
-  -moz-transform: rotate(18deg);
-  -o-transform: rotate(18deg);
-  -ie-transform: rotate(18deg);
   transform: rotate(18deg);
 }
 .sun-light:nth-child(10n + 3) {
-  -webkit-transform: rotate(36deg);
-  -moz-transform: rotate(36deg);
-  -o-transform: rotate(36deg);
-  -ie-transform: rotate(36deg);
   transform: rotate(36deg);
 }
 .sun-light:nth-child(10n + 4) {
-  -webkit-transform: rotate(54deg);
-  -moz-transform: rotate(54deg);
-  -o-transform: rotate(54deg);
-  -ie-transform: rotate(54deg);
   transform: rotate(54deg);
 }
 .sun-light:nth-child(10n + 5) {
-  -webkit-transform: rotate(72deg);
-  -moz-transform: rotate(72deg);
-  -o-transform: rotate(72deg);
-  -ie-transform: rotate(72deg);
   transform: rotate(72deg);
 }
 .sun-light:nth-child(10n + 6) {
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  -ie-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 .sun-light:nth-child(10n + 7) {
-  -webkit-transform: rotate(108deg);
-  -moz-transform: rotate(108deg);
-  -o-transform: rotate(108deg);
-  -ie-transform: rotate(108deg);
   transform: rotate(108deg);
 }
 .sun-light:nth-child(10n + 8) {
-  -webkit-transform: rotate(126deg);
-  -moz-transform: rotate(126deg);
-  -o-transform: rotate(126deg);
-  -ie-transform: rotate(126deg);
   transform: rotate(126deg);
 }
 .sun-light:nth-child(10n + 9) {
-  -webkit-transform: rotate(144deg);
-  -moz-transform: rotate(144deg);
-  -o-transform: rotate(144deg);
-  -ie-transform: rotate(144deg);
   transform: rotate(144deg);
 }
 .sun-light:nth-child(10n + 10) {
-  -webkit-transform: rotate(162deg);
-  -moz-transform: rotate(162deg);
-  -o-transform: rotate(162deg);
-  -ie-transform: rotate(162deg);
   transform: rotate(162deg);
 }
+
+@media (min-width: 1024px) {
+  .sun-leye,
+  .sun-reye {
+    top: 0.85em;
+    left: 0.75em;
+    width: 0.35em;
+    height: 0.6em;
+  }
+
+  .sun-lred,
+  .sun-rred {
+    top: 1.3em;
+    left: -0.2em;
+    width: 0.7em;
+    height: 0.35em;
+  }
+
+  .sun-nose {
+    bottom: 0.8em;
+  }
+}
+
 </style>

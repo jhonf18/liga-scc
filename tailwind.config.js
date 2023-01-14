@@ -63,11 +63,16 @@ module.exports = {
         '14': '14rem'
       },
       width: {
-        'full-1rem': 'calc(100% - 1rem)'
+        'full-1rem': 'calc(100% - 1rem)',
+        '17': '70px',
+        '15': '60px',
+        '13': '50px'
       },
       height: {
         'screen-menu-desktop': 'calc(100vh - 130px)',
-        'screen-menu-mobile': 'calc(100vh - 66px)'
+        'screen-menu-mobile': 'calc(100vh - 66px)',
+        '15': '60px',
+        '13': '50px'
       },
       saturate: {
         65: '.65',
