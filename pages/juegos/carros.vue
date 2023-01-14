@@ -66,7 +66,7 @@
             Record: {{ high_score }}
           </p>
         </div>
-        <div id="container" style="z-index: 3;" class="col-span-2">
+        <div id="container"  style="z-index: 3;" class="col-span-2">
           <div id="line_1" class="line"></div>
           <div id="line_2" class="line"></div>
           <div id="line_3" class="line"></div>
@@ -173,6 +173,10 @@
               </Button>
             </div>
           </div>
+          <div class="absolute p-0 top-0 w-full h-full grid grid-cols-2" v-if="!game_over && !firstGame">
+            <div class="col-span-1" v-touch:touchhold="touchLeft" v-touch:longtap="stopTouchLeft"></div>
+            <div class="col-span-1" v-touch:touchhold="touchRight" v-touch:longtap="stopTouchRight"></div>
+          </div>
         </div>
         <div class="col-span-1 relative p-4" style="z-index: 3;">
           <div class="mb-2 p-2 bg-blue-600 border text-white rounded border-gray-300 shadow-lg">
@@ -233,6 +237,23 @@ export default {
   mounted() {
   },
   methods: {
+    moving(event) {
+      console.log(event)
+    },
+    stopTouchLeft() {
+      cancelAnimationFrame(this.move_left);
+      this.move_left = false;
+    },
+    touchLeft() {
+      this.move_left = requestAnimationFrame(this.left);
+    },
+    touchRight(){
+      this.move_right = requestAnimationFrame(this.right);
+    },
+    stopTouchRight(){
+      cancelAnimationFrame(this.move_right);
+      this.move_right = false;
+    },
     resetGame() {
       this.nextUmbrellaShowed = this.$moment().add(5, 's');
       this.lastUmbrellaShowed = this.$moment().add(10, 's');
@@ -382,6 +403,7 @@ export default {
         localStorage.setItem('high_score', this.high_score);
         this.game_over = true;
         this.firstGame = false;
+        cancelAnimationFrame(this.repeat);
         return;
       }
 
