@@ -53,7 +53,11 @@
       @close="closeModalPlaygame"
       :footer="false"
     >
-      <div class="lg:grid grid-cols-4 py-4 px-2 lg:px-0">
+      <p class="my-2 text-center font-semibold lg:hidden relative text-sm">
+        Puntuación: {{ score }} <br>
+        Record: {{ high_score }}
+      </p>
+      <div class="lg:grid grid-cols-4 py-4 px-2 pr-4 lg:pr-2 lg:px-0 relative">
         <div class="col-span-1 relative p-4 hidden lg:block" style="z-index: 3;">
           <div class="mb-2 p-2 bg-blue-600 border text-white rounded border-gray-300 shadow-lg">
             <h6 class="text-center font-semibold">Tip 1</h6>
@@ -66,7 +70,7 @@
             Record: {{ high_score }}
           </p>
         </div>
-        <div id="container"  style="z-index: 3;" class="col-span-2">
+        <div id="container"  style="z-index: 3;" class="col-span-2 max-w-[572px] mx-auto">
           <div id="line_1" class="line"></div>
           <div id="line_2" class="line"></div>
           <div id="line_3" class="line"></div>
@@ -174,8 +178,16 @@
             </div>
           </div>
           <div class="absolute p-0 top-0 w-full h-full grid grid-cols-2" v-if="!game_over && !firstGame">
-            <div class="col-span-1" v-touch:touchhold="touchLeft" v-touch:longtap="stopTouchLeft"></div>
-            <div class="col-span-1" v-touch:touchhold="touchRight" v-touch:longtap="stopTouchRight"></div>
+            <div
+              class="col-span-1"
+              v-touch:tap="tapLeft"
+              v-touch:touchhold="touchLeft"
+              v-touch:longtap="stopTouchLeft"></div>
+            <div
+              class="col-span-1"
+              v-touch:tap="tapRight"
+              v-touch:touchhold="touchRight"
+              v-touch:longtap="stopTouchRight"></div>
           </div>
         </div>
         <div class="col-span-1 relative p-4 hidden lg:block" style="z-index: 3;">
@@ -186,18 +198,32 @@
             </ul>
           </div>
         </div>
+        <div class="content absolute h-full w-full top-0 left-0">
+          <div class="cloud"></div>
+          <div class="cloud x"></div>
+          <div class="tree" id="tree-1"></div>
+          <div class="tree-big" id="tree-b-1"></div>
+          <div class="tree" id="tree-2"></div>
+          <div class="tree-big" id="tree-b-2"></div>
+        </div>
       </div>
 
-      <div class="content absolute h-full w-full top-0 left-0">
-        <div class="cloud"></div>
-        <div class="cloud x"></div>
-        <div class="tree" id="tree-1"></div>
-        <div class="tree-big" id="tree-b-1"></div>
-        <div class="tree" id="tree-2"></div>
-        <div class="tree-big" id="tree-b-2"></div>
+      <div class="px-2 pr-4 lg:hidden mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
+        <div class="mb-2 p-2 bg-blue-600 border text-white rounded border-gray-300 shadow-lg">
+          <h6 class="text-center font-semibold">Tip 1</h6>
+          <ul class="text-sm">
+            <li>Recoje las sombrillas para que vayas más lento.</li>
+          </ul>
+        </div>
+
+        <div class="mb-2 p-2 bg-blue-600 border text-white rounded border-gray-300 shadow-lg">
+          <h6 class="text-center font-semibold">Tip 2</h6>
+          <ul class="text-sm">
+            <li>Recoje los protectores solares que esconderán los soles para que no puedan perjudicarte.</li>
+          </ul>
+        </div>
       </div>
     </Modal>
-
 
     <keyboards-events @keydown="onKeyDown" @keyup="onKeyUp"></keyboards-events>
   </main>
@@ -237,8 +263,11 @@ export default {
   mounted() {
   },
   methods: {
-    moving(event) {
-      console.log(event)
+    tapLeft(){
+      const car = $("#car");
+      if (this.game_over === false && parseInt(car.css("left")) > 0) {
+        car.css("left", parseInt(car.css("left")) - 10);
+      }
     },
     stopTouchLeft() {
       cancelAnimationFrame(this.move_left);
@@ -246,6 +275,19 @@ export default {
     },
     touchLeft() {
       this.move_left = requestAnimationFrame(this.left);
+    },
+    tapRight() {
+      const car = $("#car");
+      var container = $("#container");
+      var container_width = parseInt(container.width());
+      var car_width = parseInt(car.width());
+
+      if (
+        this.game_over === false &&
+        parseInt(car.css("left")) < container_width - car_width
+      ) {
+        car.css("left", parseInt(car.css("left")) + 5);
+      }
     },
     touchRight(){
       this.move_right = requestAnimationFrame(this.right);

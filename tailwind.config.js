@@ -55,7 +55,8 @@ module.exports = {
         body: ['Rubik']
       },
       maxHeight: {
-        '1rem': 'calc(100vh - 1rem)'
+        '1rem': 'calc(100vh - 1rem)',
+        '3rem': 'calc(100vh - 3rem)'
       },
       maxWidth: {
         '6': '6rem',

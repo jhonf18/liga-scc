@@ -13,7 +13,7 @@
         @click="close">
         <div
           v-if="type !== 'text'"
-          class="p-2 rounded-full bg-gray-200 absolute top-10 right-10 font-semibold transition-all duration-300 delay-150 cursor-pointer -mr-2 -mt-2 -mb-2 text-md ml-auto hover:rotate-180"
+          class="z-30 p-2 rounded-full bg-gray-200 absolute top-10 right-10 font-semibold transition-all duration-300 delay-150 cursor-pointer -mr-2 -mt-2 -mb-2 text-md ml-auto hover:rotate-180"
           @click="closeByButton">
           <CloseIcon width="24" height="24" />
         </div>
@@ -29,7 +29,10 @@
             'max-w-4xl': size === 'xl' && type === 'text',
             'max-w-5xl': type !== 'text' && type !== 'playgame',
             'max-w-6xl': type === 'playgame',
-            'scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-400 scrollbar-track-gray-200': type === 'image'
+            'max-h-1rem overflow-hidden': type !== 'playgame',
+            'max-h-3rem': type === 'playgame',
+            'scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-400 scrollbar-track-gray-200': type === 'image' || type === 'playgame',
+            'overflow-y-scroll overflow-x-hidden': type === 'playgame'
           }">
           <header v-if="type === 'text'" class="modal-header">
             <h5
@@ -53,7 +56,9 @@
             class="modal-body scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-200 scrollbar-track-gray-100 dark:scrollbar-thumb-gray-500 dark:scrollbar-track-gray-400">
             <slot></slot>
           </div>
-          <div v-if="type === 'playgame'" class="relative">
+          <div
+            v-if="type === 'playgame'"
+            class="relative">
             <slot></slot>
           </div>
           <div v-if="type === 'iframe'" class="container-iframe">
@@ -175,7 +180,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-
 .iframe {
   width: 100%;
   height: 100%;
@@ -201,7 +205,7 @@ export default {
 }
 
 .modal {
-  @apply bg-light-background w-full-1rem lg:w-full max-h-1rem m-auto rounded overflow-hidden;
+  @apply bg-light-background w-full-1rem lg:w-full m-auto rounded;
 }
 
 .animate-show-modal {
