@@ -34,19 +34,23 @@
           </h3>
           <div
             class="cards grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
+            <div v-for="(card, index) in cards"
+            :key="`${card.name}-${index}`"
+            :class="card.class">
               <div
-              class="card mx-auto cursor-pointer h-28 w-28 sm:h-44 sm:w-44"
-              v-for="(card, index) in cards"
-              :key="`${card.name}-${index}`"
-              @click="clickCard(card.button, index)"
-              :id="card.button">
-              <div class="front flex justify-center items-center"
-                :class="card.class"
-                :style="{
-                  backgroundImage: 'url(' + card.image + ')',
-                  backgroundSize: card.backgroundSize }">
-                  <p class="hidden sm:text-lg">{{ card.name }}</p>
-                </div>
+                class="card mx-auto cursor-pointer h-28 w-28 sm:h-44 sm:w-44"
+                @click="clickCard(card.button, index)"
+                :id="card.button">
+                <div class="front flex justify-center items-center"
+                  :style="{
+                    backgroundImage: 'url(' + card.image + ')',
+                    backgroundSize: card.backgroundSize }">
+                    <p class="hidden sm:text-lg">{{ card.name }}</p>
+                  </div>
+              </div>
+              <div class="text-center leading-3">
+                <span class="text-xs font-semibold md:text-white md:bg-pink-500 md:px-1 md:py-1">{{ card.name }}</span>
+              </div>
             </div>
           </div>
             <div class="mt-8 max-w-xl mx-auto">
@@ -96,45 +100,45 @@ import { getIndexOfElementInArray, suffleArray } from '~/helpers';
 
 let cards = [
   {
-    name: 'Imagen 1.1',
+    name: 'Observar con brazos abajo',
     image: require('~/static/images/playgames/simon-dice/paso-1.png'),
     button: 1,
-    class: {},
+    class: [],
     backgroundSize: '105%'
   },
   {
-    name: 'Imagen 1.2',
+    name: 'Observar con brazos en el cuello',
     image: require('~/static/images/playgames/simon-dice/paso-2.png'),
     button: 2,
-    class: {},
+    class: [],
     backgroundSize: '103%'
   },
   {
-    name: 'Imagen 1.3',
+    name: 'Observar con brazos en la cintura',
     image: require('~/static/images/playgames/simon-dice/paso-3.png'),
     button: 3,
-    class: {},
+    class: [],
     backgroundSize: '101%'
   },
   {
-    name: 'Imagen 1.1',
+    name: 'Palpar con un brazo en el cuello',
     image: require('~/static/images/playgames/simon-dice/paso-4.png'),
     button: 4,
-    class: {},
+    class: [],
     backgroundSize: '105%'
   },
   {
-    name: 'Imagen 1.2',
+    name: 'Palpar acostada',
     image: require('~/static/images/playgames/simon-dice/paso-5.png'),
     button: 5,
-    class: {},
+    class: [],
     backgroundSize: '105%'
   },
   {
-    name: 'Imagen 1.3',
+    name: 'Hacer presión en el pezón',
     image: require('~/static/images/playgames/simon-dice/paso-6.png'),
     button: 6,
-    class: {},
+    class: [],
     backgroundSize: '117%'
   },
 ]
@@ -169,10 +173,10 @@ export default {
         this.canPlay = false;
         const ok = this.compareSequenceOfUserwithOriginal(button);
         if (ok) {
-          await this.onAndOfButton(index, 100);
+          await this.onAndOfButton(index, 200);
           if (this.counter >= this.sequence.length - 1) {
             this.score++;
-            await this.sleep(500)
+            await this.sleep(100)
             await this.cpuTurn();
           } else {
             this.counter++;
@@ -185,7 +189,6 @@ export default {
           }
           this.gameStarted = false;
           this.$refs['modal-finished-playgame'].open()
-          //alert('Haz perdido');
         }
       }
     },
@@ -235,15 +238,14 @@ export default {
     },
     async playSequence(){
       for (const index of this.sequence) {
-        await this.onAndOfButton(index, 200);
+        await this.onAndOfButton(index, 500);
       }
     },
     async onAndOfButton(index, duration) {
       this.canPlay = false;
-      //const index = getIndexOfElementInArray(this.cards, 'object', 'button', button);
 
       this.playSound( this.cards[index].button )
-      this.cards[index].class = ['brightness-125']
+      this.cards[index].class = ['brightness-[1.35]']
       await this.sleep(duration)
       this.cards[index].class = ['']
       await this.sleep(duration)
@@ -266,11 +268,8 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-
-
 .cards .card {
   position: relative;
-  display: inline-block;
   transition: opacity 0.5s;
   @apply rounded-full;
 }
