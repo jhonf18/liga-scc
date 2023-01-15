@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="py-6 sm:py-4">
     <!-- TODO: Refactorizar codigo y realizar la versión movil del juego -->
     <h1 class="text-2xl sm:text-4xl font-bold text-primary text-center">
       Carros
@@ -261,6 +261,9 @@ export default {
     };
   },
   mounted() {
+    if(process.client) {
+      this.$ga.page(this.$router)
+    }
   },
   methods: {
     tapLeft(){

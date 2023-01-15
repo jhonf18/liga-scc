@@ -204,6 +204,11 @@ export default {
       disabledGame: false
     }
   },
+  mounted(){
+    if(process.client) {
+      this.$ga.page(this.$router)
+    }
+  },
   methods: {
     reset() {
       this.disabledGame = false;

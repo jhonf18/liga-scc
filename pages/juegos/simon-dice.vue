@@ -1,5 +1,4 @@
 <template>
-  <!-- TODO: poner boton al terminar el tricky de volver a jugar y deshabilitar el juego -->
   <main class="py-6 sm:py-4">
     <h1 class="text-2xl sm:text-4xl font-bold text-primary text-center">
       Simón dice
@@ -159,6 +158,11 @@ export default {
         text: ''
       },
       gameStarted: false
+    }
+  },
+  mounted(){
+    if(process.client) {
+      this.$ga.page(this.$router)
     }
   },
   created() {

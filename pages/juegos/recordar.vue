@@ -281,6 +281,9 @@ export default {
   },
   mounted() {
     this.resetGame();
+    if(process.client) {
+      this.$ga.page(this.$router)
+    }
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="py-6 sm:py-4">
     <h1 class="text-2xl sm:text-4xl font-bold text-primary text-center">
       Trivia
     </h1>
@@ -103,15 +103,16 @@
         class="w-11 h-11 md:w-14 md:h-14 lg:w-20 lg:h-20 mr-2"
         :src="require(`~/static/images/${modal.nameFileIcon}`)" alt="Icono de pregunta">
       </div>
-      <ul class="mt-6 grid grid-cols-2 gap-4 mb-6">
+      <ul class="mt-6 grid grid-cols-4 gap-4 mb-6">
         <li
           @click="e => selectResponse(response.correct, e, i)"
-          class="border text-center font-semibold rounded px-4 py-3 text-gray-100 cursor-pointer transition"
+          class="col-span-2 border text-center font-semibold rounded px-4 py-3 text-gray-100 cursor-pointer transition"
           :class="{
             'bg-red-wheel border-red-wheel': i === 0,
             'bg-orange-wheel': i === 1 ,
             'bg-blue-wheel': i === 2,
-            'bg-green-wheel': i === 3
+            'bg-green-wheel': i === 3,
+            'col-start-2': modal.responses.length === 3 && i === 2
           }"
           v-for="(response, i) in modal.responses" :key="i">
           <span
@@ -120,7 +121,7 @@
           <span class="font-bold text-gray-300 mr-1"
             v-else-if="i == 1">B.</span>
           <span class="font-bold text-gray-300 mr-1"
-            v-else-if="i === 3">C.</span>
+            v-else-if="i === 2">C.</span>
           <span class="font-bold text-gray-300 mr-1" v-else>D.</span>
           {{ response.text }}
         </li>
@@ -247,6 +248,11 @@ export default {
       titleModal: 'Responde para avanzar',
       rouletteVisible: true,
       finalQuestion: false
+    }
+  },
+  mounted(){
+    if(process.client) {
+      this.$ga.page(this.$router)
     }
   },
   methods: {

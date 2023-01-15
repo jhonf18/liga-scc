@@ -65,6 +65,9 @@
             <iframe
               class="iframe"
               :src="linkMultimedia"
+              title="YouTube video player"
+              autplay
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen frameborder="0"></iframe>
           </div>
           <div v-if="type === 'image'" >

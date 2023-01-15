@@ -71,7 +71,9 @@ export default {
     // https://sitemap.nuxtjs.org/
     '@nuxtjs/sitemap',
     // https://www.npmjs.com/package/@nuxtjs/robots
-    '@nuxtjs/robots'
+    '@nuxtjs/robots',
+    // https://google-analytics.nuxtjs.org/
+    '@nuxtjs/google-analytics'
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -136,5 +138,9 @@ export default {
     hostname: metadata.og.url,
     routes: [],
     gzip: true,
+  },
+
+  googleAnalytics: {
+    id: 'G-4HMB2HMVLP'
   },
 }

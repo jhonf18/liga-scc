@@ -273,8 +273,10 @@ export default {
 			}
 		}
   },
-  async mounted() {
-
+  mounted() {
+    if(process.client) {
+      this.$ga.page(this.$router)
+    }
 	},
   computed: {
     randomMoveQty() {

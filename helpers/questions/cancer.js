@@ -1,78 +1,82 @@
 const questions = [
   {
-    question: 'Pregunta 1',
+    question: "¿Qué es el cáncer?",
     responses: [
-      { text: 'Respuesta 1.1', correct: true },
-      { text: 'Respuesta 1.2' },
-      { text: 'Respuesta 1.3' },
-      { text: 'Respuesta 1.4' }
+      {
+        text: "Crecimiento descontrolado y anormal de las células",
+        correct: true,
+      },
+      { text: "Procesos de transformación celular totalmente benignos" },
+      { text: "Muerte de las células" },
     ],
     nameFileIcon: 'button-wheel.png'
   },
   {
-    question: 'Pregunta 2',
+    question: "¿En donde se puede producir un cáncer?",
     responses: [
-      { text: 'Respuesta 2.1', correct: true },
-      { text: 'Respuesta 2.2' },
-      { text: 'Respuesta 2.3' },
-      { text: 'Respuesta 2.4' }
+      { text: "En cualquier parte del cuerpo", correct: true },
+      { text: "Únicamente en la piel" },
+      { text: "Únicamente en órganos internos del cuerpo" },
     ],
     nameFileIcon: 'button-wheel.png'
   },
   {
-    question: 'Pregunta 3',
+    question:
+      "Los tumores benignos son de crecimiento lento y no causan metástasis",
+    responses: [{ text: "Verdadero", correct: true }, { text: "Falso" }],
+    nameFileIcon: 'button-wheel.png'
+  },
+  {
+    question:
+      "Se multiplican de manera acelerada y descontrolada formando masas en los tejidos:",
     responses: [
-      { text: 'Respuesta 3.1', correct: true },
-      { text: 'Respuesta 3.2' },
-      { text: 'Respuesta 3.3' },
-      { text: 'Respuesta 3.4' }
+      { text: "Tumores benignos" },
+      { text: "Órganos" },
+      { text: "Tumores malignos", correct: true },
     ],
     nameFileIcon: 'button-wheel.png'
   },
   {
-    question: 'Pregunta 4',
+    question:
+      "Algunos síntomas que pueden estar relacionados con el cáncer son:",
     responses: [
-      { text: 'Falso', correct: true },
-      { text: 'Verdadero'  }
+      {
+        text: "Masas, úlceras, pérdida de peso,cambios en la piel ",
+        correct: true,
+      },
+      { text: "Dolor de oído y acné" },
+      { text: "Subida de peso y dificultad para hablar" },
     ],
     nameFileIcon: 'button-wheel.png'
   },
   {
-    question: 'Pregunta 5',
+    question:
+      "Los factores de riesgo que aumentan la posibilidad de desarrollar cáncer son:",
     responses: [
-      { text: 'Falso', correct: true },
-      { text: 'Verdadero'  }
+      { text: "Mutación de los genes y edad " },
+      { text: "Todos son correctos", correct: true },
+      { text: "Radiación solar y tabaquismo " },
     ],
     nameFileIcon: 'button-wheel.png'
   },
   {
-    question: 'Pregunta 6',
+    question:
+      "¿Factores protectores que disminuyen la posibilidad de desarrollar cáncer?",
     responses: [
-      { text: 'Falso', correct: true },
-      { text: 'Verdadero'  }
+      {
+        text: "Alimentación saludable, actividad física, evitar alcoholismo y tabaquismo ",
+        correct: true,
+      },
+      { text: "Edad, malos hábitos de vida, alcoholismo " },
+      { text: "Nacer " },
     ],
     nameFileIcon: 'button-wheel.png'
   },
   {
-    question: 'Pregunta 7',
-    responses: [
-      { text: 'Respuesta 7.1', correct: true },
-      { text: 'Respuesta 7.2' },
-      { text: 'Respuesta 7.3' },
-      { text: 'Respuesta 7.4' }
-    ],
+    question:
+      "¿Los antecedentes familiares se constituyen en un factor de riesgo para desarrollar cáncer?",
+    responses: [{ text: "Verdadero", correct: true }, { text: "Falso" }],
     nameFileIcon: 'button-wheel.png'
   },
-  {
-    question: 'Pregunta 8',
-    responses: [
-      { text: 'Respuesta 8.1', correct: true },
-      { text: 'Respuesta 8.2' },
-      { text: 'Respuesta 8.3' },
-      { text: 'Respuesta 8.4' }
-    ],
-    nameFileIcon: 'button-wheel.png'
-  },
-]
-
+];
 export default questions;
