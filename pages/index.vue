@@ -99,8 +99,17 @@
 </template>
 
 <script>
+import metadataDynamic from '~/plugins/metadata/metadata-dynamic'
 export default {
   name: 'IndexPage',
+  head(){
+    const title = 'Inicio';
+    const dynamicMeta = metadataDynamic({
+      title
+    });
+
+    return { title, meta: [...dynamicMeta] }
+  },
   components: {
     PlayGamesIcon: () => import('@/static/icons/play-games.svg?inline'),
     VideoIcon: () => import('@/static/icons/video.svg?inline'),

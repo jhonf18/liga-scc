@@ -53,8 +53,8 @@ export default {
       videos: [
         {
           title: 'Cáncer de mama',
-          url_preview_video: 'https://licancerbucaramanga.org/wp-content/uploads/2021/06/Fachada-1.jpg?id=13704',
-          url_video: '//www.youtube.com/embed/n3rL-OeHeoE?autoplay=1',
+          url_preview_video: require(`~/static/images/miniaturas/mama.png`),
+          url_video: 'https://www.youtube.com/embed/iDY3p6JHaog',
           link: '/etapas/adulto/mujer'
         },
         {
@@ -65,20 +65,20 @@ export default {
         },
         {
           title: 'Tabaquismo',
-          url_preview_video: 'https://licancerbucaramanga.org/wp-content/uploads/2021/05/Slider-icontec1.png',
-          url_video: 'https://www.youtube.com/embed/ZVtZj6csrYE?feature=oembed',
+          url_preview_video: require(`~/static/images/miniaturas/pulmon.png`),
+          url_video: 'https://www.youtube.com/embed/vGL0VNh1HCM',
           link: '/etapas/adolescente'
         },
         {
           title: 'Cáncer de próstata',
-          url_preview_video: 'https://licancerbucaramanga.org/wp-content/uploads/2022/12/BANNER-PAGINA-WEB-de-2022.png',
-          url_video: 'https://www.youtube.com/embed/p5u_CQFbReI?feature=oembed',
+          url_preview_video: require(`~/static/images/miniaturas/prostata.png`),
+          url_video: '//www.youtube.com/embed/SPiLTySoPWM',
           link: '/etapas/adulto/hombre'
         },
         {
           title: 'Cáncer en general',
-          url_preview_video: 'https://licancerbucaramanga.org/wp-content/uploads/2022/09/DSC5075-440x260.jpg.webp',
-          url_video: 'https://www.youtube.com/embed/2DkcxwJseGQ?feature=oembed',
+          url_preview_video: require(`~/static/images/miniaturas/cancer.png`),
+          url_video: 'https://www.youtube.com/embed/SSXqifDvMgA',
           link: '/'
         }
       ],
