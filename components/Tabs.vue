@@ -24,15 +24,30 @@
           </a>
         </li>
       </ul>
-      <div class="relative flex flex-col min-w-0 pt-4 border-t break-words bg-white w-full mb-6 shadow-lg">
+      <div
+        :class="{ '!pt-0': openTab === 1 }"
+        class="relative flex flex-col pt-4 min-w-0 border-t break-words bg-white w-full mb-6 shadow-lg">
         <div class="flex-auto">
           <div class="tab-content tab-space">
             <div v-bind:class="{'hidden': openTab !== 1, 'block': openTab === 1}">
-            <div class="container-video">
+            <div class="">
               <div
                 @click="openVideo"
-                class="container-video cursor-pointer h-full flex justify-center items-center"
-                :style="{ 'background': `url(${data.url_preview_video})` }">
+                class="mx-auto w-full cursor-pointer flex justify-center items-center"
+                >
+                <div class="relative container-img s-ratio-16-9 relative rounded-tl rounded-tr">
+                  <div
+                    class="block overflow-hidden absolute inset-0 box-border m-0">
+                    <nuxt-img
+                      :src="data.url_preview_video"
+                      format="webp"
+                      :title="`Miniatura de video de ${data.title}`"
+                      :alt="`Miniatura de video de ${data.title}`"
+                      class="absolute top-0 left-0 w-full transition-all"
+                      quality="100"
+                      loading="lazy"/>
+                  </div>
+                </div>
                 <div class="filter-container"></div>
                 <div class="wrapper">
                   <div class="circle pulse"></div>
@@ -120,7 +135,33 @@ export default {
 <style lang="postcss" scoped>
 .container-video {
   position: relative;
-  min-height: 20rem;
+  min-height: 24rem;
+}
+
+
+.s-ratio-16-9 {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.container-img img {
+  position: absolute;
+    inset: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+    border: none;
+    /* margin: auto; */
+    display: block;
+    width: 0px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    filter: none;
+    background-size: cover;
+    background-image: none;
+    background-position: 0% 0%;
 }
 
 .container-infographic {
@@ -139,7 +180,7 @@ export default {
 }
 
 .wrapper {
-  position: relative;
+  position: absolute;
   width: 150px;
   height: 150px;
   margin: 0 auto;

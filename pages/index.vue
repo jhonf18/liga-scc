@@ -12,20 +12,34 @@
         Conoce sobre el cáncer
       </h2>
       <div class="md:grid md:grid-cols-5 md:gap-4">
-        <div class="container-video col-span-3">
+        <div class="col-span-3">
           <div
-            @click="openVideo"
-            class="container-video cursor-pointer h-full flex justify-center items-center">
-            <div class="filter-container"></div>
-            <div class="wrapper">
-              <div class="circle pulse"></div>
-              <div class="circle">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                  <polygon points="40,30 65,50 40,70"></polygon>
-                </svg>
-              </div>
+          @click="openVideo"
+          class="w-full cursor-pointer w-full relative flex justify-center items-center"
+          >
+          <div class="relative container-img s-ratio-16-9 relative rounded-tl rounded-tr">
+            <div
+              class="block overflow-hidden absolute inset-0 box-border m-0">
+              <nuxt-img
+                src="images/miniaturas/cancer.png"
+                format="webp"
+                title="Miniatura de video sobre el cáncer"
+                alt="Miniatura de videos sobre generalidades del cáncer"
+                class="absolute top-0 left-0 w-full transition-all"
+                quality="100"
+                loading="lazy"/>
             </div>
           </div>
+          <div class="filter-container"></div>
+          <div class="wrapper">
+            <div class="circle pulse"></div>
+            <div class="circle">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                <polygon points="40,30 65,50 40,70"></polygon>
+              </svg>
+            </div>
+          </div>
+        </div>
         </div>
         <div class="container-info mt-6 md:mt-0 col-span-2 md:p-4">
           <div>
@@ -83,7 +97,7 @@
       ref="modal-video"
       target="modal-video"
       type="iframe"
-      link-multimedia="//www.youtube.com/embed/n3rL-OeHeoE?autoplay=1"
+      link-multimedia="https://www.youtube.com/embed/SSXqifDvMgA"
       >
     </Modal>
 
@@ -92,7 +106,7 @@
       ref="modal-infographic"
       target="modal-infographic"
       type="image"
-      :link-multimedia="require(`~/static/images/infografias/cancer/aprende-sobre-el-cancer.png`)"
+      :link-multimedia="'images/infografias/cancer/aprende-sobre-el-cancer.png'"
       >
     </Modal>
   </div>
@@ -156,7 +170,7 @@ export default {
 }
 
 .wrapper {
-  position: relative;
+  position: absolute;
   width: 150px;
   height: 150px;
   margin: 0 auto;
@@ -225,6 +239,32 @@ export default {
 
 .section-tools-icons {
   width: 20px;
+}
+
+
+.s-ratio-16-9 {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.container-img img {
+  position: absolute;
+    inset: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+    border: none;
+    /* margin: auto; */
+    display: block;
+    width: 0px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    filter: none;
+    background-size: cover;
+    background-image: none;
+    background-position: 0% 0%;
 }
 
 

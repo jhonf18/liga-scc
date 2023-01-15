@@ -12,8 +12,8 @@ export default {
         paragraph_1: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolore molestias natus nulla possimus, perferendis magni numquam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias a ratione quam animi odit voluptas, voluptatem optio, maxime at, voluptatum tempore inventore culpa molestiae repellat debitis id tempora dolorem! Doloremque! Aut repudiandae, eligendi quo, at eveniet consequatur deleniti perspiciatis, rerum voluptates quae ex.',
         paragraph_2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat vero eius officiis exercitationem, asperiores autem sint. Perspiciatis tenetur modi quo maiores. Facere nulla sint quisquam praesentium dolorem ad ipsam unde.',
         second_title: 'Instruyete sobre el cáncer de pulmón',
-        url_preview_video: 'https://licancerbucaramanga.org/wp-content/uploads/2021/06/Fachada-1.jpg?id=13704',
-        url_video: 'https://www.youtube.com/embed/zqYc5c4bOZ8?feature=oembed',
+        url_preview_video: `/images/miniaturas/mama.png`,
+        url_video: 'https://www.youtube.com/embed/iDY3p6JHaog',
         play_games: [
           {
             name: 'Reconoce los signos y vence al cáncer de mama ',

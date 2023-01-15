@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import metadataDynamic from '~/plugins/metadata/metadata-dynamic'
 export default {
   data() {
     return {

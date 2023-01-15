@@ -1,7 +1,7 @@
 <template>
   <main class="py-6 sm:py-4">
     <h1 class="text-2xl sm:text-4xl font-bold text-primary text-center">
-      Ahorcado
+      Sálvate de ir a la horca por el cáncer de próstata
     </h1>
     <div class="container mx-auto max-w-4xl p-4 mt-8 border rounded px-4 py-5 shadow-lg w-full-1rem transition duration-500"
     :class="{ 'bg-blue-600': step === 3,
@@ -12,9 +12,25 @@
           Instrucciones de juego
           </h3>
           <p class="mt-4 text-sm sm:text-base">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil quaerat iste fugiat quidem, nesciunt quasi quia harum tempore illum doloribus impedit assumenda eaque, quibusdam sunt natus deleniti, praesentium optio?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aliquam, cupiditate, delectus magnam ut doloremque odit adipisci nihil blanditiis suscipit deleniti quasi ad porro reprehenderit explicabo quod vitae eveniet quidem.
+            Si quieres vencer al cáncer de próstata identificando la palabra oculta, debes tener en cuenta:
           </p>
+          <ul class="text-sm sm:text-base pl-4 list-decimal">
+            <li>
+              Elige la categoría que quieres abordar.
+            </li>
+            <li>
+              Empieza a marcar las letras para identificar la palabra oculta y salvarte de la horca del cáncer de próstata.
+            </li>
+            <li>
+              Tienes 6 intentos para salvarte.
+            </li>
+            <li>
+              Si descubres la palabra oculta podrás continuar con otra palabra o cambiar de categoría.
+            </li>
+            <li>
+              Vence al cáncer de próstata identificando todas las palabras.
+            </li>
+          </ul>
           <div class="text-right mt-8 flex justify-end">
             <Button size="lg" variant="tertiary" @click="step = 2">SIGUIENTE</Button>
           </div>
@@ -108,7 +124,7 @@
         </p>
       <div class="flex justify-center items-center mt-8">
         <Button @click="clickToResetGame" size="md" variant="outline-primary">
-          Volver a jugar
+          Siguiente palabra
         </Button>
       </div>
     </Modal>
