@@ -29,7 +29,7 @@ module.exports = {
       'tabaquismo',
       'cáncer de piel'
     ],
-    author: 'Ximena Blanco & Jhon Freddy Pérez',
+    author: 'Ximena Blanco y Jhon Freddy Pérez',
     publisher: app,
     language: 'spanish',
   },
