@@ -1,6 +1,8 @@
 <template>
   <div class="py-6 sm:py-4">
-    <h1 class="text-2xl sm:text-4xl font-bold text-primary text-center">Recuerda</h1>
+    <h1 class="text-2xl sm:text-4xl font-bold text-primary text-center">
+      Reconoce los signos y vence al cáncer de mama
+    </h1>
     <div class="mt-8 container mx-auto max-w-4xl border rounded px-4 py-5 shadow-lg w-full-1rem transition duration-500"
     :class="{ 'bg-pink-400': step === 2 }" >
       <transition name="slide" mode="out-in">
@@ -9,9 +11,25 @@
             Instrucciones de juego
           </h3>
           <p class="mt-4 text-sm sm:text-base">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil quaerat iste fugiat quidem, nesciunt quasi quia harum tempore illum doloribus impedit assumenda eaque, quibusdam sunt natus deleniti, praesentium optio?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aliquam, cupiditate, delectus magnam ut doloremque odit adipisci nihil blanditiis suscipit deleniti quasi ad porro reprehenderit explicabo quod vitae eveniet quidem.
+            Para vencer al cáncer de mama al recordar e identificar los signos de alarma debes tener en cuenta lo siguiente:
           </p>
+          <ul class="text-sm sm:text-base pl-4 list-decimal">
+            <li>
+              Cada ficha contiene un signo de alarma.
+            </li>
+            <li>
+              Debes voltear de a dos fichas con el fin de encontrar la pareja de cada signo de alarma, luego identifica el nombre del sintoma hallado para que puedas continuar.
+            </li>
+            <li>
+              Si volteas dos fichas y no coinciden, vuelve a intentarlo.
+            </li>
+            <li>
+              Recuerda en dónde está cada signo de alarma para que puedas encontrar las parejas.
+            </li>
+            <li>
+              Pon a prueba tu memoria y encuentra las parejas en el menor tiempo posible y en pocos intentos.
+            </li>
+          </ul>
           <div class="text-right mt-8 flex justify-end">
             <Button size="lg" variant="tertiary" @click="step = 2">SIGUIENTE</Button>
           </div>
@@ -48,7 +66,7 @@
       title="¡Ganaste!"
       :footer="false">
         <p class="text-center fonf-semibold text-xl">
-        Haz vencido al cáncer con una puntuación de:  <strong> {{ score }} </strong>
+        Haz vencido al cáncer de mama con una puntuación de:  <strong> {{ score }} </strong>
       </p>
       <div class="flex justify-center items-center mt-8">
         <Button @click="resetGame()" size="md" variant="outline-primary">

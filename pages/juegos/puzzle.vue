@@ -1,7 +1,7 @@
 <template>
 <main class="py-6 sm:py-4">
   <h1 class="text-2xl sm:text-4xl font-bold text-primary text-center">
-    Rompecabezas deslizante
+    Descubre las fichas del cáncer de pulmón
   </h1>
   <div
     class="container mx-auto max-w-4xl p-4 mt-8 border rounded px-4 py-5 shadow-lg w-full-1rem transition duration-500"
@@ -14,16 +14,29 @@
           Instrucciones de juego
         </h3>
         <p class="mt-4 text-sm sm:text-base">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil quaerat iste fugiat quidem, nesciunt quasi quia harum tempore illum doloribus impedit assumenda eaque, quibusdam sunt natus deleniti, praesentium optio?
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aliquam, cupiditate, delectus magnam ut doloremque odit adipisci nihil blanditiis suscipit deleniti quasi ad porro reprehenderit explicabo quod vitae eveniet quidem.
+          Descubre las fichas del cáncer de pulmón de la siguiente forma:
         </p>
+        <ul class="text-sm sm:text-base pl-4 list-decimal">
+          <li>
+            Elige una categoría relacionada con las imágenes que deseas armar y así conocer sobre el cáncer de pulmón.
+          </li>
+          <li>
+            En el tablero se encuentra un rompecabezas que deberás armar deslizando las fichas con el mouse para descubrir la imagen oculta y su nombre.
+          </li>
+          <li>
+            Cada vez que armes una imagen podras subir de nivel y resolver la siguiente imagen.
+          </li>
+          <li>
+            Una vez terminado de armar todas las imágenes de la categoría,continua y explora la siguiente categoría.
+          </li>
+        </ul>
         <div class="text-right mt-8 flex justify-end">
           <Button size="lg" variant="tertiary" @click="step = 2">SIGUIENTE</Button>
         </div>
       </div>
       <div v-if="step === 2" key="step-2">
         <h4 class="font-semibold">
-          Elije la categoría en la cual quieres armar la imagen
+          Elige la categoría en la cual quieres armar la imagen
         </h4>
         <ul class="mt-6">
           <li
@@ -39,7 +52,7 @@
       </div>
       <div v-if="step === 3" key="step-3">
         <h3 class="text-center text-2xl sm:text-4xl text-white font-semibold mb-4 mt-4">
-          Rompele la cabeza al tabaquismo
+          Arma las piezas para conocer sobre el cáncer de pulmón
         </h3>
         <div id="board" class="md:grid md:grid-cols-6">
           <div id="game-group" class="col-span-4">

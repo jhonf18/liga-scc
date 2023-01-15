@@ -85,6 +85,18 @@ export default {
       url_video: ''
     }
   },
+  head(){
+    const title = 'Videos'
+    const url = `${this.$config.baseURL}/videos`
+    const description = 'Edúcate a través de videos interactivos sobre la prevención y detección de diferentes tipos de cáncer.'
+
+    const dynamicMeta = metadataDynamic({
+      title,
+      description,
+      url
+    })
+    return { title, meta: [...dynamicMeta] }
+  },
   methods: {
     openVideo(video) {
       this.url_video = video.url_video;

@@ -21,7 +21,7 @@
         </div>
         <div v-if="step === 2" key="step-2">
           <h4 class="font-semibold">
-          Elije la categoría en la cual quieres jugar
+          Elige la categoría en la cual quieres jugar
         </h4>
         <ul class="mt-6">
           <li

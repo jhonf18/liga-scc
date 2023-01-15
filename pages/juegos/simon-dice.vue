@@ -1,7 +1,7 @@
 <template>
   <main class="py-6 sm:py-4">
     <h1 class="text-2xl sm:text-4xl font-bold text-primary text-center">
-      Simón dice
+      Ve al ritmo de la Liga con el autoexamen de mama
     </h1>
     <div class="container mx-auto max-w-4xl p-4 mt-8 border rounded px-4 py-5 shadow-lg w-full-1rem transition duration-500"
     :class="{ 'bg-pink-300': step === 3,
@@ -12,17 +12,38 @@
           Instrucciones de juego
           </h3>
           <p class="mt-4 text-sm sm:text-base">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil quaerat iste fugiat quidem, nesciunt quasi quia harum tempore illum doloribus impedit assumenda eaque, quibusdam sunt natus deleniti, praesentium optio?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aliquam, cupiditate, delectus magnam ut doloremque odit adipisci nihil blanditiis suscipit deleniti quasi ad porro reprehenderit explicabo quod vitae eveniet quidem.
+            Para seguir el ritmo de la liga y aprender a realizar el autoexamen de mama, debes tener en cuenta:
           </p>
+          <ul class="text-sm sm:text-base pl-4 list-decimal">
+            <li>
+              Una vez iniciado el juego, debes estar atento a la secuencia de sonido e iluminación de las imágenes para seguir el orden de los pasos del autoexamen de mama.
+            </li>
+            <li>
+              La iluminación y sonido de las imágenes sonará y luego seguirá tu turno para copiar la secuencia que acaba de mostrar el juego.
+            </li>
+            <li>
+              Si te equivocas en la secuencia el juego se reiniciará.
+            </li>
+          </ul>
           <div class="text-right mt-8 flex justify-end">
             <Button size="lg" variant="tertiary" @click="step = 2">SIGUIENTE</Button>
           </div>
         </div>
         <div v-if="step === 2" key="step-2">
-          <p class="text-center font-semibold max-w-2xl mx-auto mt-6 mb-6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. A eum quibusdam deserunt aliquam odit. Magnam in dolore cupiditate tenetur, nulla impedit ipsa veniam aut, suscipit, magni quo quod explicabo quia.
+          <p class="text-center max-w-2xl mx-auto mt-6 mb-2">
+            Recuerda que la realización del <strong>autoexamen de mama</strong> puede <strong>detectar</strong> de forma temprana un cáncer.
           </p>
+          <ul class="mb-6 max-w-2xl mx-auto list-disc">
+            <li>
+              Deben realizarlo <strong>hombres</strong> y <strong>mujeres</strong>.
+            </li>
+            <li>
+              Realizarlo <strong>1 vez</strong> al mes, <strong>8 días</strong> después de iniciada la menstruación.
+            </li>
+            <li>
+               Los hombres pueden elegir <strong>cualquier</strong> día al mes para hacerlo.
+            </li>
+          </ul>
           <div class="text-right mt-8 flex justify-end">
             <Button size="lg" variant="tertiary" @click="step = 3">SIGUIENTE</Button>
           </div>

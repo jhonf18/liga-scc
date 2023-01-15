@@ -17,7 +17,7 @@ export default {
   head() {
     const title = 'Juegos'
     const url = `${this.$config.baseURL}/juegos`
-    const description = 'Sección de juegos relacionados contra el cáncer.'
+    const description = 'Aprende jugando y divirtiéndote sobre los diferentes tipos de cáncer.'
 
     const dynamicMeta = metadataDynamic({
       title,

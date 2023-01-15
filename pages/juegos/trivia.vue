@@ -1,7 +1,7 @@
 <template>
   <main class="py-6 sm:py-4">
     <h1 class="text-2xl sm:text-4xl font-bold text-primary text-center">
-      Trivia
+      Trivia contra el cáncer
     </h1>
     <div
     class="container mx-auto max-w-4xl p-4 mt-8 border rounded px-4 py-5 shadow-lg w-full-1rem transition duration-500"
@@ -12,9 +12,22 @@
           Instrucciones de juego
           </h3>
           <p class="mt-4 text-sm sm:text-base">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil quaerat iste fugiat quidem, nesciunt quasi quia harum tempore illum doloribus impedit assumenda eaque, quibusdam sunt natus deleniti, praesentium optio?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aliquam, cupiditate, delectus magnam ut doloremque odit adipisci nihil blanditiis suscipit deleniti quasi ad porro reprehenderit explicabo quod vitae eveniet quidem.
+            Para demostrar tu conocimiento sobre el cáncer y vencer la trivia, ten en cuenta:
           </p>
+          <ul class="text-sm sm:text-base pl-4 list-decimal">
+            <li>
+              Haz girar la ruleta del cáncer y responde correctamente las preguntas para continuar venciendo la trivia del cáncer.
+            </li>
+            <li>
+              Cada vez que respondas correctamente, estarás eliminando un color y también acercandote a salir vencedor de la trivia.
+            </li>
+            <li>
+              Si respondes incorrectamente, tendrás que volver a girar la ruleta.
+            </li>
+            <li>
+              Serás ganador de la trivia contra el cáncer si logras eliminar todos los colores de la ruleta.
+            </li>
+          </ul>
           <div class="text-right mt-8 flex justify-end">
             <Button size="lg" variant="tertiary" @click="step = 2">SIGUIENTE</Button>
           </div>

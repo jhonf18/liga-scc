@@ -1,6 +1,8 @@
 <template>
   <div class="py-6 sm:py-4">
-    <h1 class="text-2xl sm:text-4xl font-bold text-primary text-center">Tres en raya</h1>
+    <h1 class="text-2xl sm:text-4xl font-bold text-primary text-center">
+      Hazle triqui al cáncer de próstata
+    </h1>
 
     <div class="mt-8 container mx-auto max-w-4xl border rounded px-4 py-5 shadow-lg w-full-1rem"
       :class="{ 'bg-primary': step === 3 }" >
@@ -10,9 +12,19 @@
             Instrucciones de juego
           </h3>
           <p class="mt-4 text-sm sm:text-base">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil quaerat iste fugiat quidem, nesciunt quasi quia harum tempore illum doloribus impedit assumenda eaque, quibusdam sunt natus deleniti, praesentium optio?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aliquam, cupiditate, delectus magnam ut doloremque odit adipisci nihil blanditiis suscipit deleniti quasi ad porro reprehenderit explicabo quod vitae eveniet quidem.
+            Para vencer al cáncer de próstata con tu conocimiento y marcarle tres en raya debes:
           </p>
+          <ul class="text-sm sm:text-base pl-4 list-decimal">
+            <li>
+              Empezar respondiendo una pregunta para  tener el tiro inicial o de lo contrario lo obtendrá el cáncer de próstata (máquina).
+            </li>
+            <li>
+              Marca el lugar donde quieres jugar, luego deberás responder una pregunta correctamente para poder realizar la jugada, de lo contrario volverás a responder otra pregunta hasta que respondas correctamente para poder marcar en el tablero.
+            </li>
+            <li>
+              Gana quien haga el tres en raya.
+            </li>
+          </ul>
           <div class="text-right mt-8 flex justify-end">
             <Button size="lg" variant="tertiary" @click="step = 2">SIGUIENTE</Button>
           </div>
@@ -40,7 +52,7 @@
         </div>
         <div v-if="step === 3" key="step3">
           <h3 class="text-center text-2xl sm:text-4xl text-white font-semibold mb-5 mt-8">
-            Vence al cáncer de próstata
+            Márcale tres en raya al cáncer de próstata
           </h3>
           <div class="container flex items-center justify-center mt-5">
             <div class="bg-white rounded relative">
@@ -555,10 +567,10 @@ export default {
         this.modalResult.content ="Vuelve a competir contra el cáncer para que lo puedas vencer.";
       } else if (result === 'WINNER') {
         this.modalResult.title = '¡Ganaste!';
-        this.modalResult.content ="¡Felicitaciones! Haz vencido al cáncer.";
+        this.modalResult.content = "¡Felicitaciones! Haz vencido al cáncer de próstata.";
       } else {
         this.modalResult.title = 'Perdiste';
-        this.modalResult.content ="El cáncer te ha vencido, pero no te preocupes, intenta ganarle al cáncer nuevamente.";
+        this.modalResult.content = "El cáncer de próstata te ha vencido, pero no te preocupes, intenta vencerlo nuevamente.";
       }
       this.disabledGame = true;
       this.$refs['modal-result'].open();
