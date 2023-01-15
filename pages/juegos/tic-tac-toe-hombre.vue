@@ -32,7 +32,8 @@
               v-for="(response, i) in questions[0].responses" :key="i">
               <span class="font-bold text-primary mr-1" v-if="i === 0">A.</span>
               <span class="font-bold text-primary mr-1" v-else-if="i == 1">B.</span>
-              <span class="font-bold text-primary mr-1" v-else>C.</span>
+              <span class="font-bold text-primary mr-1" v-else-if="i == 2">C.</span>
+          <span class="font-bold text-primary mr-1" v-else>D.</span>
               {{ response.text }}
             </li>
           </ul>
@@ -126,7 +127,8 @@
           v-for="(response, i) in modal.responses" :key="i">
           <span class="font-bold text-primary mr-1" v-if="i === 0">A.</span>
           <span class="font-bold text-primary mr-1" v-else-if="i == 1">B.</span>
-          <span class="font-bold text-primary mr-1" v-else>C.</span>
+          <span class="font-bold text-primary mr-1" v-else-if="i == 2">C.</span>
+          <span class="font-bold text-primary mr-1" v-else>D.</span>
           {{ response.text }}
         </li>
       </ul>

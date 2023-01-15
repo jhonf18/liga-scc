@@ -1,89 +1,101 @@
 const questions = [
   {
-    type: 'ABC',
-    question: 'Pregunta 1',
+    question: '¿El tabaquismo es el principal factor de riesgo para el cáncer de pulmón?',
     responses: [
-      { text: 'Respuesta 1.1', correct: true },
-      { text: 'Respuesta 1.2' },
-      { text: 'Respuesta 1.3' }
+      { text: 'Verdadero', correct: true },
+      { text: 'Falso' },
     ]
   },
   {
-    type: 'ABC',
-    question: 'Pregunta 3',
+    question: '¿Qué es el tabaquismo?',
     responses: [
-      { text: 'Respuesta 3.1', correct: true },
-      { text: 'Respuesta 3.2' },
-      { text: 'Respuesta 3.3' }
+      { text: 'Enfermedad crónica producto de la adicción a la nicotina', correct: true },
+      { text: 'Hábito de vida' },
+      { text: 'Adicción saludable al cigarrillo ' },
     ]
   },
   {
-    type: 'ABC',
-    question: 'Pregunta 4',
+    question: 'Qué sustancia química causa la adicción al tabaquismo?',
     responses: [
-      { text: 'Respuesta 4.1', correct: true },
-      { text: 'Respuesta 4.2' },
-      { text: 'Respuesta 4.3' }
+      { text: 'La nicotina', correct: true },
+      { text: 'La heroína' },
+      { text: 'Alquitrán' }
     ]
   },
   {
-    type: 'TRUE_OR_FALSE',
-    question: 'Pregunta 2',
+    question: 'La nicotina es una neurotoxina que genera sensación de placer momentáneo:',
     responses: [
-      { text: 'Falso', correct: true },
-      { text: 'Verdadero'  }
+      { text: 'Falso' },
+      { text: 'Verdadero', correct: true },
     ]
   },
   {
-    type: 'TRUE_OR_FALSE',
-    question: 'Pregunta 5',
+    question: '¿Aproximadamente cuántas sustancias químicas que componen el cigarrillo son cancerígenas?',
     responses: [
-      { text: 'Falso', correct: true },
-      { text: 'Verdadero'  }
+      { text: '60', correct: true },
+      { text: '100' },
+      { text: '5 ' }
     ]
   },
   {
-    type: 'TRUE_OR_FALSE',
-    question: 'Pregunta 6',
+    question: 'Cuántas sustancias químicas contiene un cigarrillo:',
     responses: [
-      { text: 'Falso', correct: true },
-      { text: 'Verdadero'  }
+      { text: '30 ' },
+      { text: '7000', correct: true },
+      { text: '50 ' },
     ]
   },
   {
-    type: 'ABC',
-    question: 'Pregunta 7',
+    question: 'El tabaquismo tiene efectos:',
     responses: [
-      { text: 'Respuesta 7.1', correct: true },
-      { text: 'Respuesta 7.2' },
-      { text: 'Respuesta 7.3' }
+      { text: 'Todas son correctas', correct: true },
+      { text: 'Fisicos' },
+      { text: 'Psicologicos' },
     ]
   },
   {
-    type: 'ABC',
-    question: 'Pregunta 8',
+    question: '¿El tabaquismo se relaciona con 17 tipos de cáncer?',
     responses: [
-      { text: 'Respuesta 8.1', correct: true },
-      { text: 'Respuesta 8.2' },
-      { text: 'Respuesta 8.3' }
+      { text: 'Verdadero', correct: true },
+      { text: 'Falso' },
     ]
   },
   {
-    type: 'ABC',
-    question: 'Pregunta 9',
+    question: 'Unos de los efectos físicos del tabaquismo son:',
     responses: [
-      { text: 'Respuesta 9.1', correct: true },
-      { text: 'Respuesta 9.2' },
-      { text: 'Respuesta 9.3' }
+      { text: 'Dientes amarillos y dificultad para respirar', correct: true },
+      { text: 'Dolor en los brazos' },
+      { text: 'Morados y úlceras en la piel' }
     ]
   },
   {
-    type: 'ABC',
-    question: 'Pregunta 10',
+    question: 'El tabaquismo aumenta la posibilidad de enfermedades cardiorrespiratorias:',
     responses: [
-      { text: 'Respuesta 10.1', correct: true },
-      { text: 'Respuesta 10.2' },
-      { text: 'Respuesta 10.3' }
+      { text: 'Verdadero', correct: true },
+      { text: 'Falso' },
+    ]
+  },
+  {
+    question: 'Algunos efectos físicos del tabaquismo son:',
+    responses: [
+      { text: 'Todos son correctos', correct: true },
+      { text: 'Envejecimiento de piel' },
+      { text: 'Infecciones respiratorias' }
+    ]
+  },
+  {
+    question: '¿Cuáles son algunos efectos psicológicos del tabaquismo  ?',
+    responses: [
+      { text: 'Atención, memoria, control de impulsos', correct: true },
+      { text: 'Sueño, alzheimer' },
+      { text: 'Autismo, estrés postraumático' }
+    ]
+  },
+  {
+    question: '¿La ansiedad y la depresión son efectos psicológicos del tabaquismo?  ',
+    responses: [
+      { text: 'Verdadero', correct: true },
+      { text: 'Falso' },
     ]
   },
 ]

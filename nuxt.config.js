@@ -4,6 +4,9 @@ import metadataDynamic from './plugins/metadata/metadata-dynamic'
 import metadataStatic from './plugins/metadata/metadata-static'
 
 export default {
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL,
+  },
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 

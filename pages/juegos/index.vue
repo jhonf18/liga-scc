@@ -12,7 +12,20 @@
 </template>
 
 <script>
+import metadataDynamic from '~/plugins/metadata/metadata-dynamic'
 export default {
+  head() {
+    const title = 'Juegos'
+    const url = `${this.$config.baseURL}/juegos`
+    const description = 'Sección de juegos relacionados contra el cáncer.'
+
+    const dynamicMeta = metadataDynamic({
+      title,
+      description,
+      url
+    })
+    return { title, meta: [...dynamicMeta] }
+  },
   data() {
     return {
       play_games: [
