@@ -22,7 +22,7 @@
               class="block overflow-hidden absolute inset-0 box-border m-0">
               <nuxt-img
                 src="images/miniaturas/cancer.png"
-                format="webp"
+                format="png"
                 title="Miniatura de video sobre el cáncer"
                 alt="Miniatura de videos sobre generalidades del cáncer"
                 class="absolute top-0 left-0 w-full transition-all"

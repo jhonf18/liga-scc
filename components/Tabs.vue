@@ -40,7 +40,7 @@
                     class="block overflow-hidden absolute inset-0 box-border m-0">
                     <nuxt-img
                       :src="data.url_preview_video"
-                      format="webp"
+                      format="png"
                       :title="`Miniatura de video de ${data.title}`"
                       :alt="`Miniatura de video de ${data.title}`"
                       class="absolute top-0 left-0 w-full transition-all"
@@ -123,7 +123,6 @@ export default {
       this.$refs['modal-content-video'].open()
     },
     openInfographic(infographic) {
-      console.log(infographic)
       this.url_infographic = infographic.url_image;
       this.$refs['content-infographic'].open()
     }
