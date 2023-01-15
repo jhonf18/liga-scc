@@ -28,6 +28,7 @@ function getSettings() {
     { charset: 'utf-8' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     { name: 'format-detection', content: 'telephone=no' },
+    { name: 'google-site-verification', content: 'bGyGfNQrYn2bbErqlkt2XpC5ikVJpjl1uNThITQ2iGo' }
   ]
 }
 
