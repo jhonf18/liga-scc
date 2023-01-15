@@ -5,8 +5,8 @@
 const metadata = require('./metadata.js')
 
 // Settings
-const url = `${process.env.BASE_URL}/`
-const image = `https://fourp.blob.core.windows.net/images/assets/fourp-fb.png`
+const url = metadata.og.url;
+const image = `https://res.cloudinary.com/dsvy4oeqc/image/upload/c_scale,w_1280/v1673821809/educate-cancer/cancer_kkfv5v.png`
 const widthImage = 1280
 const heightImage = 720
 
@@ -43,6 +43,11 @@ function getMeta(meta) {
   ]
 }
 function getOpenGraph(meta) {
+  if (meta && meta.url) {
+    meta.url = `${url}${meta.url}`
+  }
+
+
   return [
     {
       hid: 'og:type',
@@ -103,6 +108,10 @@ function getOpenGraph(meta) {
 }
 
 function getTwitterCard(meta) {
+  if (meta && meta.url) {
+    meta.url = `${url}${meta.url}`
+  }
+
   return [
     {
       hid: 'twitter:url',

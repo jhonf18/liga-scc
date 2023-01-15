@@ -185,7 +185,7 @@
 
 
 <script>
-
+import metadataDynamic from '~/plugins/metadata/metadata-dynamic';
 const categories = [
   {
     name: 'Factores de riesgo del cáncer de pulmón',
@@ -233,6 +233,22 @@ const categories = [
 ]
 
 export default {
+  head(){
+    const title = 'Descubre las fichas del cáncer de pulmón'
+    const url = `${this.$nuxt.$route.path}`
+    const description = 'Demuestra que tanto sabes sobre el cáncer de pulmón y ordena las fichas del conocimiento para vencerlo.'
+    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/c_scale,w_1280/v1673821686/educate-cancer/puzzle_fotiiy.png'
+
+    const dynamicMeta = metadataDynamic({
+      title,
+      description,
+      url,
+      image,
+      widthImage: 1280,
+      heightImage: 720,
+    })
+    return { title, meta: [...dynamicMeta] }
+  },
   data() {
     return {
       ratio: 3, //👈 A little buggy at some sizes; works best at 4, but ¯\_(ツ)_/¯

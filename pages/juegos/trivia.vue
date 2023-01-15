@@ -156,6 +156,7 @@ import Questions from '@/helpers/questions/cancer'
 import FortuneWheel from 'vue-fortune-wheel'
 import 'vue-fortune-wheel/lib/vue-fortune-wheel.css'
 import { getIndexOfElementInArray, suffleArray } from '~/helpers'
+import metadataDynamic from '~/plugins/metadata/metadata-dynamic'
 
 const questions = suffleArray(Questions);
 
@@ -237,6 +238,22 @@ let prizes = [
 export default {
   components: {
     FortuneWheel
+  },
+  head(){
+    const title = 'Trivia contra el cáncer'
+    const url = `${this.$nuxt.$route.path}`
+    const description = 'Vence la trivia del cáncer desde el conocimiento respondiendo preguntas de manera entretenida.'
+    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/c_scale,h_750,w_1280/v1673821686/educate-cancer/trivia_cspbop.png'
+
+    const dynamicMeta = metadataDynamic({
+      title,
+      description,
+      url,
+      image,
+      widthImage: 1280,
+      heightImage: 750,
+    })
+    return { title, meta: [...dynamicMeta] }
   },
   data() {
     return {

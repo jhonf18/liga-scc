@@ -137,6 +137,7 @@
 </template>
 
 <script>
+import metadataDynamic from '~/plugins/metadata/metadata-dynamic';
 
 const MAX_ATTEMPTS = 6;
 const MASK_CHAR = '_';
@@ -164,6 +165,22 @@ const categories = [
 export default {
   components: {
      RightIcon: () => import('@/static/icons/right.svg?inline'),
+  },
+  head(){
+    const title = 'Sálvate de ir a la horca por el cáncer de próstata'
+    const url = `${this.$nuxt.$route.path}`
+    const description = 'Identifica la palabra oculta que te ayudará a salvarte y vencer el cáncer de próstata.'
+    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/c_scale,h_720,w_1280/v1673821685/educate-cancer/ahorcado_qusyww.png'
+
+    const dynamicMeta = metadataDynamic({
+      title,
+      description,
+      url,
+      image,
+      widthImage: 1280,
+      heightImage: 720,
+    })
+    return { title, meta: [...dynamicMeta] }
   },
   data() {
     return {

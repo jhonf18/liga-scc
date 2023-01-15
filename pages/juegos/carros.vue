@@ -2,7 +2,7 @@
   <main class="py-6 sm:py-4">
     <!-- TODO: Refactorizar codigo y realizar la versión movil del juego -->
     <h1 class="text-2xl sm:text-4xl font-bold text-primary text-center">
-      Carros
+      La carrera contra el sol
     </h1>
     <div
       class="
@@ -28,14 +28,28 @@
             Instrucciones de juego
           </h3>
           <p class="mt-4 text-sm sm:text-base">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil
-            quaerat iste fugiat quidem, nesciunt quasi quia harum tempore illum
-            doloribus impedit assumenda eaque, quibusdam sunt natus deleniti,
-            praesentium optio? Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Possimus aliquam, cupiditate, delectus magnam ut
-            doloremque odit adipisci nihil blanditiis suscipit deleniti quasi ad
-            porro reprehenderit explicabo quod vitae eveniet quidem.
+            Demuestra tus destrezas al volante y vence el impacto del sol para prevenir el cáncer de piel:
           </p>
+          <ul class="text-sm sm:text-base pl-4 list-decimal">
+            <li>
+              Inicia la carrera contra el sol y evita chocar con él para que no te queme la piel.
+            </li>
+            <li class="hidden lg:list-item">
+              Usa las teclas con flechas o las teclas <span class="italic">A</span>, <span class="italic">D</span>, <span class="italic">W</span>, <span class="italic">S</span> para mover el carro hacia la izquierda, derecha, arriba y abajo respectivamente.
+            </li>
+            <li class="list-item lg:hidden">
+              Para manejar el carro debes mantener presionada la pantalla hacia el lado que deseas que se mueva.
+            </li>
+            <li>
+              Obtén las sombrillas para protegerte del sol y hacer que estos vayan más lento y no chocar con ellos.
+            </li>
+            <li>
+              Atrapa los bloqueadores para hacer que los soles desaparezcan por un tiempo y puedas manejar libremente sin el peligro de quemar tu piel.
+            </li>
+            <li>
+              Rompe el récord en la carrera contra el sol  y obtén una puntuación alta.
+            </li>
+          </ul>
           <div class="text-right mt-8 flex justify-end">
             <Button size="lg" variant="tertiary" @click="clickPlayGame"
               >JUGAR</Button
@@ -62,7 +76,7 @@
           <div class="mb-2 p-2 bg-blue-600 border text-white rounded border-gray-300 shadow-lg">
             <h6 class="text-center font-semibold">Tip 1</h6>
             <ul class="text-sm">
-              <li>Recoje las sombrillas para que vayas más lento.</li>
+              <li>Atrapa las sombrillas para que vayas más lento.</li>
             </ul>
           </div>
           <p class="mt-4 text-center font-semibold">
@@ -161,7 +175,7 @@
             v-if="game_over">
             <div class="max-w-xl px-2 text-center">
               <span class="text-white font-semibold">
-                Haz obtenido una puntiación de {{ score }} contra el cáncer
+                Haz obtenido una puntuación de {{ score }} en la carrera contra el sol
               </span>
               <Button size="block" class="mt-2" variant="secondary" @click="resetGame">Volver a jugar</Button>
             </div>
@@ -194,7 +208,9 @@
           <div class="mb-2 p-2 bg-blue-600 border text-white rounded border-gray-300 shadow-lg">
             <h6 class="text-center font-semibold">Tip 2</h6>
             <ul class="text-sm">
-              <li>Recoje los protectores solares que esconderán los soles para que no puedan perjudicarte.</li>
+              <li>
+                Atrapa los bloqueadores para que los soles desaparezcan y no choques con ellos.
+              </li>
             </ul>
           </div>
         </div>
@@ -230,6 +246,7 @@
 </template>
 
 <script>
+import metadataDynamic from '~/plugins/metadata/metadata-dynamic';
 export default {
   data() {
     return {
@@ -354,16 +371,16 @@ export default {
     onKeyUp(e) {
       if (this.game_over === false) {
         var key = e.keyCode;
-        if (key === 37) {
+        if (key === 37 || key === 65) {
           cancelAnimationFrame(this.move_left);
           this.move_left = false;
-        } else if (key === 39) {
+        } else if (key === 39 || key === 68) {
           cancelAnimationFrame(this.move_right);
           this.move_right = false;
-        } else if (key === 38) {
+        } else if (key === 38 || key === 87) {
           cancelAnimationFrame(this.move_up);
           this.move_up = false;
-        } else if (key === 40) {
+        } else if (key === 40 || key === 83 ) {
           cancelAnimationFrame(this.move_down);
           this.move_down = false;
         }
@@ -372,13 +389,13 @@ export default {
     onKeyDown(e) {
       if (!this.game_over) {
         let key = e.keyCode;
-        if (key === 37 && this.move_left === false) {
+        if ((key === 37 || key === 65) && this.move_left === false) {
           this.move_left = requestAnimationFrame(this.left);
-        } else if (key === 39 && this.move_right === false) {
+        } else if ((key === 39 || key === 68 )&& this.move_right === false) {
           this.move_right = requestAnimationFrame(this.right);
-        } else if (key === 38 && this.move_up === false) {
+        } else if ( ( key === 38 || key === 87 ) && this.move_up === false) {
           this.move_up = requestAnimationFrame(this.up);
-        } else if (key === 40 && this.move_down === false) {
+        } else if (( key === 40 || key === 83 ) && this.move_down === false) {
           this.move_down = requestAnimationFrame(this.down);
         }
       }
@@ -590,8 +607,23 @@ export default {
     },
   },
   head() {
+    const title = 'La carrera contra el sol'
+    const url = `${this.$nuxt.$route.path}`
+    const description = 'Compite esquivando los efectos del sol y usa tu destreza al volante para obtener elementos de protección contra el sol.'
+    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/c_scale,h_720,w_1280/v1673823659/educate-cancer/carros_z9nqbe.png'
+
+    const dynamicMeta = metadataDynamic({
+      title,
+      description,
+      url,
+      image,
+      widthImage: 1280,
+      heightImage: 720,
+    })
+
     return {
       script: [{ src: "https://code.jquery.com/jquery-3.6.3.min.js" }],
+      title, meta: [...dynamicMeta]
     };
   },
 };

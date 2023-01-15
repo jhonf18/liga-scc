@@ -84,7 +84,7 @@ export default {
 }
 
 .container-video:hover .filter-container {
-  background-color: #282b53ad;
+  background-color: #282b537e;
 }
 
 .container-video:hover .filter-content {
@@ -97,7 +97,7 @@ export default {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #282b5360;
+  background-color: #282b5367;
 }
 
 .filter-content {

@@ -173,6 +173,7 @@ import Questions from '@/helpers/questions/tabaquismo';
 import { suffleArray } from '@/helpers';
 import cancerIcon from '@/static/icons/cancer.svg.js';
 import noSmokingIcon from '@/static/icons/no-smoking.svg.js'
+import metadataDynamic from '~/plugins/metadata/metadata-dynamic';
 
 let questions = [];
 for (let i = 0; i < Questions.length; i++) {
@@ -183,6 +184,22 @@ for (let i = 0; i < Questions.length; i++) {
 questions = suffleArray(questions);
 
 export default {
+  head(){
+    const title = 'Márcale triqui al tabaquismo'
+    const url = `${this.$nuxt.$route.path}`
+    const description = 'Enfréntate al principal factor de riesgo del cáncer de pulmón y vencelo con estrategia y conocimiento.'
+    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/c_scale,w_1280/v1673821685/educate-cancer/tic-tac-adolescente_zt5nyx.png'
+
+    const dynamicMeta = metadataDynamic({
+      title,
+      description,
+      url,
+      image,
+      widthImage: 1280,
+      heightImage: 750,
+    })
+    return { title, meta: [...dynamicMeta] }
+  },
   data() {
     return {
       map: [0,0,0,0,0,0,0,0,0],

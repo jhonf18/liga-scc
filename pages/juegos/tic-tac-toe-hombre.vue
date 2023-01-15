@@ -172,6 +172,7 @@ import Questions from '@/helpers/questions/cancer_prostata';
 import { suffleArray } from '@/helpers';
 import cancerIcon from '@/static/icons/cancer.svg.js';
 import germIcon from '@/static/icons/germ.svg.js';
+import metadataDynamic from '~/plugins/metadata/metadata-dynamic';
 
 let questions = [];
 for (let i = 0; i < Questions.length; i++) {
@@ -182,6 +183,22 @@ for (let i = 0; i < Questions.length; i++) {
 questions = suffleArray(questions);
 
 export default {
+  head(){
+    const title = 'Hazle triqui al cáncer de próstata'
+    const url = `${this.$nuxt.$route.path}`
+    const description = 'Desafía con tu conocimiento al cáncer de próstata y márcale tres en raya para vencerlo.'
+    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/c_scale,w_1280/v1673821686/educate-cancer/tic-tac-hombre_ex9wp6.png'
+
+    const dynamicMeta = metadataDynamic({
+      title,
+      description,
+      url,
+      image,
+      widthImage: 1280,
+      heightImage: 734,
+    })
+    return { title, meta: [...dynamicMeta] }
+  },
   data() {
     return {
       map: [0,0,0,0,0,0,0,0,0],

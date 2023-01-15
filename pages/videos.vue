@@ -60,8 +60,8 @@ export default {
         },
         {
           title: 'Cáncer de piel',
-          url_preview_video: 'https://licancerbucaramanga.org/wp-content/uploads/2021/10/Piezas-Octubre.png',
-          url_video: 'https://www.youtube.com/embed/KWNAZc93iBs?feature=oembed',
+          url_preview_video: require('~/static/images/miniaturas/piel.png'),
+          url_video: 'https://www.youtube.com/embed/gu4QQP0gidM',
           link: '/etapas/ninos'
         },
         {
@@ -125,18 +125,18 @@ export default {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #282b5360;
+  background-color: #282b5338;
 }
 
 .wrapper {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 90px;
+  height: 90px;
   margin: 0 auto;
 }
 .wrapper .circle {
-  width: 80px;
-  height: 80px;
+  width: 65px;
+  height: 65px;
   position: absolute;
   top: 0;
   left: 0;
@@ -197,7 +197,7 @@ export default {
 }
 
 .container-video:hover .filter-container {
-  background-color: #282b53ad;
+  background-color: #282b5367;
 }
 
 .container-video:hover .filter-content {
@@ -210,7 +210,7 @@ export default {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #282b5360;
+  background-color: #282b5333;
 }
 
 .filter-content {

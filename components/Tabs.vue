@@ -33,7 +33,7 @@
             <div class="">
               <div
                 @click="openVideo"
-                class="mx-auto w-full cursor-pointer flex justify-center items-center"
+                class="mx-auto tab-content-preview-video w-full cursor-pointer flex justify-center items-center"
                 >
                 <div class="relative container-img s-ratio-16-9 relative rounded-tl rounded-tr">
                   <div
@@ -175,7 +175,11 @@ export default {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #282b5360;
+  background-color: #282b5367;
+}
+
+.tab-content-preview-video:hover .filter-container {
+  background-color: #282b537e;
 }
 
 .wrapper {

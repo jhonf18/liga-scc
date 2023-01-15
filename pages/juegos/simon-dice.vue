@@ -30,7 +30,7 @@
           </div>
         </div>
         <div v-if="step === 2" key="step-2">
-          <p class="text-center max-w-2xl mx-auto mt-6 mb-2">
+          <p class="text-center max-w-2xl mx-auto mt-6 mb-3 text-lg leading-6	">
             Recuerda que la realización del <strong>autoexamen de mama</strong> puede <strong>detectar</strong> de forma temprana un cáncer.
           </p>
           <ul class="mb-6 max-w-2xl mx-auto list-disc">
@@ -43,6 +43,12 @@
             <li>
                Los hombres pueden elegir <strong>cualquier</strong> día al mes para hacerlo.
             </li>
+            <li>
+              En el autoexamen de mama identifica
+              <strong>hendiduras</strong>, <strong>enrojecimientos</strong>,
+              <strong>masas</strong>, <strong>asimetría</strong>, <strong>úlceras</strong>,
+              <strong>enrojecimiento</strong> o <strong>secreción</strong> en el pezón
+            </li>
           </ul>
           <div class="text-right mt-8 flex justify-end">
             <Button size="lg" variant="tertiary" @click="step = 3">SIGUIENTE</Button>
@@ -50,7 +56,7 @@
         </div>
         <div v-if="step === 3" key="step-3">
           <h3 class="text-center text-2xl sm:text-4xl text-white font-semibold mb-4 mt-4">
-            Aprende hacerte el autoexamen
+            Aprende los pasos del autoexamen
           </h3>
           <div
             class="cards grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
@@ -116,6 +122,7 @@
 
 <script>
 import { getIndexOfElementInArray, suffleArray } from '~/helpers';
+import metadataDynamic from '~/plugins/metadata/metadata-dynamic';
 
 
 let cards = [
@@ -166,6 +173,20 @@ let cards = [
 cards = suffleArray(cards)
 
 export default {
+  head(){
+    const title = 'Ve al ritmo de la Liga con el autoexamen de mama'
+    const url = `${this.$nuxt.$route.path}`
+    const description = 'Sigue el ritmo que te indica la liga y aprende a realizar el autoexamen de mama.'
+    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/c_scale,h_720,w_1280/v1673821686/educate-cancer/simon-dice_axixmu.png'
+
+    const dynamicMeta = metadataDynamic({
+      title,
+      description,
+      url,
+      image,
+    })
+    return { title, meta: [...dynamicMeta] }
+  },
   data() {
     return {
       step: 1,
