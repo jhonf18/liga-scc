@@ -188,7 +188,7 @@
 
 const categories = [
   {
-    name: 'Categoría 1',
+    name: 'Factores de riesgo del cáncer de pulmón',
     images: [
       {
         name: 'Imagen 1.1',
@@ -205,7 +205,7 @@ const categories = [
     ]
   },
   {
-    name: 'Categoría 2',
+    name: 'Síntomas',
     images: [
       {
         name: 'Imagen 2.1',
@@ -222,7 +222,7 @@ const categories = [
     ]
   },
   {
-    name: 'Categoría 3',
+    name: 'Genialidades de los pulmones y cáncer',
     images: [
       {
         name: 'Imagen 3.1',

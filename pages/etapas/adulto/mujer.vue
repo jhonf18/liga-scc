@@ -18,24 +18,24 @@ export default {
           {
             name: 'Reconoce los signos y vence al cáncer de mama ',
             link: '/juegos/recordar',
-            url_image: 'images/recordar.png',
+            url_image: '/images/recordar.png',
             description: 'Pon a prueba tu memoria para recordar y detectar a tiempo los signos de alarma y vencer al cáncer de mama.'
           },
           {
             name: 'Ve al ritmo de la liga con el autoexamen de mama',
             link: '/juegos/simon-dice',
-            url_image: 'images/simon-dice.png',
+            url_image: '/images/simon-dice.png',
             description: 'Sigue el ritmo que te indica la liga y aprende a realizar el autoexamen de mama.'
           },
         ],
         infographics: [
           {
             name: 'Cáncer de mama',
-            url_image: 'images/infografias/mama/cancer-de-mama.png',
+            url_image: '/images/infografias/mama/cancer-de-mama.png',
           },
           {
             name: 'Autoexamen de mama y signos de alarma',
-            url_image: 'images/infografias/mama/autoexamen.png',
+            url_image: '/images/infografias/mama/autoexamen.png',
           },
         ]
       }

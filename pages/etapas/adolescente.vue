@@ -19,24 +19,24 @@ export default {
           {
             name: 'Descubre las fichas del cáncer de pulmón',
             link: '/juegos/puzzle',
-            url_image: 'images/puzzle.png',
+            url_image: '/images/puzzle.png',
             description: 'Demuestra que tanto sabes sobre el cáncer de pulmón y ordena las fichas del conocimiento para vencerlo.'
           },
           {
             name: 'Márcale triqui al Tabaquismo',
             link: '/juegos/tic-tac-toe-adolescente',
-            url_image: 'images/tic-tac-adolescente.png',
+            url_image: '/images/tic-tac-adolescente.png',
             description: 'Enfréntate al principal factor de riesgo del cáncer de pulmón y vencelo con estrategia y conocimiento.'
           },
         ],
         infographics: [
           {
             name: 'Efectos del tabaquismo',
-            url_image: `images/infografias/tabaquismo/efectos-del-tabaquismo.png`,
+            url_image: `/images/infografias/tabaquismo/efectos-del-tabaquismo.png`,
           },
           {
             name: 'Cáncer de pulmón',
-            url_image: `images/infografias/tabaquismo/cancer-de-pulmon.png`,
+            url_image: `/images/infografias/tabaquismo/cancer-de-pulmon.png`,
           }
         ]
       }

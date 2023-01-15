@@ -19,24 +19,24 @@ export default {
           {
             name: 'Hazle triqui al cáncer de próstata',
             link: '/juegos/tic-tac-toe-hombre',
-            url_image: 'images/tic-tac-hombre.png',
+            url_image: '/images/tic-tac-hombre.png',
             description: 'Desafía con tu conocimiento al cáncer de próstata y márcale tres en raya para vencerlo.'
           },
           {
             name: 'Sálvate de ir a la horca  por el cáncer de próstata',
             link: '/juegos/ahorcado',
-            url_image: 'images/ahorcado.png',
+            url_image: '/images/ahorcado.png',
             description: 'Identifica la palabra oculta que te ayudará a salvarte y vencer el cáncer de próstata.'
           },
         ],
         infographics: [
           {
             name: 'Síntomas de cáncer de prostata ',
-            url_image: 'images/infografias/prostata/sintomas.png',
+            url_image: '/images/infografias/prostata/sintomas.png',
           },
           {
             name: 'Cáncer de próstata ',
-            url_image: 'images/infografias/prostata/cancer-de-prostata.png',
+            url_image: '/images/infografias/prostata/cancer-de-prostata.png',
           }
         ]
       }
