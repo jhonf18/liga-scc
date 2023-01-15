@@ -55,7 +55,7 @@ export default {
     // https://www.npmjs.com/package/@nuxtjs/moment
     '@nuxtjs/moment',
     // https://image.nuxtjs.org/
-    '@nuxt/image',
+    ['@nuxt/image', { provider: 'static' }],
     // https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
   ],
