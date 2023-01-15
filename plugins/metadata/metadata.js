@@ -1,6 +1,6 @@
 const app = 'Aprende y juega con la Liga Santandereana Contra el Cáncer'
 const description = 'Educate a través de herramientas interactivas como infografías, juegos y videos lúdicos sobre la prevención y detección del cáncer.';
-const link = 'https://magnificent-pixie-e7cd78.netlify.app/'
+const link = 'https://educatecancer.online'
 const urlImage = 'https://fourp.blob.core.windows.net/images/assets/fourp-fb.png'
 const typeImage = 'image/png'
 
