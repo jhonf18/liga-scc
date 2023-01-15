@@ -1126,4 +1126,14 @@ export default {
   }
 }
 
+.sun-rred {
+  left: auto;
+  right: -0.2em;
+}
+
+.sun-reye {
+  left: auto;
+  right: 0.75em;
+}
+
 </style>
