@@ -35,7 +35,7 @@
             class="cards grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
             <div v-for="(card, index) in cards"
             :key="`${card.name}-${index}`"
-            :class="card.class">
+            :style="card.class">
               <div
                 class="card mx-auto cursor-pointer h-28 w-28 sm:h-44 sm:w-44"
                 @click="clickCard(card.button, index)"
@@ -249,9 +249,11 @@ export default {
       this.canPlay = false;
 
       this.playSound( this.cards[index].button )
-      this.cards[index].class = ['brightness-[1.35]']
+      //this.cards[index].class = ['brightness-[1.35]']
+      this.cards[index].class = { 'filter': 'brightness(1.35)' }
       await this.sleep(duration)
-      this.cards[index].class = ['']
+      //this.cards[index].class = ['']
+      this.cards[index].class= "{  }"
       await this.sleep(duration)
       this.canPlay = true
     },
