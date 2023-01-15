@@ -4,22 +4,29 @@
       <span v-if="content === 'infographic'" @click="clickCard" class="cursor-pointer">
         <div
           class="block overflow-hidden absolute inset-0 box-border m-0">
-          <img
+          <nuxt-img
             :src="data.url_image"
+            format="webp"
             :title="`Infografía ${data.name}`"
             :alt="`Infografía sobre ${data.name}`"
             :class="{ 'h-0 max-h-full' : content !== 'infographic' }"
-            class="absolute top-0 left-0 w-full transition-all">
+            class="absolute top-0 left-0 w-full transition-all"
+            quality="75"
+            loading="lazy"/>
         </div>
       </span>
       <nuxt-link v-if="content !== 'infographic'" :to="data.link">
         <div
           class="block overflow-hidden absolute inset-0 box-border m-0">
-          <img
+          <nuxt-img
             :src="data.url_image"
-            :alt="`Juego sobre el ${data.name}`"
+            format="webp"
+            :placeholder="[306, 180, 20]"
+            quality="75"
             :title="`Juego ${data.name}`"
-            class="absolute top-0 left-0 w-full transition-all">
+            :alt="`Juego sobre ${data.name}`"
+            class="absolute top-0 left-0 w-full transition-all"
+            loading="lazy"/>
         </div>
       </nuxt-link>
       <div
@@ -32,11 +39,11 @@
     <div class="card-content p-4"
       :class="{'text-center': content === 'infographic'}">
       <span v-if="!data.link" @click="clickCard"
-        class="text-xl text-primary font-semibold hover:underline transition-all cursor-pointer">
+        class="text-xl text-primary h-14 line-clamp-2 font-semibold hover:underline transition-all cursor-pointer">
         {{ data.name }}
       </span>
       <nuxt-link v-if="data.link" :to="data.link"
-        class="text-xl text-primary font-semibold hover:underline transition-all cursor-pointer">
+        class="text-xl text-primary h-14 line-clamp-2 font-semibold hover:underline transition-all cursor-pointer">
         {{ data.name }}
       </nuxt-link>
       <p class="line-clamp-4 text-gray-800" :title="data.description">

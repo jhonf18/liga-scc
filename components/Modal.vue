@@ -68,7 +68,14 @@
               allowfullscreen frameborder="0"></iframe>
           </div>
           <div v-if="type === 'image'" >
-            <img :src="linkMultimedia" alt="Infografía sobre el cáncer" class="w-full">
+            <nuxt-img
+              :src="linkMultimedia"
+              alt="Infografía sobre el cáncer"
+              title="Infografía sobre el cáncer"
+              class="w-full"
+              format="png"
+              loading="lazy"
+              />
           </div>
           <div  v-if="footer && type === 'text'" class="modal-footer">
             <button

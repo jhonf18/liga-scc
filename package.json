@@ -11,6 +11,8 @@
   "dependencies": {
     "@nuxt/content": "^1.15.1",
     "@nuxtjs/pwa": "^3.3.5",
+    "@nuxtjs/robots": "^2.5.0",
+    "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/svg": "^0.4.0",
     "core-js": "^3.19.3",
     "hammerjs": "^2.0.8",
@@ -24,6 +26,8 @@
   },
   "devDependencies": {
     "@csstools/postcss-sass": "^5.0.1",
+    "@nuxt/image": "^0.7.1",
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/moment": "^1.6.1",
     "@nuxtjs/tailwindcss": "^4.2.1",
     "@tailwindcss/line-clamp": "^0.4.2",

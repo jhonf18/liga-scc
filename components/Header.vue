@@ -5,11 +5,14 @@
       <div class="ml-2" @click="isShowMenu = true">
         <MenuIcon style="color: #fff" />
       </div>
-        <img
+        <nuxt-img
+          src="/logo-blanco.png"
+          :placeholder="[90, 50, 40]"
+          width="90" height="50"
+          format="webp"
           class="mx-auto"
-          width="90px"
-          src="https://licancerbucaramanga.org/wp-content/uploads/2021/02/Logo-Blanco.png"
-          alt="Logotipo en blanco de la Liga Santandereana Contra el Cáncer">
+          title="Logotipo de la Liga Santandereana Contra el Cáncer"
+          alt="Logotipo en blanco de la Liga Santandereana Contra el Cáncer"/>
     </div>
 
     <!-- Lateral menu -->
@@ -95,9 +98,14 @@
     <div class="hidden sm:block">
       <div class="container-img">
         <nuxt-link to="/" class="inline-block">
-          <img
-            src="https://licancerbucaramanga.org/wp-content/uploads/2021/02/cropped-Logo_LSCC-Normal.png"
-            alt="Logotipo Liga Santandereana Contra el Cáncer">
+        <nuxt-img
+          src="/logo.png"
+          :placeholder="[130, 71, 40]"
+          width="130" height="71"
+          quality="75"
+          format="webp"
+          title="Logotipo de la Liga Santandereana Contra el Cáncer"
+          alt="Logotipo de la Liga Santandereana Contra el Cáncer"/>
         </nuxt-link>
       </div>
       <nav class="menu">

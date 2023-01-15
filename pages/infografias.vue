@@ -31,43 +31,43 @@ export default {
       infographics: [
         {
           name: 'Cáncer de mama',
-          url_image: require(`~/static/images/infografias/mama/cancer-de-mama.png`),
+          url_image: `images/infografias/mama/cancer-de-mama.png`,
           link: '/etapas/adulto/mujer',
           alt: ''
         },
         {
           name: 'Autoexamen de mama y signos de alarma',
-          url_image: require(`~/static/images/infografias/mama/autoexamen.png`),
+          url_image: `images/infografias/mama/autoexamen.png`,
           link: '/etapas/adulto/mujer'
         },
         {
           name: 'Síntomas de cáncer de próstata ',
-          url_image: require(`~/static/images/infografias/prostata/sintomas.png`),
+          url_image: `images/infografias/prostata/sintomas.png`,
           link: '/etapas/adulto/hombre'
         },
         {
           name: 'Cáncer de próstata ',
-          url_image: require(`~/static/images/infografias/prostata/cancer-de-prostata.png`),
+          url_image: `images/infografias/prostata/cancer-de-prostata.png`,
           link: '/etapas/adulto/hombre'
         },
         {
           name: 'Cuidemos nuestra piel para evitar el cáncer',
-          url_image: require(`~/static/images/infografias/piel/cancer-de-piel.png`),
+          url_image: `images/infografias/piel/cancer-de-piel.png`,
           link: '/etapas/nino'
         },
         {
           name: 'Efectos del tabaquismo',
-          url_image: require(`~/static/images/infografias/tabaquismo/efectos-del-tabaquismo.png`),
+          url_image: `images/infografias/tabaquismo/efectos-del-tabaquismo.png`,
           link: '/etapas/adolescente'
         },
         {
           name: 'Cáncer de pulmón',
-          url_image: require(`~/static/images/infografias/tabaquismo/cancer-de-pulmon.png`),
+          url_image: `images/infografias/tabaquismo/cancer-de-pulmon.png`,
           link: '/etapas/adolescente'
         },
         {
           name: 'Aprende sobre el cáncer',
-          url_image: require(`~/static/images/infografias/cancer/aprende-sobre-el-cancer.png`),
+          url_image: `images/infografias/cancer/aprende-sobre-el-cancer.png`,
           link: '/'
         }
       ],

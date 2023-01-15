@@ -4,9 +4,15 @@
       <div class="col-span-2">
         <div class="container-img">
           <a href="https://licancerbucaramanga.org/" target="_blank">
-            <img
-          src="https://licancerbucaramanga.org/wp-content/uploads/2021/02/Logo-Blanco.png"
-          alt="Logotipo en blanco de la Liga Santandereana Contra el Cáncer">
+            <nuxt-img
+              src="/logo-blanco.png"
+              :placeholder="[130, 72, 40]"
+              width="130" height="72"
+              quality="75"
+              format="webp"
+              loading="lazy"
+              title="Logotipo de la Liga Santandereana Contra el Cáncer"
+              alt="Logotipo en blanco de la Liga Santandereana Contra el Cáncer"/>
           </a>
         </div>
       </div>
@@ -17,10 +23,10 @@
             <nuxt-link to="/juegos">Juegos</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/juegos">Videos</nuxt-link>
+            <nuxt-link to="/videos">Videos</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/juegos">Infografías</nuxt-link>
+            <nuxt-link to="/infografias">Infografías</nuxt-link>
           </li>
         </ul>
       </div>
@@ -46,7 +52,7 @@
       </div>
     </div>
     <div class="flex justify-center" style="font-size: .8rem">
-      <span class="text-center">Todos los derechos reservados 2023 &copy;</span>
+      <span class="text-center">Creado por Ximena Blanco &amp; Jhon Pérez &copy;</span>
     </div>
   </footer>
 </template>

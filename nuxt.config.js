@@ -1,15 +1,22 @@
+
+import metadata from './plugins/metadata/metadata'
+import metadataDynamic from './plugins/metadata/metadata-dynamic'
+import metadataStatic from './plugins/metadata/metadata-static'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Liga Santandereana Contra el Cáncer',
+    title: metadata.tags.title,
+    titleTemplate: metadata.tags.titleTemplate,
+    htmlAttrs: {
+      lang: metadata.settings.locale,
+    },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      ...metadataStatic(),
+      ...metadataDynamic()
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/icon-mesa.png' },
@@ -26,7 +33,7 @@ export default {
   ],
 
   loading: {
-    color: '#282b53',
+    color: metadata.settings.color,
     height: '2px',
   },
 
@@ -44,6 +51,10 @@ export default {
     '@nuxtjs/tailwindcss',
     // https://www.npmjs.com/package/@nuxtjs/moment
     '@nuxtjs/moment',
+    // https://image.nuxtjs.org/
+    '@nuxt/image',
+    // https://github.com/nuxt-community/dotenv-module
+    '@nuxtjs/dotenv',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -54,6 +65,10 @@ export default {
     '@nuxt/content',
     // https://www.npmjs.com/package/@nuxtjs/svg
     '@nuxtjs/svg',
+    // https://sitemap.nuxtjs.org/
+    '@nuxtjs/sitemap',
+    // https://www.npmjs.com/package/@nuxtjs/robots
+    '@nuxtjs/robots'
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -62,15 +77,15 @@ export default {
       source: './static/icon-mesa.png'
     },
     meta: {
-      name: 'Liga Santandereana Contra e Cáncer',
-      theme_color: '#282b53',
+      name: metadata.tags.title,
+      theme_color: metadata.settings.color,
       lang: 'es',
     },
     manifest: {
       lang: 'es',
-      name: 'Liga Santandereana Contra el Cáncer',
-      description: 'Herramientas interactivas',
-      short_name: 'LSCC',
+      name: metadata.tags.title,
+      description: metadata.tags.description,
+      short_name: 'Aprende con la LSCC',
       display: 'standalone',
       start_url: '/'
     },
@@ -112,5 +127,11 @@ export default {
         }
       }
     }
-  }
+  },
+
+  sitemap: {
+    hostname: metadata.og.url,
+    routes: [],
+    gzip: true,
+  },
 }

@@ -1,79 +1,128 @@
 const questions = [
   {
-    question: 'Pregunta 1',
+    question: '¿El cáncer de próstata es el que más afecta a los hombres después del cáncer de piel?',
     responses: [
-      { text: 'Respuesta 1.1', correct: true },
-      { text: 'Respuesta 1.2' },
-      { text: 'Respuesta 1.3' }
+      { text: 'Verdadero', correct: true },
+      { text: 'Falso' }
     ]
   },
   {
-    question: 'Pregunta 3',
-    responses: [
-      { text: 'Respuesta 3.1', correct: true },
-      { text: 'Respuesta 3.2' },
-      { text: 'Respuesta 3.3' }
-    ]
-  },
-  {
-    question: 'Pregunta 4',
-    responses: [
-      { text: 'Respuesta 4.1', correct: true },
-      { text: 'Respuesta 4.2' },
-      { text: 'Respuesta 4.3' }
-    ]
-  },
-  {
-    question: 'Pregunta 2',
+    question: '¿La hiperplasia prostática es cáncer?',
     responses: [
       { text: 'Falso', correct: true },
-      { text: 'Verdadero'  }
+      { text: 'Verdadero' },
     ]
   },
   {
-    question: 'Pregunta 5',
+    question: 'Cuando el cáncer de próstata ha invadido tejidos vecinos ¿qué etapa es?',
+    responses: [
+      { text: 'Localmente avanzado', correct: true },
+      { text: 'Localizado' },
+      { text: 'Avanzado' }
+    ]
+  },
+  {
+    question: 'Los factores de riesgo del cáncer de próstata son:',
+    responses: [
+      { text: 'Antecedente familiar' },
+      { text: 'Raza afrocolombiana negra'  },
+      { text: 'Edad'  },
+      { text: 'Todas son correctas', correct: true  },
+    ]
+  },
+  {
+    question: '¿Qué factor disminuye el riesgo de cáncer de próstata?',
+    responses: [
+      { text: 'Actividad física', correct: true },
+      { text: 'Edad'  },
+      { text: 'Tabaquismo '}
+    ]
+  },
+  {
+    question: 'Evitar el tabaquismo y el  alcohol se constituye como un:',
+    responses: [
+      { text: 'Factor de riesgo ' },
+      { text: 'Factor que disminuye el riesgo de cáncer', correct: true  },
+      { text: 'Hábito saludable ' },
+    ]
+  },
+  {
+    question: '¿La alimentación es un factor que disminuye el riesgo de cáncer de próstata?',
+    responses: [
+      { text: 'Verdadero', correct: true },
+      { text: 'Falso' },
+    ]
+  },
+  {
+    question: '¿Cuál de los siguientes aspectos es un factor de riesgo para cáncer de próstata?',
+    responses: [
+      { text: 'Antecedente familiar', correct: true },
+      { text: 'Montar en bicicleta' },
+      { text: 'Exceso de actividad sexual' }
+    ]
+  },
+  {
+    question: 'La medida aproximada de la próstata es de:',
+    responses: [
+      { text: '20 cm3', correct: true },
+      { text: '10 cm3' },
+      { text: '30 cm3' }
+    ]
+  },
+  {
+    question: 'La próstata es atravesada por:',
+    responses: [
+      { text: 'Uretra', correct: true },
+      { text: 'El colon' },
+      { text: 'La vejiga' }
+    ]
+  },
+  {
+    question: 'Algunas afectaciones de la próstata se evidencian en:',
+    responses: [
+      { text: 'Dificultad para orinar', correct: true },
+      { text: 'Dificultad para caminar' },
+      { text: 'Dificultades en la erección' }
+    ]
+  },
+  {
+    question: '¿Qué es el cáncer de próstata?',
+    responses: [
+      { text: 'Todas son correctas', correct: true },
+      { text: 'Crecimiento maligno de la glándula prostática' },
+      { text: 'Producción descontrolada de las células' }
+    ]
+  },
+  {
+    question: '¿Cuáles son los síntomas del cáncer de próstata?  ',
+    responses: [
+      { text: 'Todas son correctas', correct: true },
+      { text: 'Dolor al  orinar y eyacular' },
+      { text: 'Sangre en la orina y semen' },
+      { text: 'Dificultad para orinar y eyacular' },
+    ]
+  },
+  {
+    question: '¿Toda afectación en la próstata es cáncer de próstata?',
     responses: [
       { text: 'Falso', correct: true },
-      { text: 'Verdadero'  }
+      { text: 'Verdadero' },
     ]
   },
   {
-    question: 'Pregunta 6',
+    question: 'El examen diagnóstico que permite evaluar el tamaño, forma o dureza de la próstata es:',
     responses: [
-      { text: 'Falso', correct: true },
-      { text: 'Verdadero'  }
+      { text: 'Examen físico - tacto rectal', correct: true },
+      { text: 'Antígeno prostático' },
+      { text: 'Radiografía' }
     ]
   },
   {
-    question: 'Pregunta 7',
+    question: '¿Cuáles son los exámenes para diagnosticar el cáncer de próstata?',
     responses: [
-      { text: 'Respuesta 7.1', correct: true },
-      { text: 'Respuesta 7.2' },
-      { text: 'Respuesta 7.3' }
-    ]
-  },
-  {
-    question: 'Pregunta 8',
-    responses: [
-      { text: 'Respuesta 8.1', correct: true },
-      { text: 'Respuesta 8.2' },
-      { text: 'Respuesta 8.3' }
-    ]
-  },
-  {
-    question: 'Pregunta 9',
-    responses: [
-      { text: 'Respuesta 9.1', correct: true },
-      { text: 'Respuesta 9.2' },
-      { text: 'Respuesta 9.3' }
-    ]
-  },
-  {
-    question: 'Pregunta 10',
-    responses: [
-      { text: 'Respuesta 10.1', correct: true },
-      { text: 'Respuesta 10.2' },
-      { text: 'Respuesta 10.3' }
+      { text: 'Antígeno prostático y examen físico', correct: true },
+      { text: 'Radiografía' },
+      { text: 'Ninguna es correcta' }
     ]
   },
 ]

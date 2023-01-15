@@ -19,14 +19,14 @@ export default {
           {
             name: 'La carrera contra el  sol',
             link: '/juegos/carros',
-            url_image: require('~/static/images/carros.png'),
+            url_image: 'images/carros.png',
             description: 'Compite esquivando los efectos del sol y usa tu destreza al volante para obtener elementos de protección contra el sol.'
           },
         ],
         infographics: [
           {
             name: 'Cuidemos nuestra piel para evitar el cáncer',
-            url_image: require(`~/static/images/infografias/piel/cancer-de-piel.png`)
+            url_image: `images/infografias/piel/cancer-de-piel.png`
           },
         ]
       }
