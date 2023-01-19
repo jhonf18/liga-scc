@@ -175,23 +175,36 @@ export default {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #282b5367;
+  background-color: #282b531e;
 }
 
 .tab-content-preview-video:hover .filter-container {
-  background-color: #282b537e;
+  background-color: #282b5328;
 }
+
+.container-video:hover .filter-container {
+  background-color: #282b5373;
+}
+
+.container-video:hover .filter-content {
+  display: flex;
+}
+
+.filter-content {
+  display: none;
+}
+
 
 .wrapper {
   position: absolute;
-  width: 150px;
-  height: 150px;
+  height: 90px;
+  width: 90px;
   margin: 0 auto;
 }
 .wrapper .circle {
-  width: 100px;
-  height: 100px;
   position: absolute;
+  height: 65px;
+  width: 65px;
   top: 0;
   left: 0;
   right: 0;
@@ -250,24 +263,30 @@ export default {
   }
 }
 
-.container-video:hover .filter-container {
-  background-color: #282b53ad;
+
+@media (min-width: 768px) {
+  .wrapper {
+    height: 120px;
+    width: 120px;
+  }
+
+  .wrapper .circle {
+    height: 80px;
+    width: 80px;
+  }
 }
 
-.container-video:hover .filter-content {
-  display: flex;
+@media (min-width: 1024px) {
+  .wrapper {
+    height: 150px;
+    width: 150px;
+  }
+
+  .wrapper .circle {
+    height: 100px;
+    width: 100px;
+  }
 }
 
-.filter-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #282b5360;
-}
 
-.filter-content {
-  display: none;
-}
 </style>

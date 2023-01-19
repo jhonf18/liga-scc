@@ -5,7 +5,7 @@
         {{  data.title }}
       </h1>
       <div class="md:grid md:grid-cols-5 md:gap-4">
-        <div class="relative container-img s-ratio-16-9 relative rounded-tl rounded-tr">
+        <div class="relative container-img s-ratio-16-9 relative rounded-tl rounded-tr col-span-3 md:ml-4">
           <div
             class="block overflow-hidden absolute inset-0 box-border m-0">
             <nuxt-img
@@ -18,9 +18,12 @@
               loading="lazy"/>
           </div>
         </div>
-        <div class="container-info mt-6 md:mt-0 col-span-2 md:p-4">
+        <div class="container-info mt-4 md:mt-0 col-span-2 md:p-4 text-justify	leading-7">
           <div>
-            <p class="mt-4 mb-8">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-medium text-center">
+              ¿Qué es el {{ data.title }}?
+            </h2>
+            <p class="mt-6 lg:mt-8 mb-8">
               {{ data.paragraph_1 }}
             </p>
             <p class="mt-4">

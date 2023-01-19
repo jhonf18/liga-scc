@@ -8,7 +8,7 @@
     </main>
 
     <section class="p-6 sm:container sm:p-0 mx-auto mt-16 mb-16 lg:p-4">
-      <h2 class="text-center text-2xl sm:text-3xl mb-8 font-semibold">
+      <h2 class="text-center text-2xl sm:text-3xl md:text-4xl mb-6 lg:mb-10 font-semibold">
         Conoce sobre el cáncer
       </h2>
       <div class="md:grid md:grid-cols-5 md:gap-4">
@@ -43,18 +43,18 @@
         </div>
         <div class="container-info mt-6 md:mt-0 col-span-2 md:p-4">
           <div>
-            <h3 class="text-xl sm:text-2xl font-medium">
+            <h3 class="text-xl sm:text-2xl lg:text-3xl font-medium text-center">
               ¿Qué es el cáncer?
             </h3>
-            <p class="mt-4 mb-8">
-El cáncer es una de las enfermedades que más muertes provoca a nivel mundial. Se caracteriza por el crecimiento descontrolado y anormal de las células en cualquier parte del cuerpo, llegando a conformar un tumor. Sin embargo, el cáncer se puede prevenir y diagnosticar a tiempo para incidir en el proceso de dicha enfermedad  y transformar la experiencia.
+            <p class="mt-8 mb-8 text-justify leading-7">
+              El cáncer es una de las enfermedades que más muertes provoca a nivel mundial. Se caracteriza por el crecimiento descontrolado y anormal de las células en cualquier parte del cuerpo, llegando a conformar un tumor. Sin embargo, el cáncer se puede prevenir y diagnosticar a tiempo para incidir en el proceso de dicha enfermedad  y transformar la experiencia.
             </p>
           </div>
           <div>
             <span>Aprende sobre las generalidades del cáncer a través de</span>
             <div class="grid grid-cols-2 gap-6 mt-2">
-              <Button variant="primary" @click="openInfographic">Infografía</Button>
-              <Button variant="primary" to="/juegos/trivia">Juego</Button>
+              <Button variant="primary" @click="openInfographic">Infografías</Button>
+              <Button variant="primary" to="/juegos/trivia">Juegos</Button>
             </div>
           </div>
         </div>

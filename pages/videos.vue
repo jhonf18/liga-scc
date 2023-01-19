@@ -61,7 +61,7 @@ export default {
         {
           title: 'Cáncer de piel',
           url_preview_video: require('~/static/images/miniaturas/piel.png'),
-          url_video: 'https://www.youtube.com/embed/gu4QQP0gidM',
+          url_video: 'https://www.youtube.com/embed/ogl3svT2I5Y',
           link: '/etapas/ninos'
         },
         {

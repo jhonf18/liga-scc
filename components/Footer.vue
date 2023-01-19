@@ -15,6 +15,34 @@
               alt="Logotipo en blanco de la Liga Santandereana Contra el Cáncer"/>
           </a>
         </div>
+        <div class="flex mt-3 sm-md:mt-6">
+          <a class="mr-2 social-link"
+            href="https://www.facebook.com/FourPI/" target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Enlace para el Facebook de FourP">
+            <FacebookIcon class="social-icon"/>
+          </a>
+          <a class="mr-2 social-link"
+            href="https://wa.me/573219087862" target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Enlace para el WhatsApp de FourP">
+            <WhatsAppIcon class="social-icon"/>
+          </a>
+          <a class="mr-2 social-link fill-current"
+            href="https://www.youtube.com/channel/UCA9ukhWLVq1S6w3AWYy_D9A?view_as=subscriber"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Enlace para el Youtube de FourP">
+            <InstagramIcon class="social-icon"/>
+          </a>
+          <a class="social-link"
+            href="https://www.youtube.com/channel/UCA9ukhWLVq1S6w3AWYy_D9A?view_as=subscriber"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Enlace para el Youtube de FourP">
+            <YoutubeIcon class="social-icon"/>
+          </a>
+        </div>
       </div>
       <div class="mt-5 lg:col-start-4 col-span-2">
         <h4 class="font-semibold">Conoce nuestras herramientas</h4>
@@ -53,7 +81,7 @@
     </div>
     <div class="flex justify-center" style="font-size: .8rem">
       <span class="text-center">
-        Elaborado por Ximena Blanco practicante de Trabajo Social UIS &amp; Jhon Pérez Desarrollador Web&copy;
+        Elaborado por Ximena Blanco practicante de Trabajo Social UIS &amp; Jhon Pérez Desarrollador Web &copy;
       </span>
     </div>
   </footer>
@@ -61,7 +89,12 @@
 
 <script>
 export default {
-
+  components: {
+    FacebookIcon: () => import('@/static/icons/facebook.svg?inline'),
+    WhatsAppIcon: () => import('@/static/icons/whatsapp.svg?inline'),
+    YoutubeIcon: () => import('@/static/icons/youtube.svg?inline'),
+    InstagramIcon: () => import('@/static/icons/instagram.svg?inline')
+  }
 }
 </script>
 
@@ -73,4 +106,14 @@ export default {
 .footer {
   background-color: #282b53;
 }
+
+.social-link {
+  @apply h-8 w-8 inline-flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200  dark:bg-gray-500  dark:hover:bg-gray-600 transition-colors;
+}
+
+.social-icon {
+  @apply w-5 stroke-current text-gray-700;
+}
+
+
 </style>

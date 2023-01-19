@@ -76,7 +76,7 @@
               alt="Infografía sobre el cáncer"
               title="Infografía sobre el cáncer"
               class="w-full"
-              format="png"
+              format="webp"
               loading="lazy"
               />
           </div>
