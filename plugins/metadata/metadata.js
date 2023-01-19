@@ -1,5 +1,5 @@
-const app = 'Aprende y juega con la Liga Santandereana Contra el Cáncer'
-const description = 'Educate a través de herramientas interactivas como infografías, juegos y videos lúdicos sobre la prevención y detección del cáncer.';
+const app = 'Aprende y juega con la LSCC'
+const description = 'Educate con la Liga Santanderena Contra el Cáncer a través de herramientas interactivas como infografías, juegos y videos lúdicos sobre la prevención y detección del cáncer.';
 const link = 'https://educatecancer.online'
 const urlImage = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/c_scale,w_1280/v1673821809/educate-cancer/cancer_kkfv5v.png'
 const typeImage = 'image/png'
@@ -18,24 +18,23 @@ module.exports = {
     description,
     rating: 'general',
     keywords: [
-      'education',
       'educación',
       'juegos',
       'videos',
       'infografías',
-      'herramientas',
-      'lúdicas',
-      'play games',
       'cáncer',
-      'detección del cáncer',
-      'prevención del cáncer',
-      'cáncer de mama',
-      'cáncer de próstata',
-      'cáncer de pulmón',
+      'detección',
+      'conoce',
+      'identifica',
+      'signos de alarma',
+      'prevención',
+      'mama',
+      'próstata',
+      'pulmón',
       'tabaquismo',
-      'cáncer de piel'
+      'piel'
     ],
-    author: 'Ximena Blanco y Jhon Freddy Pérez',
+    author: 'Ximena Blanco y Jhon Pérez',
     publisher: app,
     language: 'spanish',
   },

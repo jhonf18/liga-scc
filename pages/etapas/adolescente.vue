@@ -9,12 +9,11 @@ export default {
       data: {
         title: 'Cáncer de pulmón',
         url_principal_image: 'https://ciencia.unam.mx/uploads/infografias/if_cancer_piel_26062018.jpg',
-        paragraph_1: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolore molestias natus nulla possimus, perferendis magni numquam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias a ratione quam animi odit voluptas, voluptatem optio, maxime at, voluptatum tempore inventore culpa molestiae repellat debitis id tempora dolorem! Doloremque! Aut repudiandae, eligendi quo, at eveniet consequatur deleniti perspiciatis, rerum voluptates quae ex.',
-        paragraph_2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat vero eius officiis exercitationem, asperiores autem sint. Perspiciatis tenetur modi quo maiores. Facere nulla sint quisquam praesentium dolorem ad ipsam unde.',
-        second_title: 'Instruyete sobre el cáncer de pulmón',
+        paragraph_1: 'El cáncer de pulmón se produce cuando las células de este órgano presentan una transformación o crecimiento descontrolado producto de factores de riesgo. El principal factor para desarrollar este tipo de cáncer es el consumo de tabaco, por lo cual, surge la necesidad de sensibilizar en torno a los efectos del cigarrillo y el gran impacto que tiene en la salud, con el fin de desnaturalizar la aceptación social que ha tenido el consumo de este.',
+        paragraph_2: '',
+        second_title: 'Instrúyete sobre el cáncer de pulmón y el tabaquismo',
         url_preview_video: `/images/miniaturas/pulmon.png`,
         url_video: 'https://www.youtube.com/embed/vGL0VNh1HCM',
-        url_infographic: 'https://ciencia.unam.mx/uploads/infografias/if_cancer_piel_26062018.jpg',
         play_games: [
           {
             name: 'Descubre las fichas del cáncer de pulmón',

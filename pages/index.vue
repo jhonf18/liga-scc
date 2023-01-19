@@ -47,14 +47,14 @@
               ¿Qué es el cáncer?
             </h3>
             <p class="mt-4 mb-8">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolore molestias natus nulla possimus, perferendis magni numquam. Aut repudiandae, eligendi quo, at eveniet consequatur deleniti perspiciatis, rerum voluptates quae ex.
+El cáncer es una de las enfermedades que más muertes provoca a nivel mundial. Se caracteriza por el crecimiento descontrolado y anormal de las células en cualquier parte del cuerpo, llegando a conformar un tumor. Sin embargo, el cáncer se puede prevenir y diagnosticar a tiempo para incidir en el proceso de dicha enfermedad  y transformar la experiencia.
             </p>
           </div>
           <div>
-            <span>Aprende sobre el cáncer con</span>
+            <span>Aprende sobre las generalidades del cáncer a través de</span>
             <div class="grid grid-cols-2 gap-6 mt-2">
-              <Button variant="primary" @click="openInfographic">Infografías</Button>
-              <Button variant="primary" to="/juegos/trivia">Juegos</Button>
+              <Button variant="primary" @click="openInfographic">Infografía</Button>
+              <Button variant="primary" to="/juegos/trivia">Juego</Button>
             </div>
           </div>
         </div>

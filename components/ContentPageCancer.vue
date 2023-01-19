@@ -1,25 +1,21 @@
 <template>
   <div>
     <section class="mt-12 mb-4 mx-auto sm:mb-12 p-6 sm:container sm:p-0 lg:p-4 ">
-      <h1 class="text-center text-3xl sm:text-5xl font-bold mb-12 text-primary">
+      <h1 class="text-center text-3xl sm:text-5xl font-bold mb-12 text-primary uppercase">
         {{  data.title }}
       </h1>
       <div class="md:grid md:grid-cols-5 md:gap-4">
-        <div
-          @click="openContent"
-          class="container-video col-span-3"
-          :style="{ 'background': `url(${data.url_principal_image})`,
-            'background-position': 'top center',
-            'background-repeat': 'no-repeat',
-            'background-size': 'cover'
-           }">
+        <div class="relative container-img s-ratio-16-9 relative rounded-tl rounded-tr">
           <div
-            class="container-video cursor-pointer h-full flex justify-center items-center">
-            <div class="filter-container">
-              <div class="filter-content flex justify-center items-center w-full h-full">
-                <span class="m-auto text-gray-300 text-2xl font-medium">ABRIR</span>
-              </div>
-            </div>
+            class="block overflow-hidden absolute inset-0 box-border m-0">
+            <nuxt-img
+              :src="data.url_principal_image"
+              format="webp"
+              :title="`${data.title}`"
+              :alt="`Infografía sobre ${data.title}`"
+              class="absolute top-0 left-0 w-full transition-all"
+              quality="75"
+              loading="lazy"/>
           </div>
         </div>
         <div class="container-info mt-6 md:mt-0 col-span-2 md:p-4">
@@ -41,7 +37,7 @@
     </div>
 
     <section class="p-6 sm:mt-12 sm:container sm:p-0 lg:p-4 mx-auto  md:mt-8">
-      <h2 class="text-2xl sm:text-4xl font-bold text-primary text-center">
+      <h2 class="text-2xl sm:text-4xl font-bold text-primary text-center uppercase">
         {{ data.second_title }}
       </h2>
       <div class="max-w-screen-lg mx-auto mt-12">
@@ -84,7 +80,7 @@ export default {
 }
 
 .container-video:hover .filter-container {
-  background-color: #282b537e;
+  background-color: #282b5363;
 }
 
 .container-video:hover .filter-content {
@@ -97,10 +93,30 @@ export default {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #282b5367;
+  background-color: #282b535b;
 }
 
 .filter-content {
   display: none;
 }
+
+.container-img img {
+  position: absolute;
+    inset: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+    border: none;
+    /* margin: auto; */
+    display: block;
+    width: 0px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    filter: none;
+    background-size: cover;
+    background-image: none;
+    background-position: 0% 0%;
+}
+
+
 </style>

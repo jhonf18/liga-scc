@@ -52,7 +52,9 @@
       </div>
     </div>
     <div class="flex justify-center" style="font-size: .8rem">
-      <span class="text-center">Creado por Ximena Blanco &amp; Jhon Pérez &copy;</span>
+      <span class="text-center">
+        Elaborado por Ximena Blanco practicante de Trabajo Social UIS &amp; Jhon Pérez Desarrollador Web&copy;
+      </span>
     </div>
   </footer>
 </template>

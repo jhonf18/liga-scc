@@ -9,9 +9,9 @@ export default {
       data: {
         title: 'Cáncer de mama',
         url_principal_image: 'https://ciencia.unam.mx/uploads/infografias/if_cancer_piel_26062018.jpg',
-        paragraph_1: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolore molestias natus nulla possimus, perferendis magni numquam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias a ratione quam animi odit voluptas, voluptatem optio, maxime at, voluptatum tempore inventore culpa molestiae repellat debitis id tempora dolorem! Doloremque! Aut repudiandae, eligendi quo, at eveniet consequatur deleniti perspiciatis, rerum voluptates quae ex.',
-        paragraph_2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat vero eius officiis exercitationem, asperiores autem sint. Perspiciatis tenetur modi quo maiores. Facere nulla sint quisquam praesentium dolorem ad ipsam unde.',
-        second_title: 'Instruyete sobre el cáncer de pulmón',
+        paragraph_1: 'El cáncer de mama ocupa el puesto número uno de  incidencia en las mujeres, se caracteriza por la proliferación descontrolada de células en las glándulas mamarias que posteriormente producen masas. Este tipo de enfermedad se puede diagnosticar a tiempo a través del autoexamen de mama y los diferentes exámenes de tamización. Por ello, educate con la Liga Santandereana Contra el cáncer para transformar la experiencia del cáncer de mama y disminuir las cifras de incidencia en las mujeres.',
+        paragraph_2: '',
+        second_title: 'Instrúyete sobre el cáncer de mama',
         url_preview_video: `/images/miniaturas/mama.png`,
         url_video: 'https://www.youtube.com/embed/iDY3p6JHaog',
         play_games: [

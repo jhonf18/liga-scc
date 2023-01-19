@@ -169,3 +169,10 @@ body::-webkit-scrollbar-track {
 .bg-green-wheel:hover {
   background-color: #00a237;
 }
+
+.s-ratio-16-9 {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}

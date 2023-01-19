@@ -8,13 +8,12 @@ export default {
     return {
       data: {
         title: 'Cáncer de piel',
-        url_principal_image: 'https://ciencia.unam.mx/uploads/infografias/if_cancer_piel_26062018.jpg',
-        paragraph_1: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolore molestias natus nulla possimus, perferendis magni numquam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias a ratione quam animi odit voluptas, voluptatem optio, maxime at, voluptatum tempore inventore culpa molestiae repellat debitis id tempora dolorem! Doloremque! Aut repudiandae, eligendi quo, at eveniet consequatur deleniti perspiciatis, rerum voluptates quae ex.',
-        paragraph_2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat vero eius officiis exercitationem, asperiores autem sint. Perspiciatis tenetur modi quo maiores. Facere nulla sint quisquam praesentium dolorem ad ipsam unde.',
-        second_title: 'Instruyete sobre la prevención del cáncer de piel',
+        url_principal_image: '/images/sections/cancer-de-piel.png',
+        paragraph_1: 'El cáncer de piel es uno de los tipos de cáncer más frecuentes,se caracteriza por la transformación de las células sanas en células malignas,  su principal factor de riesgo es la exposición a la luz solar. Por ello, es importante que desde edades tempranas los niños y niñas comprendan el impacto que trae el sol y la relevancia de cuidar la piel con los diferentes elementos de  fotoprotección: el bloqueador solar, la sombrilla, el sombrero y ropa que cubra la piel para evitar un cáncer.',
+        paragraph_2: '',
+        second_title: 'Instrúyete sobre la prevención del cáncer de piel',
         url_preview_video: '/images/miniaturas/piel.png',
         url_video: 'https://www.youtube.com/embed/gu4QQP0gidM',
-        url_infographic: 'https://ciencia.unam.mx/uploads/infografias/if_cancer_piel_26062018.jpg',
         play_games: [
           {
             name: 'La carrera contra el  sol',

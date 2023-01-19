@@ -9,12 +9,11 @@ export default {
       data: {
         title: 'Cáncer de próstata',
         url_principal_image: 'https://ciencia.unam.mx/uploads/infografias/if_cancer_piel_26062018.jpg',
-        paragraph_1: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolore molestias natus nulla possimus, perferendis magni numquam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias a ratione quam animi odit voluptas, voluptatem optio, maxime at, voluptatum tempore inventore culpa molestiae repellat debitis id tempora dolorem! Doloremque! Aut repudiandae, eligendi quo, at eveniet consequatur deleniti perspiciatis, rerum voluptates quae ex.',
-        paragraph_2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat vero eius officiis exercitationem, asperiores autem sint. Perspiciatis tenetur modi quo maiores. Facere nulla sint quisquam praesentium dolorem ad ipsam unde.',
-        second_title: 'Instruyete sobre el cáncer de pulmón',
+        paragraph_1: 'El cáncer de próstata es el que más afecta a los hombres después del cáncer de piel, se caracteriza por la  transformación de la estructura de la próstata a raíz del crecimiento anormal de las células.La Liga Santandereana Contra el Cáncer te educa sobre los principales signos de alarma, exámenes de tamización y generalidades para que puedas diagnosticar a tiempo esta enfermedad.',
+        paragraph_2: '',
+        second_title: 'Instrúyete sobre el cáncer de próstata',
         url_preview_video: '/images/miniaturas/prostata.png',
-          url_video: '//www.youtube.com/embed/SPiLTySoPWM',
-        url_infographic: 'https://ciencia.unam.mx/uploads/infografias/if_cancer_piel_26062018.jpg',
+        url_video: '//www.youtube.com/embed/SPiLTySoPWM',
         play_games: [
           {
             name: 'Hazle triqui al cáncer de próstata',

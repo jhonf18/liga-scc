@@ -96,7 +96,7 @@
                 </div>
                 <div v-if="winGame && gameStarted"
                   class="absolute top-0 left-0 w-full h-full bg-gray-300/[0.6] flex justify-center items-center z-10">
-                  <p class="font-semibold text-center text-2xl text-black">
+                  <p class="font-semibold text-center text-2xl lg:text-3xl text-black">
                     {{ nameImageSelected }}
                   </p>
                 </div>
@@ -116,20 +116,7 @@
             </p>
           </div>
 
-
           <div id="options" class="col-span-2 text-sm p-4 max-w-xl mx-auto">
-            <!-- <div id="custom-image">
-              <label for="custom-image-input">Custom Image:</label>
-              <select v-model="imageSelect" name="imageSelect" id="imageSelect">
-                <option value="https://s3-us-west-2.amazonaws.com/s.cdpn.io/240751/sanfran.jpg">Golden Gate</option>
-                <option value="https://s3-us-west-2.amazonaws.com/s.cdpn.io/240751/chicago.jpg">Chicago</option>
-                <option value="https://s3-us-west-2.amazonaws.com/s.cdpn.io/240751/griff.jpg">Hiding Pupper</option>
-                <option value="custom">Custom URL</option>
-              </select>
-
-              <input v-if="imageSelect === `custom`" @click="highlightInput" v-model="customImage" id="custom-image-input" type="text"/>
-            </div> -->
-
             <div v-if="showSolution"
               id="solution"
               :style="{backgroundImage: imageSelect == 'custom' ? `url(${customImage})` : `url(${imageSelect})`}"
@@ -188,45 +175,36 @@
 import metadataDynamic from '~/plugins/metadata/metadata-dynamic';
 const categories = [
   {
-    name: 'Factores de riesgo del cáncer de pulmón',
-    images: [
-      {
-        name: 'Imagen 1.1',
-        url: 'https://ih0.redbubble.net/image.369334182.5732/flat,1000x1000,075,f.u2.jpg'
-      },
-      {
-        name: 'Imagen 1.2',
-        url: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/240751/sanfran.jpg'
-      },
-      {
-        name: 'Imagen 1.3',
-        url: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/240751/chicago.jpg'
-      },
-    ]
-  },
-  {
     name: 'Síntomas',
     images: [
       {
-        name: 'Imagen 2.1',
-        url: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/240751/griff.jpg'
+        name: 'Tos constante',
+        url: '/images/playgames/puzzle/tos-constante.png'
       },
       {
-        name: 'Imagen 2.2',
-        url: require('~/static/images/playgames/tabaquismo/imagen-1.jpg')
+        name: 'Ahogo',
+        url: '/images/playgames/puzzle/ahogo.png'
       },
       {
-        name: 'Imagen 2.3',
-        url: require('~/static/images/playgames/tabaquismo/imagen-2.jpg')
-      }
+        name: 'Infecciones pulmunares',
+        url: '/images/playgames/puzzle/infecciones-pulmunares.png'
+      },
     ]
   },
   {
-    name: 'Genialidades de los pulmones y cáncer',
+    name: 'Factores de riesgo de cáncer de pulmón',
     images: [
       {
-        name: 'Imagen 3.1',
-        url: require('~/static/images/playgames/tabaquismo/imagen-3.jpg')
+        name: 'Humo de leña',
+        url: '/images/playgames/puzzle/humo-de-lena.png'
+      },
+      {
+        name: 'Fumar',
+        url: '/images/playgames/puzzle/fumar.png'
+      },
+      {
+        name: 'Contaminación ambiental',
+        url: '/images/playgames/puzzle/contaminacion-ambiental.png'
       }
     ]
   }
