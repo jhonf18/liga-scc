@@ -15,9 +15,9 @@
         <div class="col-span-3">
           <div
           @click="openVideo"
-          class="w-full cursor-pointer w-full relative flex justify-center items-center"
+          class="w-full container-img cursor-pointer w-full relative flex justify-center items-center"
           >
-          <div class="relative container-img s-ratio-16-9 relative rounded-tl rounded-tr">
+          <div class="relative  s-ratio-16-9 relative rounded-tl rounded-tr">
             <div
               class="block overflow-hidden absolute inset-0 box-border m-0">
               <nuxt-img
@@ -54,7 +54,7 @@
             <span>Aprende sobre las generalidades del cáncer a través de</span>
             <div class="grid grid-cols-2 gap-6 mt-2">
               <Button variant="primary" @click="openInfographic">Infografías</Button>
-              <Button variant="primary" to="/juegos/trivia">Juegos</Button>
+              <Button variant="primary" :to="this.$routesApp.trivia.url">Juegos</Button>
             </div>
           </div>
         </div>
@@ -166,7 +166,11 @@ export default {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #282b5360;
+  background-color: #282b5333;
+}
+
+.container-img:hover .filter-container {
+  background-color: #282b5362;
 }
 
 .wrapper {

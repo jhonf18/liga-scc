@@ -39,7 +39,7 @@
           </h4>
           <ul class="mt-6">
             <li
-              @click="e => selectResponse(response.correct, e, i)"
+              @click="e => selectResponse(response.correct, e, 0)"
               class="border rounded p-2 mb-3 cursor-pointer hover:bg-gray-200 hover:border-gray-300 transition"
               v-for="(response, i) in questions[0].responses" :key="i">
               <span class="font-bold text-primary mr-1" v-if="i === 0">A.</span>
@@ -134,7 +134,7 @@
       </h4>
       <ul class="mt-6">
         <li
-          @click="e => selectResponse(response.correct, e, i, true)"
+          @click="e => selectResponse(response.correct, e, modal.index, true)"
           class="border rounded p-2 mb-3 cursor-pointer hover:bg-gray-200 hover:border-gray-300 transition"
           v-for="(response, i) in modal.responses" :key="i">
           <span class="font-bold text-primary mr-1" v-if="i === 0">A.</span>
@@ -184,10 +184,10 @@ questions = suffleArray(questions);
 
 export default {
   head(){
-    const title = 'Hazle triqui al cáncer de próstata'
+    const title = this.$routesApp.tictacMan.name
     const url = `${this.$nuxt.$route.path}`
     const description = 'Desafía con tu conocimiento al cáncer de próstata y márcale tres en raya para vencerlo.'
-    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/c_scale,w_1280/v1673821686/educate-cancer/tic-tac-hombre_ex9wp6.png'
+    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/v1674146211/educate-cancer/tic-tac-hombre_u14e8n.png'
 
     const dynamicMeta = metadataDynamic({
       title,
@@ -195,7 +195,7 @@ export default {
       url,
       image,
       widthImage: 1280,
-      heightImage: 734,
+      heightImage: 720,
     })
     return { title, meta: [...dynamicMeta] }
   },
@@ -211,7 +211,7 @@ export default {
       corners: [0,2,6,8],
       message: 'Haz tu primer movimiento',
       step: 1,
-      questions: questions,
+      questions: JSON.parse(JSON.stringify(questions)),
       questionsDisplayed: [],
       turn: 0,
       resultResponse: false,
@@ -223,7 +223,8 @@ export default {
       },
       modal: {
         question : '',
-        responses: []
+        responses: [],
+        index: 0
       },
       modalResult: {
         title: '',
@@ -320,9 +321,6 @@ export default {
       return equal;
     },
     fcell(cell){
-
-      console.log(this.map);
-
       this.cell = cell;
 
       const lengthQuestions = this.questions.length;
@@ -335,7 +333,8 @@ export default {
           const question = this.questions[index];
           this.modal = {
             question: question.question,
-            responses: question.responses
+            responses: question.responses,
+            index
           }
 
           this.$refs['modal-questions'].open();
@@ -564,6 +563,18 @@ export default {
       }
 
       this.questions.splice(index, 1);
+
+      // Si no hay preguntas por mostrar luego
+      if (this.questions.length === 0) {
+        let questions = [];
+        for (let i = 0; i < Questions.length; i++) {
+          questions[i] = Questions[i];
+          questions[i].responses = suffleArray(questions[i].responses);
+          questions[i].id = i;
+        }
+        questions = suffleArray(questions);
+        this.questions = JSON.parse(JSON.stringify(questions))
+      }
 
     },
     shuffleQuestions(){

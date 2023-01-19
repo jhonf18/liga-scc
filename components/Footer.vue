@@ -17,29 +17,29 @@
         </div>
         <div class="flex mt-3 sm-md:mt-6">
           <a class="mr-2 social-link"
-            href="https://www.facebook.com/FourPI/" target="_blank"
+            href="https://www.facebook.com/ligasantandereanacontraelcancer" target="_blank"
             rel="noreferrer noopener"
-            aria-label="Enlace para el Facebook de FourP">
+            aria-label="Enlace para el Facebook de La Liga Santandereana Contra el Cáncer">
             <FacebookIcon class="social-icon"/>
           </a>
           <a class="mr-2 social-link"
-            href="https://wa.me/573219087862" target="_blank"
+            href="https://api.whatsapp.com/send/?phone=573015546358&text=Hola%2C%0A%C2%BFEn+qu%C3%A9+podemos+ayudarte%3F&type=phone_number&app_absent=0" target="_blank"
             rel="noreferrer noopener"
-            aria-label="Enlace para el WhatsApp de FourP">
+            aria-label="Enlace para el WhatsApp de La Liga Santandereana Contra el Cáncer">
             <WhatsAppIcon class="social-icon"/>
           </a>
           <a class="mr-2 social-link fill-current"
-            href="https://www.youtube.com/channel/UCA9ukhWLVq1S6w3AWYy_D9A?view_as=subscriber"
+            href="https://www.instagram.com/ligasantandereanacancer/"
             target="_blank"
             rel="noreferrer noopener"
-            aria-label="Enlace para el Youtube de FourP">
+            aria-label="Enlace para el instagram de La Liga Santandereana Contra el Cáncer">
             <InstagramIcon class="social-icon"/>
           </a>
           <a class="social-link"
-            href="https://www.youtube.com/channel/UCA9ukhWLVq1S6w3AWYy_D9A?view_as=subscriber"
+            href="https://www.youtube.com/channel/UCkDtLRuTXGe36_6hCizYVHA/videos"
             target="_blank"
             rel="noreferrer noopener"
-            aria-label="Enlace para el Youtube de FourP">
+            aria-label="Enlace para el Youtube de La Liga Santandereana Contra el Cáncer">
             <YoutubeIcon class="social-icon"/>
           </a>
         </div>
@@ -62,17 +62,30 @@
         <h4 class="font-semibold">Conoce la liga</h4>
         <ul class="pl-1">
           <li>
-            <a href="https://licancerbucaramanga.org/servicios/" target="_blank">
+            <a
+              href="https://licancerbucaramanga.org/servicios/"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Enlace para redireccionar a los servicios que ofrece la Liga Santandereana Contra el Cáncer"
+              >
               Nuestros servicios
             </a>
           </li>
           <li>
-            <a href="https://licancerbucaramanga.org/historia/" target="_blank">
+            <a
+            href="https://licancerbucaramanga.org/historia/"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Enlace para abrir la historia de la Liga Santandereana Contra el Cáncer">
               Nuestra Historia
             </a>
           </li>
           <li>
-            <a href="https://licancerbucaramanga.org/nuestro-equipo/" target="_blank">
+            <a
+            href="https://licancerbucaramanga.org/nuestro-equipo/"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Enlace para abrir el equipo de la Liga Santandereana Contra el Cáncer">
               Nuestro Equipo
             </a>
           </li>

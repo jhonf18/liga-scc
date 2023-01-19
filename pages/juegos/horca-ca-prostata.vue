@@ -167,7 +167,7 @@ export default {
      RightIcon: () => import('@/static/icons/right.svg?inline'),
   },
   head(){
-    const title = 'Sálvate de ir a la horca por el cáncer de próstata'
+    const title = this.$routesApp.hangman.name
     const url = `${this.$nuxt.$route.path}`
     const description = 'Identifica la palabra oculta que te ayudará a salvarte y vencer el cáncer de próstata.'
     const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/c_scale,h_720,w_1280/v1673821685/educate-cancer/ahorcado_qusyww.png'

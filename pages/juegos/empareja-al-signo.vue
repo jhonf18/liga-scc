@@ -113,7 +113,7 @@ import metadataDynamic from '~/plugins/metadata/metadata-dynamic';
 
 export default {
   head(){
-    const title = 'Reconoce los signos y vence al cáncer de mama'
+    const title = this.$routesApp.rememberCards.name
     const url = `${this.$nuxt.$route.path}`
     const description = 'Pon a prueba tu memoria para recordar y detectar a tiempo los signos de alarma y vencer al cáncer de mama.'
     const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/c_scale,h_720,w_1280/v1673821686/educate-cancer/recordar_iavazm.png'

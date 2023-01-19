@@ -607,7 +607,7 @@ export default {
     },
   },
   head() {
-    const title = 'La carrera contra el sol'
+    const title = this.$routesApp.cars.name
     const url = `${this.$nuxt.$route.path}`
     const description = 'Compite esquivando los efectos del sol y usa tu destreza al volante para obtener elementos de protección contra el sol.'
     const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/c_scale,h_720,w_1280/v1673823659/educate-cancer/carros_z9nqbe.png'

@@ -174,10 +174,10 @@ cards = suffleArray(cards)
 
 export default {
   head(){
-    const title = 'Ve al ritmo de la Liga con el autoexamen de mama'
+    const title = this.$routesApp.simonSays.name
     const url = `${this.$nuxt.$route.path}`
     const description = 'Sigue el ritmo que te indica la liga y aprende a realizar el autoexamen de mama.'
-    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/c_scale,h_720,w_1280/v1673821686/educate-cancer/simon-dice_axixmu.png'
+    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/v1674146211/educate-cancer/simon-dice_aso5xn.png'
 
     const dynamicMeta = metadataDynamic({
       title,

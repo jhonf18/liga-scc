@@ -240,7 +240,7 @@ export default {
     FortuneWheel
   },
   head(){
-    const title = 'Trivia contra el cáncer'
+    const title = this.$routesApp.trivia.name
     const url = `${this.$nuxt.$route.path}`
     const description = 'Vence la trivia del cáncer desde el conocimiento respondiendo preguntas de manera entretenida.'
     const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/c_scale,h_750,w_1280/v1673821686/educate-cancer/trivia_cspbop.png'

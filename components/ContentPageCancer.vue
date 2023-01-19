@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="mt-12 mb-4 mx-auto sm:mb-12 p-6 sm:container sm:p-0 lg:p-4 ">
+    <main class="mt-12 mb-4 mx-auto sm:mb-12 p-6 sm:container sm:p-0 lg:p-4 ">
       <h1 class="text-center text-3xl sm:text-5xl font-bold mb-12 text-primary uppercase">
         {{  data.title }}
       </h1>
@@ -32,7 +32,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </main>
 
     <div>
       <div class="border-t border-gray-400 w-2/5 h-1 mx-auto"></div>

@@ -212,10 +212,10 @@ const categories = [
 
 export default {
   head(){
-    const title = 'Descubre las fichas del cáncer de pulmón'
+    const title = this.$routesApp.puzzle.name
     const url = `${this.$nuxt.$route.path}`
     const description = 'Demuestra que tanto sabes sobre el cáncer de pulmón y ordena las fichas del conocimiento para vencerlo.'
-    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/c_scale,w_1280/v1673821686/educate-cancer/puzzle_fotiiy.png'
+    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/v1674146212/educate-cancer/puzzle_oddvnh.png'
 
     const dynamicMeta = metadataDynamic({
       title,

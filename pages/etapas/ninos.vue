@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import metadataDynamic from '~/plugins/metadata/metadata-dynamic';
 export default {
   data() {
     return {
@@ -17,7 +18,7 @@ export default {
         play_games: [
           {
             name: 'La carrera contra el  sol',
-            link: '/juegos/carros',
+            link: this.$routesApp.cars.url,
             url_image: '/images/carros.png',
             description: 'Compite esquivando los efectos del sol y usa tu destreza al volante para obtener elementos de protección contra el sol.'
           },
@@ -30,7 +31,22 @@ export default {
         ]
       }
     }
-  }
+  },
+  head(){
+    const title = this.$routesApp.children.name;
+    const url = `${this.$nuxt.$route.path}`
+    const description = 'Aprende junto a la Liga Santandereana Contra el Cáncer sobre las generalidades del cáncer de piel'
+    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/v1674146047/educate-cancer/cancer-de-piel_zqxxhw.png'
+
+    const dynamicMeta = metadataDynamic({
+      title,
+      url,
+      description,
+      image
+    });
+
+    return { title, meta: [...dynamicMeta] }
+  },
 }
 </script>
 

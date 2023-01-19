@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import metadataDynamic from '~/plugins/metadata/metadata-dynamic';
 export default {
   data() {
     return {
@@ -17,13 +18,13 @@ export default {
         play_games: [
           {
             name: 'Descubre las fichas del cáncer de pulmón',
-            link: '/juegos/puzzle',
+            link: this.$routesApp.puzzle.url,
             url_image: '/images/puzzle.png',
             description: 'Demuestra que tanto sabes sobre el cáncer de pulmón y ordena las fichas del conocimiento para vencerlo.'
           },
           {
             name: 'Márcale triqui al Tabaquismo',
-            link: '/juegos/tic-tac-toe-adolescente',
+            link: this.$routesApp.tictacAdolescent.url,
             url_image: '/images/tic-tac-adolescente.png',
             description: 'Enfréntate al principal factor de riesgo del cáncer de pulmón y vencelo con estrategia y conocimiento.'
           },
@@ -40,6 +41,21 @@ export default {
         ]
       }
     }
-  }
+  },
+  head(){
+    const title = this.$routesApp.adolescent.name;
+    const url = `${this.$nuxt.$route.path}`
+    const description = 'Edúcate sobre la prevención y detención del cáncer de pulmón junto a la Liga Santandereana Contra el Cáncer a través de herramientas interactivas como infografías, juegos y videos.'
+    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/v1674146048/educate-cancer/cancer-de-pulmon_uznmb3.png'
+
+    const dynamicMeta = metadataDynamic({
+      title,
+      url,
+      description,
+      image
+    });
+
+    return { title, meta: [...dynamicMeta] }
+  },
 }
 </script>

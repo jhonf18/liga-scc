@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import metadataDynamic from '~/plugins/metadata/metadata-dynamic';
 export default {
   data() {
     return {
@@ -17,13 +18,13 @@ export default {
         play_games: [
           {
             name: 'Reconoce los signos y vence al cáncer de mama ',
-            link: '/juegos/recordar',
+            link: this.$routesApp.rememberCards.url,
             url_image: '/images/recordar.png',
             description: 'Pon a prueba tu memoria para recordar y detectar a tiempo los signos de alarma y vencer al cáncer de mama.'
           },
           {
             name: 'Ve al ritmo de la liga con el autoexamen de mama',
-            link: '/juegos/simon-dice',
+            link: this.$routesApp.simonSays.url,
             url_image: '/images/simon-dice.png',
             description: 'Sigue el ritmo que te indica la liga y aprende a realizar el autoexamen de mama.'
           },
@@ -40,6 +41,21 @@ export default {
         ]
       }
     }
-  }
+  },
+  head(){
+    const title = this.$routesApp.woman.name;
+    const url = `${this.$nuxt.$route.path}`
+    const description = 'Aprende sobre la prevención y detención del cáncer de mama junto a la Liga Santandereana Contra el Cáncer a través de herramientas interactivas como infografías, juegos y videos.'
+    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/v1674146047/educate-cancer/cancer-de-mama_txye8r.png'
+
+    const dynamicMeta = metadataDynamic({
+      title,
+      url,
+      description,
+      image
+    });
+
+    return { title, meta: [...dynamicMeta] }
+  },
 }
 </script>

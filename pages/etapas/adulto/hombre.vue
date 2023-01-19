@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import metadataDynamic from '~/plugins/metadata/metadata-dynamic';
 export default {
   data() {
     return {
@@ -17,13 +18,13 @@ export default {
         play_games: [
           {
             name: 'Hazle triqui al cáncer de próstata',
-            link: '/juegos/tic-tac-toe-hombre',
+            link: this.$routesApp.tictacMan.url,
             url_image: '/images/tic-tac-hombre.png',
             description: 'Desafía con tu conocimiento al cáncer de próstata y márcale tres en raya para vencerlo.'
           },
           {
             name: 'Sálvate de ir a la horca  por el cáncer de próstata',
-            link: '/juegos/ahorcado',
+            link: this.$routesApp.hangman.url,
             url_image: '/images/ahorcado.png',
             description: 'Identifica la palabra oculta que te ayudará a salvarte y vencer el cáncer de próstata.'
           },
@@ -40,7 +41,22 @@ export default {
         ]
       }
     }
-  }
+  },
+  head(){
+    const title = this.$routesApp.man.name;
+    const url = `${this.$nuxt.$route.path}`
+    const description = 'Edúcate sobre la prevención y detención del cáncer de próstata junto a la Liga Santandereana Contra el Cáncer a través de herramientas interactivas como infografías, juegos y videos.'
+    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/v1674146047/educate-cancer/cancer-de-prostata_nxvdsg.png'
+
+    const dynamicMeta = metadataDynamic({
+      title,
+      url,
+      description,
+      image
+    });
+
+    return { title, meta: [...dynamicMeta] }
+  },
 }
 </script>
 
