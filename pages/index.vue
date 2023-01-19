@@ -175,13 +175,13 @@ export default {
 
 .wrapper {
   position: absolute;
-  width: 150px;
-  height: 150px;
+  width: 90px;
+  height: 90px;
   margin: 0 auto;
 }
 .wrapper .circle {
-  width: 100px;
-  height: 100px;
+  width: 65px;
+  height: 65px;
   position: absolute;
   top: 0;
   left: 0;
@@ -271,6 +271,30 @@ export default {
     background-position: 0% 0%;
 }
 
+
+@media (min-width: 768px) {
+  .wrapper {
+    height: 120px;
+    width: 120px;
+  }
+
+  .wrapper .circle {
+    height: 80px;
+    width: 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    height: 150px;
+    width: 150px;
+  }
+
+  .wrapper .circle {
+    height: 100px;
+    width: 100px;
+  }
+}
 
 
 </style>
