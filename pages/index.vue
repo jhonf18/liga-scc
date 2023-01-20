@@ -47,7 +47,7 @@
               ¿Qué es el cáncer?
             </h3>
             <p class="mt-8 mb-8 text-justify leading-7">
-              El cáncer es una de las enfermedades que más muertes provoca a nivel mundial. Se caracteriza por el crecimiento descontrolado y anormal de las células en cualquier parte del cuerpo, llegando a conformar un tumor. Sin embargo, el cáncer se puede prevenir y diagnosticar a tiempo para incidir en el proceso de dicha enfermedad  y transformar la experiencia.
+              El cáncer es una de las enfermedades que más muertes provoca a nivel mundial. Se caracteriza por el crecimiento descontrolado y anormal de las células en cualquier parte del cuerpo conformando un tumor. Sin embargo, el cáncer se puede prevenir y diagnosticar a tiempo para incidir en el proceso de dicha enfermedad.
             </p>
           </div>
           <div>
@@ -97,7 +97,7 @@
       ref="modal-video"
       target="modal-video"
       type="iframe"
-      link-multimedia="https://www.youtube.com/embed/SSXqifDvMgA"
+      link-multimedia="https://www.youtube.com/embed/ogl3svT2I5Y"
       >
     </Modal>
 

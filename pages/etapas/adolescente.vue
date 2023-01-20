@@ -10,7 +10,7 @@ export default {
       data: {
         title: 'Cáncer de pulmón',
         url_principal_image: '/images/sections/cancer-de-pulmon.png',
-        paragraph_1: 'El cáncer de pulmón se produce cuando las células de este órgano presentan una transformación o crecimiento descontrolado producto de factores de riesgo. El principal factor para desarrollar este tipo de cáncer es el consumo de tabaco, por lo cual, surge la necesidad de sensibilizar en torno a los efectos del cigarrillo y el gran impacto que tiene en la salud, con el fin de desnaturalizar la aceptación social que ha tenido el consumo de este.',
+        paragraph_1: 'El cáncer de pulmón se produce cuando las células de este órgano presentan una transformación o crecimiento descontrolado producto de factores de riesgo. El principal factor para desarrollar este tipo de cáncer es el consumo de tabaco, por ello, edúcate sobre los efectos del cigarrillo y el gran impacto que tiene en la salud, con el fin de desnaturalizar la aceptación social que ha tenido esta enfermedad crónica producto de la adicción a la nicotina.',
         paragraph_2: '',
         second_title: 'Instrúyete sobre el cáncer de pulmón y el tabaquismo',
         url_preview_video: `/images/miniaturas/pulmon.png`,

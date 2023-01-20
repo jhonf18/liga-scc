@@ -10,7 +10,7 @@ export default {
       data: {
         title: 'Cáncer de mama',
         url_principal_image: '/images/sections/cancer-de-mama.png',
-        paragraph_1: 'El cáncer de mama ocupa el puesto número uno de  incidencia en las mujeres, se caracteriza por la proliferación descontrolada de células en las glándulas mamarias que posteriormente producen masas. Este tipo de enfermedad se puede diagnosticar a tiempo a través del autoexamen de mama y los diferentes exámenes de tamización. Por ello, educate con la Liga Santandereana Contra el cáncer para transformar la experiencia del cáncer de mama y disminuir las cifras de incidencia en las mujeres.',
+        paragraph_1: 'El cáncer de mama ocupa el puesto número uno de incidencia en las mujeres, se caracteriza por la proliferación descontrolada de células en las glándulas mamarias que posteriormente producen masas. Este tipo de enfermedad se puede diagnosticar a tiempo identificando los principales signos de alarma a través del autoexamen de mama y los diferentes exámenes de tamización y así  transformar la experiencia del cáncer de mama y disminuir las cifras de incidencia en las mujeres.',
         paragraph_2: '',
         second_title: 'Instrúyete sobre el cáncer de mama',
         url_preview_video: `/images/miniaturas/mama.png`,

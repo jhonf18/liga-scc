@@ -15,7 +15,7 @@ const routesApp = {
     url: '/infografias',
     name: 'Infografías'
   },
-  chidren: {
+  children: {
     url: '/etapas/ninos',
     name: 'Niño y niña'
   },

@@ -51,7 +51,6 @@
               @rotateStart="onRotateStart"
               @rotateEnd="onRotateEnd"
             >
-              <!-- <img slot="wheel" src="@/assets/wheel.png" /> -->
             </FortuneWheel>
           </div>
           <div v-else-if="!rouletteVisible && !finalQuestion">
@@ -59,9 +58,14 @@
               <h4 class="font-semibold text-xl md:text-2xl">
                 {{ modal.question }}
               </h4>
-              <img
+              <nuxt-img
+                format="webp"
+                sizes="sm:44px md:56px lg:80px"
+                quality="75"
+                loading="lazy"
+                title=""
                 class="w-11 h-11 md:w-14 md:h-14 lg:w-20 lg:h-20 mr-2"
-                :src="require(`~/static/images/${modal.nameFileIcon}`)" alt="Icono de pregunta">
+                :src="`/images/playgames/trivia/${modal.nameFileIcon}`" alt="Logo de pregunta" />
             </div>
             <ul class="mt-6 grid grid-cols-2 gap-4 mb-6">
               <li
@@ -88,7 +92,7 @@
           </div>
           <div v-else-if="finalQuestion">
             <h4 class="font-semibold text-xl md:text-2xl text-center mt-8">
-              ¡Felicitaciones! Venciste al cáncer
+              ¡Felicidades! haz demostrado tu conocimiento sobre el cáncer para prevenirlo y detectarlo a tiempo
             </h4>
 
             <div class="mt-8 max-w-xl mx-auto">
@@ -112,9 +116,14 @@
         <h4 class="font-semibold text-xl md:text-2xl">
         {{ modal.question }}
       </h4>
-      <img
+      <nuxt-img
+        format="webp"
+        sizes="sm:44px md:56px lg:80px"
+        quality="75"
+        loading="lazy"
+        title=""
         class="w-11 h-11 md:w-14 md:h-14 lg:w-20 lg:h-20 mr-2"
-        :src="require(`~/static/images/${modal.nameFileIcon}`)" alt="Icono de pregunta">
+        :src="`/images/playgames/trivia/${modal.nameFileIcon}`" alt="Logo de pregunta" />
       </div>
       <ul class="mt-6 grid grid-cols-4 gap-4 mb-6">
         <li

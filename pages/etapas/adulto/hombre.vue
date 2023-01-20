@@ -10,7 +10,7 @@ export default {
       data: {
         title: 'Cáncer de próstata',
         url_principal_image: '/images/sections/cancer-de-prostata.png',
-        paragraph_1: 'El cáncer de próstata es el que más afecta a los hombres después del cáncer de piel, se caracteriza por la  transformación de la estructura de la próstata a raíz del crecimiento anormal de las células.La Liga Santandereana Contra el Cáncer te educa sobre los principales signos de alarma, exámenes de tamización y generalidades para que puedas diagnosticar a tiempo esta enfermedad.',
+        paragraph_1: 'El cáncer de próstata es el que más afecta a los hombres después del cáncer de piel, se caracteriza por la transformación de la estructura de la próstata a raíz del crecimiento anormal de las células. Conoce los principales signos de alarma, exámenes de tamización y generalidades para que puedas diagnosticar a tiempo esta enfermedad.',
         paragraph_2: '',
         second_title: 'Instrúyete sobre el cáncer de próstata',
         url_preview_video: '/images/miniaturas/prostata.png',

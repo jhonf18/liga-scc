@@ -9,7 +9,7 @@ const questions = [
       { text: "Procesos de transformación celular totalmente benignos" },
       { text: "Muerte de las células" },
     ],
-    nameFileIcon: 'button-wheel.png'
+    nameFileIcon: 'que-es-el-cancer.png'
   },
   {
     question: "¿En donde se puede producir un cáncer?",
@@ -18,13 +18,13 @@ const questions = [
       { text: "Únicamente en la piel" },
       { text: "Únicamente en órganos internos del cuerpo" },
     ],
-    nameFileIcon: 'button-wheel.png'
+    nameFileIcon: 'en-donde-se-produce-el-cancer.png'
   },
   {
     question:
       "Los tumores benignos son de crecimiento lento y no causan metástasis",
     responses: [{ text: "Verdadero", correct: true }, { text: "Falso" }],
-    nameFileIcon: 'button-wheel.png'
+    nameFileIcon: 'tumores-benignos.png'
   },
   {
     question:
@@ -34,7 +34,7 @@ const questions = [
       { text: "Órganos" },
       { text: "Tumores malignos", correct: true },
     ],
-    nameFileIcon: 'button-wheel.png'
+    nameFileIcon: 'multiplicacion-descontrolada.png'
   },
   {
     question:
@@ -47,7 +47,7 @@ const questions = [
       { text: "Dolor de oído y acné" },
       { text: "Subida de peso y dificultad para hablar" },
     ],
-    nameFileIcon: 'button-wheel.png'
+    nameFileIcon: 'algunos-sintomas.png'
   },
   {
     question:
@@ -57,7 +57,7 @@ const questions = [
       { text: "Todos son correctos", correct: true },
       { text: "Radiación solar y tabaquismo " },
     ],
-    nameFileIcon: 'button-wheel.png'
+    nameFileIcon: 'factores-de-riesgo.png'
   },
   {
     question:
@@ -70,13 +70,13 @@ const questions = [
       { text: "Edad, malos hábitos de vida, alcoholismo " },
       { text: "Nacer " },
     ],
-    nameFileIcon: 'button-wheel.png'
+    nameFileIcon: 'factores-protectores.png'
   },
   {
     question:
       "¿Los antecedentes familiares se constituyen en un factor de riesgo para desarrollar cáncer?",
     responses: [{ text: "Verdadero", correct: true }, { text: "Falso" }],
-    nameFileIcon: 'button-wheel.png'
+    nameFileIcon: 'antecedentes.png'
   },
 ];
 export default questions;

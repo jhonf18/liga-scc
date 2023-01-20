@@ -61,6 +61,16 @@ export default {
     '@nuxtjs/dotenv',
   ],
 
+  image: {
+    provider: 'static',
+    screens: {
+      sm: 576,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+    }
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/pwa
