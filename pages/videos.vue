@@ -90,11 +90,12 @@ export default {
     const title = 'Videos'
     const url = `${this.$config.baseURL}/videos`
     const description = 'Edúcate a través de videos interactivos sobre la prevención y detección de diferentes tipos de cáncer.'
-
+    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/v1674192653/educate-cancer/screenshot-videos-lscc_frqzex.png'
     const dynamicMeta = metadataDynamic({
       title,
       description,
-      url
+      url,
+      image
     })
     return { title, meta: [...dynamicMeta] }
   },

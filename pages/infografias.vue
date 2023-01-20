@@ -79,11 +79,12 @@ export default {
     const title = 'Infografías'
     const url = `${this.$config.baseURL}/infografias`
     const description = 'Conoce sobre las generalidades de cada tipo de cáncer a traves de infografias con imágenes e información relevante.'
-
+    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/v1674192653/educate-cancer/screenshot-infographics-lscc_tvxsbx.png'
     const dynamicMeta = metadataDynamic({
       title,
       description,
-      url
+      url,
+      image
     })
     return { title, meta: [...dynamicMeta] }
   },

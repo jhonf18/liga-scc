@@ -18,11 +18,12 @@ export default {
     const title = 'Juegos'
     const url = `${this.$config.baseURL}/juegos`
     const description = 'Aprende jugando y divirtiéndote sobre los diferentes tipos de cáncer.'
-
+    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/v1674192653/educate-cancer/screenshot-playgames-lscc_videcw.png'
     const dynamicMeta = metadataDynamic({
       title,
       description,
-      url
+      url,
+      image
     })
     return { title, meta: [...dynamicMeta] }
   },

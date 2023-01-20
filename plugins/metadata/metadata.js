@@ -1,7 +1,7 @@
 const app = 'Aprende y juega con la LSCC'
 const description = 'Edúcate con la Liga Santanderena Contra el Cáncer a través de herramientas interactivas como infografías, juegos y videos lúdicos sobre la prevención y detección del cáncer.';
 const link = 'https://educatecancer.online'
-const urlImage = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/c_scale,w_1280/v1673821809/educate-cancer/cancer_kkfv5v.png'
+const urlImage = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/v1674192461/educate-cancer/screenshot-index-lscc_kjhaay.png'
 const typeImage = 'image/png'
 
 module.exports = {

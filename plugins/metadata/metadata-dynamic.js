@@ -6,7 +6,7 @@ const metadata = require('./metadata.js')
 
 // Settings
 const url = metadata.og.url;
-const image = `https://res.cloudinary.com/dsvy4oeqc/image/upload/c_scale,w_1280/v1673821809/educate-cancer/cancer_kkfv5v.png`
+const image = `https://res.cloudinary.com/dsvy4oeqc/image/upload/v1674192461/educate-cancer/screenshot-index-lscc_kjhaay.png`
 const widthImage = 1280
 const heightImage = 720
 
