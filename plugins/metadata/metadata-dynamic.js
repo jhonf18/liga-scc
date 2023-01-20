@@ -74,11 +74,11 @@ function getOpenGraph(meta) {
       name: 'og:image',
       content: (meta && meta.image) || image,
     },
-    {
-      hid: 'og:image:url',
-      name: 'og:image:url',
-      content: (meta && meta.image) || image,
-    },
+    // {
+    //   hid: 'og:image:url',
+    //   name: 'og:image:url',
+    //   content: (meta && meta.image) || image,
+    // },
     {
       hid: 'og:image:secure_url',
       name: 'og:image:secure_url',
