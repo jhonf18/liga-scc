@@ -21,7 +21,6 @@
           <nuxt-img
             :src="data.url_image"
             format="webp"
-            :placeholder="[306, 180, 20]"
             quality="75"
             :title="`Juego ${data.name}`"
             :alt="`Juego sobre ${data.name}`"
