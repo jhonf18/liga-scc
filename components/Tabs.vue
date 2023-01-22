@@ -2,6 +2,13 @@
   <div class="flex flex-wrap">
     <div class="w-full">
       <ul class="flex mb-0 list-none flex-wrap pt-3 flex-row">
+        <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
+          <a class="text-xs font-bold uppercase px-5 py-3 rounded border-r border-t block leading-normal"
+            v-on:click="toggleTabs(3)"
+            v-bind:class="{'text-tertiary bg-white': openTab !== 3, 'text-white bg-tertiary': openTab === 3}">
+            Infografías
+          </a>
+        </li>
         <li class="-mb-px last:mr-0 flex-auto text-center">
           <a class="text-xs font-bold uppercase px-5 py-3 rounded border-l border-t block leading-normal cursor-pointer"
             v-on:click="toggleTabs(1)"
@@ -14,13 +21,6 @@
             v-on:click="toggleTabs(2)"
             v-bind:class="{'text-tertiary bg-white': openTab !== 2, 'text-white bg-tertiary': openTab === 2}">
             Juegos
-          </a>
-        </li>
-        <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
-          <a class="text-xs font-bold uppercase px-5 py-3 rounded border-r border-t block leading-normal"
-            v-on:click="toggleTabs(3)"
-            v-bind:class="{'text-tertiary bg-white': openTab !== 3, 'text-white bg-tertiary': openTab === 3}">
-            Infografías
           </a>
         </li>
       </ul>

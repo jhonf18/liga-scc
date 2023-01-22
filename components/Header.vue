@@ -80,13 +80,13 @@
                 </Accordion>
               </li>
               <li @click="isShowMenu = false" class="flex items-center">
-                <nuxt-link to="/juegos" class="py-2 w-full block">JUEGOS</nuxt-link>
+                <nuxt-link to="/infografias" class="py-2 w-full block">INFOGRAFÍA</nuxt-link>
               </li>
               <li @click="isShowMenu = false" class="flex items-center">
                 <nuxt-link to="/videos" class="py-2 w-full block">VIDEOS</nuxt-link>
               </li>
               <li @click="isShowMenu = false" class="flex items-center">
-                <nuxt-link to="/infografias" class="py-2 w-full block">INFOGRAFÍA</nuxt-link>
+                <nuxt-link to="/juegos" class="py-2 w-full block">JUEGOS</nuxt-link>
               </li>
             </ul>
           </div>
@@ -155,8 +155,8 @@
             </ul>
           </li>
           <li class="menu-item">
-            <nuxt-link  to="/juegos">
-              JUEGOS
+            <nuxt-link to="/infografias">
+              INFOGRAFÍAS
             </nuxt-link>
           </li>
           <li class="menu-item">
@@ -165,8 +165,8 @@
             </nuxt-link>
           </li>
           <li class="menu-item">
-            <nuxt-link to="/infografias">
-              INFOGRAFÍAS
+            <nuxt-link  to="/juegos">
+              JUEGOS
             </nuxt-link>
           </li>
         </ul>
