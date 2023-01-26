@@ -5,14 +5,15 @@
       <div class="ml-2" @click="isShowMenu = true">
         <MenuIcon style="color: #fff" />
       </div>
+      <nuxt-link to="/" class="mx-auto">
         <nuxt-img
           src="/logo-blanco.png"
           :placeholder="[90, 50, 40]"
           width="90" height="50"
           format="webp"
-          class="mx-auto"
           title="Logotipo de la Liga Santandereana Contra el Cáncer"
           alt="Logotipo en blanco de la Liga Santandereana Contra el Cáncer"/>
+      </nuxt-link>
     </div>
 
     <!-- Lateral menu -->

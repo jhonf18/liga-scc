@@ -15,7 +15,7 @@
               alt="Logotipo en blanco de la Liga Santandereana Contra el Cáncer"/>
           </a>
         </div>
-        <div class="flex mt-3 sm-md:mt-6">
+        <div class="flex mt-5 md:mt-3 sm-md:mt-6">
           <a class="mr-2 social-link"
             href="https://www.facebook.com/ligasantandereanacontraelcancer" target="_blank"
             rel="noreferrer noopener"
@@ -46,7 +46,7 @@
       </div>
       <div class="mt-5 lg:col-start-4 col-span-2">
         <h4 class="font-semibold">Conoce nuestras herramientas</h4>
-        <ul class="pl-1">
+        <ul class="pl-1 links">
           <li>
             <nuxt-link to="/juegos">Juegos</nuxt-link>
           </li>
@@ -60,7 +60,7 @@
       </div>
       <div class="mt-5 col-span-2 lg:col-start-6 lg:col-span-1">
         <h4 class="font-semibold">Conoce la liga</h4>
-        <ul class="pl-1">
+        <ul class="pl-1 links">
           <li>
             <a
               href="https://licancerbucaramanga.org/servicios/"
@@ -126,6 +126,14 @@ export default {
 
 .social-icon {
   @apply w-5 stroke-current text-gray-700;
+}
+
+.links a {
+  @apply h-7 inline-block md:h-auto md:inline;
+}
+
+h4 {
+  @apply mb-2 md:mb-0;
 }
 
 

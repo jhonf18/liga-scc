@@ -52,7 +52,7 @@ module.exports = {
         serif: ['Rubik'],
         mono: ['Rubik'],
         display: ['Rubik'],
-        body: ['Rubik']
+        body: ['Rubik', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', "Segoe UI", 'Roboto', "Helvetica Neue", 'Arial', "Noto Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" ]
       },
       maxHeight: {
         '1rem': 'calc(100vh - 1rem)',
