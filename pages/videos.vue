@@ -55,7 +55,7 @@ export default {
         {
           title: 'Cáncer de mama',
           url_preview_video: require(`~/static/images/miniaturas/mama.png`),
-          url_video: 'https://www.youtube.com/embed/iDY3p6JHaog',
+          url_video: 'https://www.youtube.com/embed/xEpluMqjq1c',
           link: this.$routesApp.woman.url
         },
         {
