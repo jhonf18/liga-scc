@@ -3,23 +3,26 @@
     <div class="w-full">
       <ul class="flex mb-0 list-none flex-wrap pt-3 flex-row">
         <li class="-mb-px last:mr-0 flex-auto text-center">
-          <a class="text-xs font-bold uppercase px-5 py-3 rounded border-l border-t block leading-normal cursor-pointer"
+          <a target="#" class=" flex items-center h-full justify-center text-xs font-bold uppercase px-5 py-3 rounded-tl border-l border-t block leading-normal cursor-pointer"
             v-on:click="toggleTabs(1)"
             v-bind:class="{'text-tertiary bg-white': openTab !== 1, 'text-white bg-tertiary': openTab === 1}">
+            <VideoIcon class="icon" style="width: 30px" :class="{'!text-gray-200': openTab === 1}" />
             Videos
           </a>
         </li>
         <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
-          <a class="text-xs font-bold uppercase px-5 py-3 rounded border-r border-t block leading-normal"
+          <a target="#" class=" flex items-center h-full justify-center text-xs font-bold uppercase px-5 py-3  border-r border-t block leading-normal"
             v-on:click="toggleTabs(3)"
             v-bind:class="{'text-tertiary bg-white': openTab !== 3, 'text-white bg-tertiary': openTab === 3}">
+            <PictureIcon class="icon" style="width: 21px" :class="{'!text-gray-200': openTab === 3}"/>
             Infografías
           </a>
         </li>
         <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
-          <a class="text-xs font-bold uppercase px-5 py-3 rounded border-l border-r border-t block leading-normal"
+          <a target="#" class=" flex items-center h-full justify-center text-xs font-bold uppercase px-5 py-3 rounded-tr border-l border-r border-t block leading-normal"
             v-on:click="toggleTabs(2)"
-            v-bind:class="{'text-tertiary bg-white': openTab !== 2, 'text-white bg-tertiary': openTab === 2}">
+            v-bind:class="{'text-tertiary bg-white': openTab !== 2, '!text-white bg-tertiary': openTab === 2}">
+            <PlayGamesIcon class="icon" style="width: 30px" :class="{'!text-gray-200': openTab === 2}"/>
             Juegos
           </a>
         </li>
@@ -103,6 +106,11 @@
 
 <script>
 export default {
+  components: {
+    PlayGamesIcon: () => import('@/static/icons/play-games.svg?inline'),
+    VideoIcon: () => import('@/static/icons/video.svg?inline'),
+    PictureIcon: () => import('@/static/icons/picture.svg?inline')
+  },
   props: {
     data: {
       type: Object,
@@ -288,5 +296,9 @@ export default {
   }
 }
 
+
+.icon {
+  @apply hidden sm:block mr-2 fill-current text-gray-700;
+}
 
 </style>

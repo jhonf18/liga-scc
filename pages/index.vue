@@ -21,7 +21,7 @@
             <div
               class="block overflow-hidden absolute inset-0 box-border m-0">
               <nuxt-img
-                src="images/miniaturas/cancer.png"
+                src="images/miniaturas/cancer-m.png"
                 format="png"
                 title="Miniatura de video sobre el cáncer"
                 alt="Miniatura de videos sobre generalidades del cáncer"
@@ -73,19 +73,19 @@
       <div class="flex flex-col sm:flex-row sm:justify-center mt-8">
         <div class="mr-4 mt-4 sm:mt-0 w-full sm:w-auto">
           <Button size="lg" variant="primary" to="/juegos">
-            <PlayGamesIcon style="width: 25px" class="mr-2" />
+            <PlayGamesIcon style="width: 25px" class="mr-2 icon" />
             Juegos
           </Button>
         </div>
         <div class="mr-4 mt-4 sm:mt-0 w-full sm:w-auto">
           <Button size="lg" variant="secondary" to="/videos" >
-            <VideoIcon style="width: 25px" class="mr-2" />
+            <VideoIcon style="width: 25px" class="mr-2 icon" />
             Videos
           </Button>
         </div>
         <div class="mt-4 sm:mt-0 w-full sm:w-auto">
           <Button size="lg" variant="tertiary" to="/infografias" >
-            <PictureIcon style="width: 18px" class="mr-2" />
+            <PictureIcon style="width: 18px" class="mr-2 icon" />
             Infografías
           </Button>
         </div>
@@ -97,7 +97,7 @@
       ref="modal-video"
       target="modal-video"
       type="iframe"
-      link-multimedia="https://www.youtube.com/embed/ogl3svT2I5Y"
+      link-multimedia="https://www.youtube.com/embed/9bujZyz3tr8"
       >
     </Modal>
 
@@ -294,6 +294,10 @@ export default {
     height: 100px;
     width: 100px;
   }
+}
+
+.icon {
+  @apply fill-current text-gray-300;
 }
 
 

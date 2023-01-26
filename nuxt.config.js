@@ -7,6 +7,9 @@ export default {
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL,
   },
+  generate: {
+    fallback: true
+  },
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
@@ -84,7 +87,9 @@ export default {
     // https://www.npmjs.com/package/@nuxtjs/robots
     '@nuxtjs/robots',
     // https://google-analytics.nuxtjs.org/
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    // https://github.com/nuxt-community/component-cache-module
+    ['@nuxtjs/component-cache', { maxAge: 1000 * 60 * 60 }],
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

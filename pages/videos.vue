@@ -78,8 +78,8 @@ export default {
         },
         {
           title: 'Cáncer en general',
-          url_preview_video: require(`~/static/images/miniaturas/cancer.png`),
-          url_video: 'https://www.youtube.com/embed/ogl3svT2I5Y',
+          url_preview_video: require(`~/static/images/miniaturas/cancer-m.png`),
+          url_video: 'https://www.youtube.com/embed/9bujZyz3tr8',
           link: '/'
         }
       ],
