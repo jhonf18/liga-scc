@@ -2,44 +2,49 @@
   <div>
     <main class="banner">
       <h1
-        class="mx-auto text-3xl sm:text-5xl text-center max-w-2xl font-medium leading-normal mt-12 mb-12">
+        class="mx-auto text-3xl sm:text-5xl text-center max-w-2xl font-medium leading-normal mt-12 mb-12"
+      >
         Juega y aprende con la Liga Santandereana Contra el Cáncer
       </h1>
     </main>
 
     <section class="p-6 sm:container sm:p-0 mx-auto mt-16 mb-16 lg:p-4">
-      <h2 class="text-center text-2xl sm:text-3xl md:text-4xl mb-6 lg:mb-10 font-semibold">
+      <h2
+        class="text-center text-2xl sm:text-3xl md:text-4xl mb-6 lg:mb-10 font-semibold"
+      >
         Conoce sobre el cáncer
       </h2>
       <div class="md:grid md:grid-cols-5 md:gap-4">
         <div class="col-span-3">
           <div
-          @click="openVideo"
-          class="w-full container-img cursor-pointer w-full relative flex justify-center items-center"
+            @click="openVideo"
+            class="w-full container-img cursor-pointer w-full relative flex justify-center items-center"
           >
-          <div class="relative  s-ratio-16-9 relative rounded-tl rounded-tr">
-            <div
-              class="block overflow-hidden absolute inset-0 box-border m-0">
-              <nuxt-img
-                src="images/miniaturas/cancer-m.png"
-                format="png"
-                title="Miniatura de video sobre el cáncer"
-                alt="Miniatura de videos sobre generalidades del cáncer"
-                class="absolute top-0 left-0 w-full transition-all"
-                quality="100"
-                loading="lazy"/>
+            <div class="relative s-ratio-16-9 relative rounded-tl rounded-tr">
+              <div
+                class="block overflow-hidden absolute inset-0 box-border m-0"
+              >
+                <nuxt-img
+                  src="images/miniaturas/cancer-m.png"
+                  format="png"
+                  title="Miniatura de video sobre el cáncer"
+                  alt="Miniatura de videos sobre generalidades del cáncer"
+                  class="absolute top-0 left-0 w-full transition-all"
+                  quality="100"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div class="filter-container"></div>
+            <div class="wrapper">
+              <div class="circle pulse"></div>
+              <div class="circle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                  <polygon points="40,30 65,50 40,70"></polygon>
+                </svg>
+              </div>
             </div>
           </div>
-          <div class="filter-container"></div>
-          <div class="wrapper">
-            <div class="circle pulse"></div>
-            <div class="circle">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                <polygon points="40,30 65,50 40,70"></polygon>
-              </svg>
-            </div>
-          </div>
-        </div>
         </div>
         <div class="container-info mt-6 md:mt-0 col-span-2 md:p-4">
           <div>
@@ -47,14 +52,26 @@
               ¿Qué es el cáncer?
             </h3>
             <p class="mt-8 mb-8 text-justify leading-7">
-              El cáncer es una de las enfermedades que más muertes provoca a nivel mundial. Se caracteriza por el crecimiento descontrolado y anormal de las células en cualquier parte del cuerpo conformando un tumor. Sin embargo, el cáncer se puede prevenir y diagnosticar a tiempo para incidir en el proceso de dicha enfermedad.
+              El cáncer es una de las enfermedades que más muertes provoca a
+              nivel mundial. Se caracteriza por el
+              <strong
+                >crecimiento descontrolado y anormal de las células</strong
+              >
+              en cualquier parte del cuerpo
+              <strong>conformando un tumor</strong>. Sin embargo, el cáncer se
+              puede <strong>prevenir y diagnosticar a tiempo</strong> para
+              incidir en el proceso de dicha enfermedad.
             </p>
           </div>
           <div>
             <span>Aprende sobre las generalidades del cáncer a través de</span>
             <div class="grid grid-cols-2 gap-6 mt-2">
-              <Button variant="primary" @click="openInfographic">Infografías</Button>
-              <Button variant="primary" :to="this.$routesApp.trivia.url">Juegos</Button>
+              <Button variant="primary" @click="openInfographic"
+                >Infografías</Button
+              >
+              <Button variant="primary" :to="this.$routesApp.trivia.url"
+                >Juegos</Button
+              >
             </div>
           </div>
         </div>
@@ -68,7 +85,8 @@
 
     <section class="p-6 sm:container sm:p-0 mx-auto mt-8 sm:mt-16">
       <p class="text-lg sm:text-xl text-center">
-        Visita nuestras herramientas interactivas y educate para prevenir y detectar de forma temprana el cáncer.
+        Visita nuestras herramientas interactivas y educate para prevenir y
+        detectar de forma temprana el cáncer.
       </p>
       <div class="flex flex-col sm:flex-row sm:justify-center mt-8">
         <div class="mr-4 mt-4 sm:mt-0 w-full sm:w-auto">
@@ -78,13 +96,13 @@
           </Button>
         </div>
         <div class="mr-4 mt-4 sm:mt-0 w-full sm:w-auto">
-          <Button size="lg" variant="secondary" to="/videos" >
+          <Button size="lg" variant="secondary" to="/videos">
             <VideoIcon style="width: 25px" class="mr-2 icon" />
             Videos
           </Button>
         </div>
         <div class="mt-4 sm:mt-0 w-full sm:w-auto">
-          <Button size="lg" variant="tertiary" to="/infografias" >
+          <Button size="lg" variant="tertiary" to="/infografias">
             <PictureIcon style="width: 18px" class="mr-2 icon" />
             Infografías
           </Button>
@@ -98,7 +116,7 @@
       target="modal-video"
       type="iframe"
       link-multimedia="https://www.youtube.com/embed/9bujZyz3tr8"
-      >
+    >
     </Modal>
 
     <Modal
@@ -107,43 +125,47 @@
       target="modal-infographic"
       type="image"
       :link-multimedia="'images/infografias/cancer/aprende-sobre-el-cancer.png'"
-      >
+    >
     </Modal>
   </div>
 </template>
 
 <script>
-import metadataDynamic from '~/plugins/metadata/metadata-dynamic'
+import metadataDynamic from "~/plugins/metadata/metadata-dynamic";
 export default {
-  name: 'IndexPage',
-  head(){
-    const title = 'Inicio';
+  name: "IndexPage",
+  head() {
+    const title = "Inicio";
     const dynamicMeta = metadataDynamic({
-      title
+      title,
     });
 
-    return { title, meta: [...dynamicMeta] }
+    return { title, meta: [...dynamicMeta] };
   },
   components: {
-    PlayGamesIcon: () => import('@/static/icons/play-games.svg?inline'),
-    VideoIcon: () => import('@/static/icons/video.svg?inline'),
-    PictureIcon: () => import('@/static/icons/picture.svg?inline')
+    PlayGamesIcon: () => import("@/static/icons/play-games.svg?inline"),
+    VideoIcon: () => import("@/static/icons/video.svg?inline"),
+    PictureIcon: () => import("@/static/icons/picture.svg?inline"),
   },
   methods: {
     openVideo() {
-      this.$refs['modal-video'].open()
+      this.$refs["modal-video"].open();
     },
     openInfographic() {
-      this.$refs['modal-infographic'].open()
-    }
-  }
-}
+      this.$refs["modal-infographic"].open();
+    },
+  },
+};
 </script>
 
 <style lang="postcss" scoped>
 .banner {
-  background: rgb(46,52,138);
-  background: radial-gradient(circle, rgba(46,52,138,0.9990371148459384) 10%, rgba(40,43,83,1) 98%);
+  background: rgb(46, 52, 138);
+  background: radial-gradient(
+    circle,
+    rgba(46, 52, 138, 0.9990371148459384) 10%,
+    rgba(40, 43, 83, 1) 98%
+  );
   color: #fff;
   padding: 1.5em 0;
 }
@@ -155,7 +177,7 @@ export default {
 }
 
 .container-video {
-  background: url('https://licancerbucaramanga.org/wp-content/uploads/2021/06/Fachada-1.jpg?id=13704');
+  background: url("https://licancerbucaramanga.org/wp-content/uploads/2021/06/Fachada-1.jpg?id=13704");
   position: relative;
   min-height: 14rem;
 }
@@ -245,7 +267,6 @@ export default {
   width: 20px;
 }
 
-
 .s-ratio-16-9 {
   width: 100%;
   height: 0;
@@ -255,22 +276,21 @@ export default {
 
 .container-img img {
   position: absolute;
-    inset: 0px;
-    box-sizing: border-box;
-    padding: 0px;
-    border: none;
-    /* margin: auto; */
-    display: block;
-    width: 0px;
-    min-width: 100%;
-    max-width: 100%;
-    min-height: 100%;
-    filter: none;
-    background-size: cover;
-    background-image: none;
-    background-position: 0% 0%;
+  inset: 0px;
+  box-sizing: border-box;
+  padding: 0px;
+  border: none;
+  /* margin: auto; */
+  display: block;
+  width: 0px;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  filter: none;
+  background-size: cover;
+  background-image: none;
+  background-position: 0% 0%;
 }
-
 
 @media (min-width: 768px) {
   .wrapper {
@@ -299,6 +319,4 @@ export default {
 .icon {
   @apply fill-current text-gray-300;
 }
-
-
 </style>

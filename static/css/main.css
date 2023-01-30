@@ -176,3 +176,16 @@ body::-webkit-scrollbar-track {
   overflow: hidden;
   padding-bottom: 56.25%;
 }
+
+
+.title-children-color {
+  color: #fac32d;
+}
+
+.subtitle-children-color {
+  @apply text-blue-400;
+}
+
+.strong-children-color strong {
+  @apply text-tertiary;
+}
