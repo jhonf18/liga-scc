@@ -3,7 +3,12 @@
     <main class="mt-12 mb-4 mx-auto sm:mb-12 p-6 sm:container sm:p-0 lg:p-4">
       <h1
         class="text-center text-3xl sm:text-5xl font-bold mb-12 text-primary uppercase"
-        :class="{ 'title-children-color': $route.path === '/etapas/ninos' }"
+        :class="{
+          'color-sec-children': $route.path === '/etapas/ninos',
+          'color-sec-adolescent': $route.path === '/etapas/adolescente',
+          'color-sec-woman': $route.path === '/etapas/adulto/mujer',
+          'color-sec-man': $route.path === '/etapas/adulto/hombre',
+        }"
       >
         {{ data.title }}
       </h1>
@@ -30,18 +35,15 @@
             <h2
               class="text-xl sm:text-2xl md:text-3xl font-medium text-center"
               :class="{
-                'subtitle-children-color': $route.path === '/etapas/ninos',
+                'color-sec-children': $route.path === '/etapas/ninos',
+                'color-sec-adolescent': $route.path === '/etapas/adolescente',
+                'color-sec-woman': $route.path === '/etapas/adulto/mujer',
+                'color-sec-man': $route.path === '/etapas/adulto/hombre',
               }"
             >
               ¿Qué es el {{ data.title }}?
             </h2>
-            <p
-              class="mt-6 lg:mt-8 mb-8"
-              :class="{
-                'strong-children-color': $route.path === '/etapas/ninos',
-              }"
-              v-html="data.paragraph_1"
-            ></p>
+            <p class="mt-6 lg:mt-8 mb-8" v-html="data.paragraph_1"></p>
             <p class="mt-4">
               {{ data.paragraph_2 }}
             </p>
@@ -58,6 +60,12 @@
     <section class="p-6 sm:mt-12 sm:container sm:p-0 lg:p-4 mx-auto md:mt-8">
       <h2
         class="text-2xl sm:text-4xl font-bold text-primary text-center uppercase"
+        :class="{
+          'color-sec-children': $route.path === '/etapas/ninos',
+          'color-sec-adolescent': $route.path === '/etapas/adolescente',
+          'color-sec-woman': $route.path === '/etapas/adulto/mujer',
+          'color-sec-man': $route.path === '/etapas/adulto/hombre',
+        }"
       >
         {{ data.second_title }}
       </h2>

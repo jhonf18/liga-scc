@@ -10,14 +10,14 @@ export default {
       data: {
         title: "Cáncer de próstata",
         url_principal_image: "/images/sections/cancer-de-prostata.png",
-        paragraph_1: `El cáncer de próstata es el que más afecta a los hombres después del cáncer de piel, se
+        paragraph_1: `El cáncer de próstata es el que más afecta a los hombres seguido del cáncer de piel, se
         caracteriza por la <strong>transformación de la estructura de la próstata</strong> a raíz del crecimiento
         anormal de las células. Conoce los principales <strong>signos de alarma, exámenes de tamización</strong> y
         generalidades para que puedas diagnosticar a tiempo esta enfermedad.`,
         paragraph_2: "",
         second_title: "Instrúyete sobre el cáncer de próstata",
         url_preview_video: "/images/miniaturas/prostata.png",
-        url_video: "//www.youtube.com/embed/SPiLTySoPWM",
+        url_video: "https://www.youtube.com/embed/X02CfqOt1zM",
         play_games: [
           {
             name: "Hazle triqui al cáncer de próstata",
@@ -27,7 +27,7 @@ export default {
               "Desafía con tu conocimiento al cáncer de próstata y márcale tres en raya para vencerlo.",
           },
           {
-            name: "Sálvate de ir a la horca  por el cáncer de próstata",
+            name: "Edúcate y sálvate del cáncer de próstata",
             link: this.$routesApp.hangman.url,
             url_image: "/images/ahorcado.png",
             description:

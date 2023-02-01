@@ -189,3 +189,19 @@ body::-webkit-scrollbar-track {
 .strong-children-color strong {
   @apply text-tertiary;
 }
+
+.color-sec-children {
+  color: #fac32d;
+}
+
+.color-sec-adolescent {
+  @apply text-blue-400;
+}
+
+.color-sec-man {
+  color: #2460e5;
+}
+
+.color-sec-woman {
+  color: #f389a8;
+}

@@ -18,7 +18,7 @@ export default {
         paragraph_2: "",
         second_title: "Instrúyete sobre el cáncer de mama",
         url_preview_video: `/images/miniaturas/mama.png`,
-        url_video: "https://www.youtube.com/embed/xEpluMqjq1c",
+        url_video: "https://www.youtube.com/embed/pw12Bqfjn94",
         play_games: [
           {
             name: "Reconoce los signos y vence al cáncer de mama ",

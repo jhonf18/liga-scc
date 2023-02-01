@@ -10,15 +10,15 @@ export default {
       data: {
         title: "Cáncer de pulmón",
         url_principal_image: "/images/sections/cancer-de-pulmon.png",
-        paragraph_1: `El cáncer de pulmón se produce cuando las <strong>células</strong> de este órgano presentan una
-        transformación o <strong>crecimiento descontrolado</strong> producto de factores de riesgo. El
+        paragraph_1: `El cáncer de pulmón se produce cuando las <strong>células</strong> de este órgano presentan un
+        cambio o <strong>crecimiento descontrolado</strong> producto de factores de riesgo. El
         <strong>principal factor</strong> para desarrollar este tipo de cáncer es el <strong>consumo de tabaco</strong>,
         por ello, edúcate sobre los efectos del cigarrillo y el gran impacto que tiene en la salud, con el fin de
         desnaturalizar la aceptación social que ha tenido esta <strong>enfermedad crónica</strong> producto de la adicción a la nicotina.`,
         paragraph_2: "",
         second_title: "Instrúyete sobre el cáncer de pulmón y el tabaquismo",
         url_preview_video: `/images/miniaturas/pulmon.png`,
-        url_video: "https://www.youtube.com/embed/vGL0VNh1HCM",
+        url_video: "https://www.youtube.com/embed/k3eMUzjeBsc",
         play_games: [
           {
             name: "Descubre las fichas del cáncer de pulmón",

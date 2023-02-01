@@ -1,21 +1,25 @@
 <template>
   <main>
     <h1
-      class="text-2xl md:text-4xl lg:text-5xl font-bold text-primary text-center pt-7 mb-9">
+      class="text-2xl md:text-4xl lg:text-5xl font-bold text-primary text-center pt-7 mb-9"
+    >
       Videos sobre el cáncer
     </h1>
     <section
-    class="px-4 sm:px-0 sm:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-6 sm:container mx-auto">
+      class="px-4 sm:px-0 sm:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-6 sm:container mx-auto"
+    >
       <div v-for="(video, i) in videos" :key="i" class="mb-6 sm:mb-0">
         <div class="container-video">
           <div
             @click="openVideo(video)"
             class="container-video cursor-pointer h-full flex justify-center items-center"
             :style="{
-              'background': `url(${video.url_preview_video})`,
+              background: `url(${video.url_preview_video})`,
               'background-position': 'top center',
               'background-repeat': 'no-repeat',
-              'background-size': 'cover' }">
+              'background-size': 'cover',
+            }"
+          >
             <div class="filter-container"></div>
             <div class="wrapper">
               <div class="circle pulse"></div>
@@ -28,8 +32,10 @@
           </div>
         </div>
         <div class="mt-2 pl-2">
-          <nuxt-link :to="video.link"
-            class="text-lg text-primary font-semibold hover:underline transition-all">
+          <nuxt-link
+            :to="video.link"
+            class="text-lg text-primary font-semibold hover:underline transition-all"
+          >
             {{ video.title }}
           </nuxt-link>
         </div>
@@ -41,71 +47,72 @@
       target="modal-content-video"
       type="iframe"
       :link-multimedia="url_video"
-      />
-
+    />
   </main>
 </template>
 
 <script>
-import metadataDynamic from '~/plugins/metadata/metadata-dynamic'
+import metadataDynamic from "~/plugins/metadata/metadata-dynamic";
 export default {
   data() {
     return {
       videos: [
         {
-          title: 'Cáncer de mama',
+          title: "Cáncer de mama",
           url_preview_video: require(`~/static/images/miniaturas/mama.png`),
-          url_video: 'https://www.youtube.com/embed/xEpluMqjq1c',
-          link: this.$routesApp.woman.url
+          url_video: "https://www.youtube.com/embed/pw12Bqfjn94",
+          link: this.$routesApp.woman.url,
         },
         {
-          title: 'Cáncer de piel',
-          url_preview_video: require('~/static/images/miniaturas/piel.png'),
-          url_video: 'https://www.youtube.com/embed/gu4QQP0gidM',
-          link: this.$routesApp.children.url
+          title: "Cáncer de piel",
+          url_preview_video: require("~/static/images/miniaturas/piel.png"),
+          url_video: "https://www.youtube.com/embed/MBO7hFZO590",
+          link: this.$routesApp.children.url,
         },
         {
-          title: 'Tabaquismo',
+          title: "Tabaquismo",
           url_preview_video: require(`~/static/images/miniaturas/pulmon.png`),
-          url_video: 'https://www.youtube.com/embed/vGL0VNh1HCM',
-          link: this.$routesApp.adolescent.url
+          url_video: "https://www.youtube.com/embed/k3eMUzjeBsc",
+          link: this.$routesApp.adolescent.url,
         },
         {
-          title: 'Cáncer de próstata',
+          title: "Cáncer de próstata",
           url_preview_video: require(`~/static/images/miniaturas/prostata.png`),
-          url_video: '//www.youtube.com/embed/SPiLTySoPWM',
-          link: this.$routesApp.man.url
+          url_video: "https://www.youtube.com/embed/X02CfqOt1zM",
+          link: this.$routesApp.man.url,
         },
         {
-          title: 'Cáncer en general',
+          title: "Cáncer en general",
           url_preview_video: require(`~/static/images/miniaturas/cancer-m.png`),
-          url_video: 'https://www.youtube.com/embed/9bujZyz3tr8',
-          link: '/'
-        }
+          url_video: "https://www.youtube.com/embed/L1PFtUE5G_c",
+          link: "/",
+        },
       ],
-      url_video: ''
-    }
+      url_video: "",
+    };
   },
-  head(){
-    const title = 'Videos'
-    const url = `${this.$config.baseURL}/videos`
-    const description = 'Edúcate con la Liga Santandereana Contra el Cáncer a través de videos interactivos sobre la prevención y detección de diferentes tipos de cáncer.'
-    const image = 'https://res.cloudinary.com/dsvy4oeqc/image/upload/v1674192653/educate-cancer/screenshot-videos-lscc_frqzex.png'
+  head() {
+    const title = "Videos";
+    const url = `${this.$config.baseURL}/videos`;
+    const description =
+      "Edúcate con la Liga Santandereana Contra el Cáncer a través de videos interactivos sobre la prevención y detección de diferentes tipos de cáncer.";
+    const image =
+      "https://res.cloudinary.com/dsvy4oeqc/image/upload/v1674192653/educate-cancer/screenshot-videos-lscc_frqzex.png";
     const dynamicMeta = metadataDynamic({
       title,
       description,
       url,
-      image
-    })
-    return { title, meta: [...dynamicMeta] }
+      image,
+    });
+    return { title, meta: [...dynamicMeta] };
   },
   methods: {
     openVideo(video) {
       this.url_video = video.url_video;
-      this.$refs['modal-content-video'].open();
-    }
-  }
-}
+      this.$refs["modal-content-video"].open();
+    },
+  },
+};
 </script>
 
 <style lang="postcss" scoped>
@@ -116,7 +123,7 @@ export default {
 
 .container-infographic {
   position: relative;
-  transition: all .4s;
+  transition: all 0.4s;
   min-height: 20rem;
 }
 

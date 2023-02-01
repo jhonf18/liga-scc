@@ -19,7 +19,7 @@ export default {
         paragraph_2: "",
         second_title: "Instrúyete sobre la prevención del cáncer de piel",
         url_preview_video: "/images/miniaturas/piel.png",
-        url_video: "https://www.youtube.com/embed/ogl3svT2I5Y",
+        url_video: "https://www.youtube.com/embed/MBO7hFZO590",
         play_games: [
           {
             name: "La carrera contra el  sol",
