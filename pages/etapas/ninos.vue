@@ -11,7 +11,7 @@ export default {
         title: "Cáncer de piel",
         url_principal_image: "/images/sections/cancer-de-piel.png",
         paragraph_1: `El cáncer de piel es uno de los tipos de cáncer más frecuentes, se caracteriza por la
-          <strong>transformación de las células sanas</strong> en células malignas, su <strong>
+          <strong>modificación de las células sanas</strong> en células malignas, su <strong>
           principal factor de riesgo es la exposición a la luz solar</strong>.
           Por ello, es importante que desde edades tempranas los niños y niñas comprendan el impacto que trae
           el sol y la <strong>relevancia de cuidar la piel</strong> con los diferentes elementos
